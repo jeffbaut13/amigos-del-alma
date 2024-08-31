@@ -87,7 +87,7 @@ const Collage = () => {
 
       <div className="absolute inset-0 flex overflow-hidden">
         <button
-          className="border absolute bottom-28 left-1/2 transform -translate-x-1/2 border-[--colorYellow] w-44 h-10 z-10  rounded-lg"
+          className="border absolute bottom-28 left-1/2 transform -translate-x-1/2 border-[--colorYellow] w-44 h-10 z-10  rounded-lg AddingtonCF-thin"
           onClick={handleNextClick}
         >
           siguiente

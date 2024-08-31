@@ -72,7 +72,7 @@ const Comercial = ({ abrirDije, setAbrirDije }) => {
         </div>
 
         <button
-          className=" border flex items-center justify-center border-[--colorYellow] w-52 h-10 rounded-lg mt-6"
+          className=" border flex items-center justify-center border-[--colorYellow] w-52 h-10 rounded-lg mt-6 AddingtonCF-thin"
           onClick={handlePlayClick}
         >
           {" "}

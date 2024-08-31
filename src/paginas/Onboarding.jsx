@@ -66,11 +66,11 @@ const Onboarding = () => {
             </h1>
           </div>
           <div className="flex justify-between items-center w-[30%] h-[45%]">
-            <button className="border border-[--colorYellow] w-44 h-10 text-sm rounded-lg">
+            <button className="border border-[--colorYellow] w-44 h-10 text-sm rounded-lg AddingtonCF-thin">
               omitir
             </button>
             <button
-              className="border border-[--colorYellow] w-44 h-10 rounded-lg"
+              className="border border-[--colorYellow] w-44 h-10 rounded-lg AddingtonCF-thin"
               onClick={handleNextClick}
             >
               siguiente
@@ -120,7 +120,7 @@ const Onboarding = () => {
             </div>
             <div className="pt-16">
               <button
-                className="border border-[--colorYellow] text-white w-44 h-10 rounded-lg"
+                className="border border-[--colorYellow] text-white w-44 h-10 rounded-lg AddingtonCF-thin"
                 onClick={handleNextClick}
               >
                 siguiente
