@@ -9,7 +9,7 @@ import {
   OrbitControls,
 } from "@react-three/drei";
 
-import { Dijegbl } from "./Dijegbl";
+import { Dijegbl } from "../components/Dijegbl";
 
 function Loader() {
   const { progress, active } = useProgress();

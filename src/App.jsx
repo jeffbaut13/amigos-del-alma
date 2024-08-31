@@ -18,11 +18,10 @@ const App = () => {
         />
       </Helmet>
 
-      <>
-        <React.StrictMode>
-          <RouterProvider router={router} />
-        </React.StrictMode>
-      </>
+      <React.StrictMode>
+        {/* Asegúrate de que RouterProvider envuelva todo */}
+        <RouterProvider router={router} />
+      </React.StrictMode>
     </>
   );
 };

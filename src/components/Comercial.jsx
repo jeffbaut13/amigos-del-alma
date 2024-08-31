@@ -3,12 +3,12 @@ import { gsap } from "gsap";
 import { useNavigate } from "react-router-dom"; // Importar useNavigate
 import backgroundImage from "/imagenes/amigosDelAlma.jpg";
 
-const Comercial = () => {
+const Comercial = ({ setDije }) => {
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
   const [showSkipButton, setShowSkipButton] = useState(false);
   const videoRef = useRef(null);
   const skipButtonRef = useRef(null);
-  const navigate = useNavigate(); // Inicializar useNavigate
+  //const navigate = useNavigate(); // Inicializar useNavigate
 
   // Función para manejar el clic en el botón "play"
   const handlePlayClick = () => {
@@ -23,14 +23,14 @@ const Comercial = () => {
       onComplete: () => {
         setIsVideoPlaying(false);
         setShowSkipButton(false);
-        //navigate("/inicio-dije"); // Redirigir a InicioDije
+        setDije(true);
       },
     });
   };
 
   // Función para manejar el fin del video
   const handleVideoEnd = () => {
-    navigate("/inicio-dije"); // Redirigir a InicioDije
+    setDije(true); // Redirigir a InicioDije
   };
 
   useEffect(() => {
@@ -87,7 +87,7 @@ const Comercial = () => {
           <video
             className="w-full h-full object-cover"
             autoPlay
-            //onEnded={handleVideoEnd}
+            onEnded={handleVideoEnd}
           >
             <source src="/videos/comercial.mp4" type="video/mp4" />
             Tu navegador no soporta la reproducción de video.

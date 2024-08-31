@@ -57,10 +57,6 @@ const Onboarding = () => {
         }}
       ></div>
 
-      <div className="absolute top-10 left-1/2 transform -translate-x-1/2">
-        <img className="w-44" src="/iconos/textoLogo.svg" alt="Textologo" />
-      </div>
-
       {!showUploadStep && !showNextStep && (
         <div className="flex flex-col items-center h-full relative">
           <div className="h-[55%] flex flex-col justify-end">
@@ -85,9 +81,6 @@ const Onboarding = () => {
 
       {showUploadStep && !showNextStep && (
         <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-60">
-          <div className="absolute top-10 left-1/2 transform -translate-x-1/2">
-            <img className="w-44" src="/iconos/textoLogo.svg" alt="Textologo" />
-          </div>
           <div className="flex flex-col items-center">
             <h1 className="text-[--colorYellow] text-xs text-center">
               sube la mejor foto que tengas con tu amig@ del alma.

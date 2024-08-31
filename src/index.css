@@ -83,10 +83,10 @@ h1 {
   line-height: 1.1;
 }
 
-button {
+.edicion button {
   @apply uppercase text-center rounded-md border-2 border-[--primary] py-2.5 pl-5 pr-3.5 transition-all duration-300 bg-[--primary] text-[--second] cursor-pointer text-base;
 }
-button:hover {
+.edicion button:hover {
   @apply border-[--thirty] text-[--primary] bg-transparent;
 }
 .home button {
@@ -117,7 +117,7 @@ svg {
   @apply w-full h-full object-contain;
 }
 .line {
-  @apply w-full h-0.5 bg-[--primary];
+  @apply w-full h-0.5 bg-[--colorYellow];
 }
 
 .text-shadow {

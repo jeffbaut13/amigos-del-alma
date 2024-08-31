@@ -1,12 +1,12 @@
 import { useRef, useState } from "react";
 
-import DijeValtio from "./store";
 import { useSnapshot } from "valtio";
-import { convertToBraille } from "./helpers/BraileConverter";
-import { Canva } from "./components/Canva";
-import { Navbar } from "./components/Navbar";
-import { Price } from "./components/Price";
-import { CardsCustomer } from "./components/CardsCustomer";
+import { convertToBraille } from "../helpers/BraileConverter";
+import DijeValtio from "../store/index";
+import { Canva } from "../components/Canva";
+import { Navbar } from "../components/Navbar";
+import { Price } from "../components/Price";
+import { CardsCustomer } from "../components/CardsCustomer";
 import gsap from "gsap";
 
 export const EdicionDije = () => {
@@ -40,9 +40,9 @@ export const EdicionDije = () => {
   };
 
   return (
-    <div className="AddingtonCF-light relative w-full h-full bg-[--second] flex">
+    <div className="AddingtonCF-light edicion relative w-full h-full bg-[--second] flex">
       <div className="backgroundStyle" />
-      <Navbar />
+
       <div className="w-[42%] h-full z-50 relative">
         <Canva open={open} snap={snap} cameraControlRef={controlsRef} />
       </div>
