@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 90s linear infinite;
+}
+
+@layer base {
+  @font-face {
+    font-family: "Mories";
+    font-style: normal;
+    src: url("./fonts/Mories.ttf");
+  }
+  @font-face {
+    font-family: "sequel";
+    font-style: normal;
+    src: url("./fonts/sequel-sans-book-disp.ttf");
+  }
+}
+.mories {
+  font-family: "Mories";
+  font-weight: 400;
+}
+
+:root {
+  @apply h-screen;
+  --colorYellow: #fff6c2;
+  --second-color: #000000;
+  font-family: "Mories";
+  line-height: 1.5;
+  letter-spacing: 0.25em;
+  font-weight: 400;
+  background-color: #000000;
+
+  color: rgba(255, 255, 255, 0.87);
+  /*  background-color: var(--bg); */
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

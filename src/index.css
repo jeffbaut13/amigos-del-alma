@@ -1,0 +1,161 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "AddingtonCF-thin";
+  src: url("/font/AddingtonCF-Thin.ttf");
+}
+@font-face {
+  font-family: "AddingtonCF-light";
+  src: url("/font/AddingtonCF-Light.ttf");
+}
+@font-face {
+  font-family: "NeueHaas Bold";
+  src: url("/font/NeueHaasDisplayBold.ttf");
+}
+@font-face {
+  font-family: "NeueHaas Thin";
+  src: url("/font/NeueHaasDisplayThin.ttf");
+}
+html {
+  @apply uppercase xl:text-[1vw] xs:text-[3vw] sm:text-[1.5vw] lg:text-[1vw] scroll-smooth;
+}
+body,
+#root {
+  width: 100%;
+  height: 100vh;
+}
+:root {
+  --primary: #282828;
+  --second: #fffcf3;
+  --thirty: #e1c149;
+  --borderOpacity: #2828283b;
+  --borderCircle: #000000;
+  color-scheme: light dark;
+  color: var(--primary);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.AddingtonCF-thin {
+  font-family: "AddingtonCF-thin";
+  @apply tracking-[0.3rem];
+}
+.AddingtonCF-light {
+  font-family: "AddingtonCF-light";
+  @apply tracking-[0.3rem];
+  -webkit-text-stroke: 0.2px black;
+}
+.NeueHaas-Bold {
+  font-family: "NeueHaas Bold";
+}
+.NeueHaas-Thin {
+  font-family: "NeueHaas Thin";
+}
+.number {
+  @apply NeueHaas-Thin tracking-wider;
+}
+.numberBold {
+  @apply NeueHaas-Bold tracking-wider;
+}
+
+a {
+  font-weight: 500;
+  color: var(--second);
+  text-decoration: inherit;
+}
+a:hover {
+  color: var(--primary);
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  @apply uppercase text-center rounded-md border-2 border-[--primary] py-2.5 pl-5 pr-3.5 transition-all duration-300 bg-[--primary] text-[--second] cursor-pointer text-base;
+}
+button:hover {
+  @apply border-[--thirty] text-[--primary] bg-transparent;
+}
+/* button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+} */
+hr {
+  @apply border-[--borderOpacity];
+}
+.backgroundStyle {
+  @apply fixed pointer-events-none top-0 left-0 z-20 w-full h-full;
+  background: linear-gradient(
+    90deg,
+    rgb(59 52 16 / 24%) 0%,
+    rgba(255, 255, 255, 0) 16%,
+    rgba(255, 255, 255, 0) 80%,
+    rgb(59 52 16 / 24%) 100%
+  );
+}
+img,
+svg {
+  @apply w-full h-full object-contain;
+}
+.line {
+  @apply w-full h-0.5 bg-[--primary];
+}
+
+.text-shadow {
+  text-shadow: 0px 0px 1px black;
+}
+input {
+  @apply w-full bg-transparent p-4 uppercase focus:outline-none;
+}
+/* Chrome, Safari, Edge, Opera */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.pasosNumer {
+  @apply text-shadow absolute w-4 h-4 text-[0.5rem] flex items-center justify-center border border-[--borderOpacity] rounded-full;
+}
+.slick-track {
+  @apply flex items-center justify-start;
+}
+.slick-slide {
+  @apply pointer-events-none;
+}
+.slick-slide.slick-active {
+  @apply pointer-events-auto;
+}
+
+.shadowbox {
+  box-shadow: 0px 0px 9px 2px rgba(0, 0, 0, 0.253);
+}
+.custom_Shadow {
+  box-shadow: 0 0 8px 4px #ffffff;
+  transition: all 0.3s ease-in-out;
+}
+
+.custom_Shadow:after {
+  content: "";
+  width: 1.5rem;
+  height: 1.5rem;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border-radius: 900px;
+  box-shadow: -2px 3px 6px 0px #a3a3a3;
+  transform: translate(-50%, -50%);
+}
