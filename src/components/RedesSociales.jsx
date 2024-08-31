@@ -1,5 +1,5 @@
 import React from "react";
 
 export const RedesSociales = () => {
-  return <div>RedesSociales</div>;
+  return <div className="text-white">RedesSociales</div>;
 };

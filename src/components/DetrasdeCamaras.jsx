@@ -1,7 +1,7 @@
 import React from "react";
 
 export const DetrasDeCamaras = () => {
-  return <div>DetrasDeCamaras</div>;
+  return <div className="text-white">DetrasDeCamaras</div>;
 };
 
 /* 

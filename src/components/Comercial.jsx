@@ -23,7 +23,7 @@ const Comercial = () => {
       onComplete: () => {
         setIsVideoPlaying(false);
         setShowSkipButton(false);
-        navigate("/inicio-dije"); // Redirigir a InicioDije
+        //navigate("/inicio-dije"); // Redirigir a InicioDije
       },
     });
   };
@@ -87,7 +87,7 @@ const Comercial = () => {
           <video
             className="w-full h-full object-cover"
             autoPlay
-            onEnded={handleVideoEnd}
+            //onEnded={handleVideoEnd}
           >
             <source src="/videos/comercial.mp4" type="video/mp4" />
             Tu navegador no soporta la reproducción de video.

@@ -1,7 +1,8 @@
 import React from "react";
 import Comercial from "../components/Comercial";
-import DetrasdeCamaras from "../components/DetrasDeCamaras";
+
 import { RedesSociales } from "../components/RedesSociales";
+import { DetrasDeCamaras } from "../components/DetrasDeCamaras";
 
 export const Campaña = () => {
   return (
@@ -10,7 +11,7 @@ export const Campaña = () => {
         <Comercial />
       </div>
       <div>
-        <DetrasdeCamaras />
+        <DetrasDeCamaras />
       </div>
       <div>
         <RedesSociales />
