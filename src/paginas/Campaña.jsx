@@ -2,7 +2,6 @@ import React from "react";
 import Comercial from "../components/Comercial";
 
 import { RedesSociales } from "../components/RedesSociales";
-import { DetrasDeCamaras } from "../components/DetrasDeCamaras";
 
 export const Campaña = () => {
   return (
@@ -10,9 +9,7 @@ export const Campaña = () => {
       <div>
         <Comercial />
       </div>
-      <div>
-        <DetrasDeCamaras />
-      </div>
+      <div>Detras de camaras</div>
       <div>
         <RedesSociales />
       </div>
