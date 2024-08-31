@@ -80,7 +80,7 @@ const Onboarding = () => {
       )}
 
       {showUploadStep && !showNextStep && (
-        <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-60">
+        <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-70">
           <div className="flex flex-col items-center">
             <h1 className="text-[--colorYellow] text-xs text-center">
               sube la mejor foto que tengas con tu amig@ del alma.
@@ -88,14 +88,14 @@ const Onboarding = () => {
               si quieres hacer parte de nuestro collage.
             </h1>
             <div className="flex flex-col items-center pt-8">
-              <div className="flex flex-col items-center justify-center border border-[--colorYellow] rounded-lg w-72 h-80 space-y-4 foto cursor-grab">
+              <div className="flex flex-col items-center justify-center border rounded-lg w-72 h-80 space-y-4 foto cursor-grab">
                 <div
-                  className=" border border-[--colorYellow] rounded-lg w-[95%] h-[95%]"
+                  className=" border  rounded-lg w-[95%] h-[95%]"
                   onDragOver={handleDragOver}
                   onDrop={handleDrop}
                   onClick={() => document.getElementById("fileInput").click()}
                 >
-                  <div className="flex flex-col justify-center text-center items-center text-[--colorYellow] bg-black opacity-40 w-full h-full">
+                  <div className="flex flex-col justify-center text-center items-center text-[--colorYellow] w-full h-full">
                     {image ? (
                       <img
                         src={image}
@@ -103,9 +103,9 @@ const Onboarding = () => {
                         className="w-full h-full object-cover rounded-lg"
                       />
                     ) : (
-                      <p className=" text-[0.7rem]  z-50 border-b-2 border-[--colorYellow] ">
-                        arrastra o carga tu
-                        <br /> foto aquí
+                      <p className=" text-[0.7rem]  z-50 border-b-[1px] pb-2  ">
+                        arrastra o carga <br /> tu
+                         foto aquí
                       </p>
                     )}
                     <input
