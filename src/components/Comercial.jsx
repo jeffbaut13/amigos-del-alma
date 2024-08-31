@@ -99,8 +99,9 @@ const Comercial = ({ abrirDije, setAbrirDije }) => {
             className="w-full h-full object-cover"
             autoPlay
             onEnded={handleVideoEnd}
+            controls
           >
-            <source src="/videos/comercial.mp4" type="video/mp4" />
+            <source src="/imagenes/videoplaybackk.mp4" type="video/mp4" />
             Tu navegador no soporta la reproducción de video.
           </video>
 

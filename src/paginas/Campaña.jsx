@@ -3,6 +3,7 @@ import Comercial from "../components/Comercial";
 
 import { RedesSociales } from "../components/RedesSociales";
 import { EdicionDije } from "../components/EdicionDije";
+import DetrasdeCamaras from "../components/DetrasdeCamaras";
 
 export const Campaña = () => {
   const [abrirDije, setAbrirDije] = useState(false);
@@ -20,7 +21,9 @@ export const Campaña = () => {
       <div>
         <Comercial abrirDije={abrirDije} setAbrirDije={setAbrirDije} />
       </div>
-      <div className="text-white">Detras de camaras</div>
+      <div>
+        <DetrasdeCamaras />
+      </div>
       <div>
         <RedesSociales />
       </div>
