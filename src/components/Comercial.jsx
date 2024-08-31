@@ -110,7 +110,7 @@ const Comercial = ({ abrirDije, setAbrirDije }) => {
             <button
               ref={skipButtonRef}
               onClick={handleSkipClick}
-              className="absolute bottom-10 right-10 border border-[--colorYellow] w-44 h-10 text-1xl rounded-lg"
+              className="absolute bottom-24 right-10 border border-[--colorYellow] w-44 h-10 text-1xl rounded-lg"
             >
               Omitir
             </button>
