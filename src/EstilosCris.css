@@ -37,16 +37,4 @@
   --colorYellow: #fff6c2;
   --second-color: #000000;
   font-family: "Mories";
-  line-height: 1.5;
-  letter-spacing: 0.25em;
-  font-weight: 400;
-  background-color: #000000;
-
-  color: rgba(255, 255, 255, 0.87);
-  /*  background-color: var(--bg); */
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
