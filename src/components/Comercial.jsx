@@ -3,9 +3,10 @@ import { gsap } from "gsap";
 import { useNavigate } from "react-router-dom"; // Importar useNavigate
 import backgroundImage from "/imagenes/amigosDelAlma.jpg";
 
-const Comercial = ({ setDije }) => {
+const Comercial = ({ abrirDije, setAbrirDije }) => {
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
   const [showSkipButton, setShowSkipButton] = useState(false);
+  const [btnAbrirDije, setBtnAbrirDije] = useState(false);
   const videoRef = useRef(null);
   const skipButtonRef = useRef(null);
   //const navigate = useNavigate(); // Inicializar useNavigate
@@ -23,14 +24,16 @@ const Comercial = ({ setDije }) => {
       onComplete: () => {
         setIsVideoPlaying(false);
         setShowSkipButton(false);
-        setDije(true);
+        setBtnAbrirDije(true);
+        setAbrirDije(true);
       },
     });
   };
 
   // Función para manejar el fin del video
   const handleVideoEnd = () => {
-    setDije(true); // Redirigir a InicioDije
+    setBtnAbrirDije(true);
+    setAbrirDije(true); // Redirigir a InicioDije
   };
 
   useEffect(() => {
@@ -63,7 +66,7 @@ const Comercial = ({ setDije }) => {
       <div className="flex flex-col items-center h-full relative">
         <div className="h-[45%] flex flex-col justify-between items-center mt-28">
           <img className="w-96" src="/iconos/TituloCentrado.svg" alt="Título" />
-          <h1 className="text-[--colorYellow] text-1xl text-center">
+          <h1 className="text-[--colorYellow] text-xl text-center">
             conoce la historia de alejo y toño
           </h1>
         </div>
@@ -76,6 +79,14 @@ const Comercial = ({ setDije }) => {
           reproducir
           <img className="w-6 ml-2" src="/iconos/playPequeño.svg" alt="play" />
         </button>
+        {btnAbrirDije && (
+          <button
+            className=" border flex items-center justify-center border-[--colorYellow] w-52 h-10 rounded-lg mt-6"
+            onClick={() => setAbrirDije(true)}
+          >
+            Editar dije
+          </button>
+        )}
       </div>
 
       {/* Video a pantalla completa */}

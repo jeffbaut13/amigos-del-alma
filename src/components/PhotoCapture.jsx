@@ -102,9 +102,7 @@ export const PhotoCapture = ({
       ) : (
         <>
           {" "}
-          <button className="bg-transparent text-[0.7rem] text-[--primary] border border-[--borderOpacity]">
-            Tomar foto
-          </button>
+          <button className="editorbtn ">Tomar foto</button>
         </>
       )}
     </>

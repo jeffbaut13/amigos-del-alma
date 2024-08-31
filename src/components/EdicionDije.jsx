@@ -9,7 +9,7 @@ import { Price } from "../components/Price";
 import { CardsCustomer } from "../components/CardsCustomer";
 import gsap from "gsap";
 
-export const EdicionDije = () => {
+export const EdicionDije = ({ setAbrirDije }) => {
   const snap = useSnapshot(DijeValtio);
   const controlsRef = useRef(null);
   const [open, setOpen] = useState("");
@@ -40,9 +40,16 @@ export const EdicionDije = () => {
   };
 
   return (
-    <div className="AddingtonCF-light edicion relative w-full h-full bg-[--second] flex">
+    <div className="AddingtonCF-light edicion w-[85%] h-4/5 rounded-xl fixed top-1/2 z-[100] -translate-y-1/2 -translate-x-1/2 left-1/2 bg-[--second] flex">
       <div className="backgroundStyle" />
+      <div className="fixed top-0 left-0 z-50 flex justify-between px-8 mt-6 w-full h-8">
+        <figure></figure>
+        <figure>
+          <img src="/logo.svg" alt="" />
+        </figure>
 
+        <div className=" "></div>
+      </div>
       <div className="w-[42%] h-full z-50 relative">
         <Canva open={open} snap={snap} cameraControlRef={controlsRef} />
       </div>

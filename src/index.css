@@ -2,6 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 90s linear infinite;
+}
+
+@font-face {
+  font-family: "Mories";
+  font-style: normal;
+  src: url("./fonts/Mories.ttf");
+}
+@font-face {
+  font-family: "sequel";
+  font-style: normal;
+  src: url("./fonts/sequel-sans-book-disp.ttf");
+}
+
 @font-face {
   font-family: "AddingtonCF-thin";
   src: url("/font/AddingtonCF-Thin.ttf");
@@ -19,7 +43,7 @@
   src: url("/font/NeueHaasDisplayThin.ttf");
 }
 html {
-  @apply uppercase xl:text-[1vw] xs:text-[3vw] sm:text-[1.5vw] lg:text-[1vw] scroll-smooth;
+  @apply uppercase xl:text-[1vw] xs:text-[3vw] sm:text-[1.5vw] lg:text-[1vw] scroll-smooth bg-black;
 }
 body,
 #root {
@@ -32,8 +56,10 @@ body,
   --thirty: #e1c149;
   --borderOpacity: #2828283b;
   --borderCircle: #000000;
-  color-scheme: light dark;
-  color: var(--primary);
+  --colorYellow: #fff6c2;
+  --second-color: #000000;
+  font-family: "Mories";
+
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -95,10 +121,9 @@ h1 {
 .home button:hover {
   @apply border-[--colorYellow] text-[--primary] bg-[--colorYellow];
 }
-/* button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-} */
+.edicion .editorbtn {
+  @apply bg-transparent text-[0.5rem] text-[--primary] border border-[--borderOpacity] py-1 px-2;
+}
 hr {
   @apply border-[--borderOpacity];
 }
@@ -164,4 +189,12 @@ input[type="number"]::-webkit-inner-spin-button {
   border-radius: 900px;
   box-shadow: -2px 3px 6px 0px #a3a3a3;
   transform: translate(-50%, -50%);
+}
+
+.slick-track,
+.slick-list,
+.slick-slide,
+.slick-slide > div,
+.slick-slide > div > div {
+  height: 100%;
 }

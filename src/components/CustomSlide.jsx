@@ -98,12 +98,12 @@ export const CustomSlide = ({ DijeValtio, reset, setReset }) => {
           }}
         >
           <img
-            className="pointer-events-none"
+            className="pointer-events-none w-full h-full object-contain"
             src="/iconos/slideIcon.svg"
             alt=""
           />
         </span>
-        <div className="w-full py-2 flex justify-between">
+        <div className="w-full py-2  flex justify-between">
           <span>-</span>
           <span>+</span>
         </div>

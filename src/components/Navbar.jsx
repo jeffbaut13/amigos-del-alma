@@ -19,7 +19,7 @@ export const Navbar = () => {
   }, [location]);
 
   return (
-    <div className="fixed top-0 left-0 z-50 flex justify-between items-center px-8 mt-6 w-full h-6">
+    <div className="fixed top-0 left-0 z-[200] flex justify-between items-center px-8 mt-6 w-full h-6">
       <figure className="h-full inline-block">
         <img className="h-full" src="/prospero.svg" alt="Logo" />
       </figure>

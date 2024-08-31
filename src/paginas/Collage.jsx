@@ -77,8 +77,14 @@ const Collage = () => {
   return (
     <div className="home relative w-full h-full overflow-hidden bg-black collage-container">
       <div className="absolute inset-0 z-10 flex flex-col text-[--colorYellow] space-y-8 items-center justify-center bg-black bg-opacity-50 pointer-events-none">
-        <p>tu recuerdo se ha sumado a este gran álbum de historias</p>
-        <img className="w-96" src="/iconos/TituloCentrado.svg" alt="Título" />
+        <p className="">
+          tu recuerdo se ha sumado a este gran álbum de historias
+        </p>
+        <img
+          className="w-96 h-auto"
+          src="/iconos/TituloCentrado.svg"
+          alt="Título"
+        />
       </div>
 
       <div className="absolute inset-0 flex overflow-hidden">

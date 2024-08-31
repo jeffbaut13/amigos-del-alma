@@ -70,7 +70,7 @@ export const Pasos = ({ DijeValtio, setOpen, camMove, snap }) => {
   return (
     <>
       <div
-        className={`box w-full rounded-lg flex flex-col justify-evenly items-start px-4`}
+        className={`box w-full h-full rounded-lg flex flex-col justify-center items-start px-4`}
       >
         <PasosIcons currentSlide={currentSlide} />
 

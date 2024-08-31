@@ -50,9 +50,11 @@ export const ImgLoadDije = ({ DijeValtio }) => {
   };
 
   return (
-    <div>
+    <div className="h-full">
       <div
-        className={`botonesBox ${controles ? "flex justify-between" : "block"}`}
+        className={`botonesBox  my-4 ${
+          controles ? "flex justify-between" : "block"
+        }`}
       >
         <UploadImage
           setReset={setReset}
@@ -67,15 +69,15 @@ export const ImgLoadDije = ({ DijeValtio }) => {
           setReset={setReset}
         />
       </div>
-      <hr className={`mx-auto my-4 w-full ${controles ? "" : "hidden"}`} />
+      <hr className={`mx-auto mb-4 w-full ${controles ? "" : "hidden"}`} />
 
       {controles && (
         <div>
-          <h2 className=" w-full text-center my-8">DIRECCIÓN</h2>
+          <h2 className=" w-full text-center mb-4 ">DIRECCIÓN</h2>
           {/* Flecha derecha */}
-          <div className="relative w-36 h-36 m-auto">
+          <div className="relative w-28 h-28 m-auto">
             <ButtonImgEditor
-              position={"left-0 top-12"}
+              position={"left-0 top-1/2 -translate-y-1/2"}
               rotate={"rotate-180"}
               handleclick={() => (DijeValtio.imagePositionX -= 0.01)}
               handleOnMouseDown={() => startAction("move", -0.01, 0)}
@@ -84,7 +86,7 @@ export const ImgLoadDije = ({ DijeValtio }) => {
             />
             {/* Flecha izquierda */}
             <ButtonImgEditor
-              position={"right-0 top-12"}
+              position={"right-0 top-1/2 -translate-y-1/2"}
               rotate={""}
               handleclick={() => (DijeValtio.imagePositionX += 0.01)}
               handleOnMouseDown={() => startAction("move", +0.01, 0)}
@@ -111,8 +113,8 @@ export const ImgLoadDije = ({ DijeValtio }) => {
               handleOnMouseLeave={stopAction}
             />
           </div>
-          <hr className={`mx-auto my-4 w-full ${controles ? "" : "hidden"}`} />
-          <h2 className="w-full text-center my-8">TAMAÑO DE IMAGEN</h2>
+          <hr className={`mx-auto my-2  w-full ${controles ? "" : "hidden"}`} />
+          <h2 className="w-full text-center my-4">TAMAÑO DE IMAGEN</h2>
           <CustomSlide
             snap={snap}
             DijeValtio={DijeValtio}

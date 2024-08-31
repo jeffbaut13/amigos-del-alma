@@ -90,9 +90,7 @@ export const UploadImage = ({
         </>
       ) : (
         <>
-          <button className="bg-transparent text-[0.7rem] text-[--primary] border border-[--borderOpacity]">
-            Subir imagen
-          </button>
+          <button className="editorbtn">Subir imagen</button>
         </>
       )}
     </>

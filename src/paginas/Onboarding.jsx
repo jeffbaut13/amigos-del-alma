@@ -60,13 +60,13 @@ const Onboarding = () => {
       {!showUploadStep && !showNextStep && (
         <div className="flex flex-col items-center h-full relative">
           <div className="h-[55%] flex flex-col justify-end">
-            <h1 className="text-[--colorYellow] text-1xl text-center">
+            <h1 className="text-[--colorYellow] text-xl text-center">
               solo los amigos del alma tienen recuerdos
               <br /> que duran para siempre.
             </h1>
           </div>
           <div className="flex justify-between items-center w-[30%] h-[45%]">
-            <button className="border border-[--colorYellow] w-44 h-10 text-1xl rounded-lg">
+            <button className="border border-[--colorYellow] w-44 h-10 text-xl rounded-lg">
               omitir
             </button>
             <button

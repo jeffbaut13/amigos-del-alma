@@ -49,9 +49,9 @@ export const SliderPaso = ({ next, sliderRef, DijeValtio, setOpen }) => {
   };
 
   return (
-    <Slider className="w-full my-14" {...settings} ref={sliderRef}>
+    <Slider className="w-full h-[55%]" {...settings} ref={sliderRef}>
       <div>
-        <div className="flex flex-col items-start justify-center w-full rounded-lg slide-uno">
+        <div className="h-full flex flex-col items-start justify-center w-full rounded-lg slide-uno">
           <p className="text-base">
             AHORA TÚ Y TU AMIGO DEL ALMA TAMBIÉN PODRÁN TENER SU PROPIO SÍMBOLO
             PERSONALIZADO.
@@ -62,7 +62,7 @@ export const SliderPaso = ({ next, sliderRef, DijeValtio, setOpen }) => {
         </div>
       </div>
       <div>
-        <div className="flex items-center flex-col justify-start w-full slide-uno">
+        <div className="h-full flex  flex-col items-start justify-center w-full slide-uno">
           <div className=" w-full py-2">
             <input
               maxLength={10}
@@ -90,7 +90,7 @@ export const SliderPaso = ({ next, sliderRef, DijeValtio, setOpen }) => {
         </div>
       </div>
       <div>
-        <div className="h-28 flex items-center flex-col justify-start w-full slide-uno">
+        <div className="h-full flex  flex-col items-start justify-center w-full slide-uno">
           <div className=" w-full py-2 px-0.5 relative">
             {inputChange ? (
               <p
@@ -117,7 +117,7 @@ export const SliderPaso = ({ next, sliderRef, DijeValtio, setOpen }) => {
         </div>
       </div>
       <div>
-        <div className="h-28 flex items-center flex-col justify-start w-full slide-uno">
+        <div className="h-full flex  flex-col items-start justify-center w-full slide-uno">
           <div className=" w-full py-2 px-1">
             <p className="text-base">
               SI ALGUIEN SE ENCUENTRA <br />A TU AMIGO, <br /> ¿A QUÉ NÚMERO
