@@ -50,7 +50,7 @@ const Comercial = () => {
   }, [isVideoPlaying]);
 
   return (
-    <div className="h-screen w-screen relative">
+    <div className="home h-screen w-full relative">
       {/* Fondo de la pantalla principal */}
       <div
         className="absolute inset-0 bg-cover bg-center"

@@ -9,7 +9,7 @@ export const Campaña = () => {
       <div>
         <Comercial />
       </div>
-      <div>Detras de camaras</div>
+      <div className="text-white">Detras de camaras</div>
       <div>
         <RedesSociales />
       </div>

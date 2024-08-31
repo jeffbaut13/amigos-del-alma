@@ -33,7 +33,6 @@
 }
 
 :root {
-  @apply h-screen;
   --colorYellow: #fff6c2;
   --second-color: #000000;
   font-family: "Mories";

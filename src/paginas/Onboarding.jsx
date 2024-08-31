@@ -47,7 +47,7 @@ const Onboarding = () => {
   };
 
   return (
-    <div className={`h-screen w-screen relative onboarding-container`}>
+    <div className={`home h-full w-full relative onboarding-container`}>
       <div
         className={`absolute inset-0 bg-cover bg-center transition-all duration-500 ${
           showUploadStep || showNextStep ? "blur-sm" : ""
@@ -127,7 +127,7 @@ const Onboarding = () => {
             </div>
             <div className="pt-16">
               <button
-                className="border border-[--colorYellow] w-44 h-10 rounded-lg"
+                className="border border-[--colorYellow] text-white w-44 h-10 rounded-lg"
                 onClick={handleNextClick}
               >
                 siguiente
