@@ -1,3 +1,10 @@
+import React from "react";
+
+export const DetrasDeCamaras = () => {
+  return <div>DetrasDeCamaras</div>;
+};
+
+/* 
 import React, { useState } from "react";
 
 const videos = [
@@ -87,3 +94,4 @@ const DetrasdeCamaras = () => {
 };
 
 export default DetrasdeCamaras;
+ */
