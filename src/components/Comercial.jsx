@@ -66,7 +66,7 @@ const Comercial = ({ abrirDije, setAbrirDije }) => {
       <div className="flex flex-col items-center h-full relative">
         <div className="h-[45%] flex flex-col justify-between items-center mt-28">
           <img className="w-96" src="/iconos/TituloCentrado.svg" alt="Título" />
-          <h1 className="text-[--colorYellow] text-xl text-center">
+          <h1 className="text-[--colorYellow] text-sm text-center">
             conoce la historia de alejo y toño
           </h1>
         </div>

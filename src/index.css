@@ -59,7 +59,7 @@ body,
   --colorYellow: #fff6c2;
   --second-color: #000000;
   font-family: "Mories";
-
+  letter-spacing: 0.25em;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;

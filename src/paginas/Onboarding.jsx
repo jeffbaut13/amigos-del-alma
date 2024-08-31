@@ -60,13 +60,13 @@ const Onboarding = () => {
       {!showUploadStep && !showNextStep && (
         <div className="flex flex-col items-center h-full relative">
           <div className="h-[55%] flex flex-col justify-end">
-            <h1 className="text-[--colorYellow] text-xl text-center">
+            <h1 className="text-[--colorYellow] text-sm text-center">
               solo los amigos del alma tienen recuerdos
               <br /> que duran para siempre.
             </h1>
           </div>
           <div className="flex justify-between items-center w-[30%] h-[45%]">
-            <button className="border border-[--colorYellow] w-44 h-10 text-xl rounded-lg">
+            <button className="border border-[--colorYellow] w-44 h-10 text-sm rounded-lg">
               omitir
             </button>
             <button
@@ -103,7 +103,7 @@ const Onboarding = () => {
                         className="w-full h-full object-cover rounded-lg"
                       />
                     ) : (
-                      <p className=" text-[10px] w-[50%] px-10 z-50 border-b-2 border-[--colorYellow] ">
+                      <p className=" text-[0.7rem]  z-50 border-b-2 border-[--colorYellow] ">
                         arrastra o carga tu
                         <br /> foto aquí
                       </p>
