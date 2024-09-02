@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 
 const videos = [
-  { src: '/imagenes/videoplaybackk.mp4', title: 'ALFREDO. EL PIANISTA QUE CREÓ LA MÚSICA DEL COMERCIAL.' },
-  { src: '/imagenes/videoplaybackk.mp4', title: 'DETRÁS DE CÁMARAS' },
-  { src: '/imagenes/videoplaybackk.mp4', title: 'CONOCE A TEQUILA. EL PERRO QUE INTERPRETÓ A TOÑO.' },
+  { src: '/imagenes/videoplaybackk.mp4', title: 'ALFREDO' },
+  { src: '/imagenes/videoplaybackk.mp4', title: 'MAKING OFF' },
+  { src: '/imagenes/videoplaybackk.mp4', title: 'TEQUILA' },
 ];
 
 const DetrasdeCamaras = () => {
@@ -22,27 +22,35 @@ const DetrasdeCamaras = () => {
 
   return (
     <div className="h-screen w-screen relative flex items-center justify-center bg-black overflow-hidden">
-      <div className="flex space-x-28 items-center justify-center">
+      <div className="flex space-x-28 items-start justify-center">
         {videos.map((video, index) => (
           <div key={index} className="flex flex-col items-center">
-            {/* Contenedor del título con las mismas dimensiones que el video */}
-            <div className="w-80 h-[50px] mb-4 flex items-center justify-center rounded-xl">
-              <p className="text-center text-xs text-[--colorYellow]">{video.title}</p>
+            {/* Contenedor de espacio para el título, siempre presente */}
+            <div className={`w-80 h-[50px] ${index === 1 ? '' : 'flex items-center justify-center'}`}>
+              {index === 1 && (
+                <p className="text-center text-3xl text-[--colorYellow]">{video.title}</p>
+              )}
             </div>
-            {/* Contenedor del video con borde amarillo */}
+            {/* Contenedor del video */}
             <div
-              className="w-80 h-[500px] overflow-hidden border border-[--colorYellow] bg-black rounded-xl shadow-lg relative cursor-pointer"
+              className="w-80 h-[70vh] overflow-hidden border border-[--colorYellow] bg-black rounded-xl shadow-lg relative cursor-pointer"
               onClick={() => handleVideoClick(video.src)}
             >
               <video
                 src={video.src}
-                className="w-full h-4/5 rounded-lg object-cover"
+                className="w-full h-full rounded-lg object-cover"
               />
               <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50">
                 <div className="p-4 rounded-full">
-                  <img className="w-8" src="/iconos/playPequeño.svg" alt="Play" />
+                  <img className="w-20" src="/iconos/playPequeño.svg" alt="Play" />
                 </div>
               </div>
+              {/* Título dentro de la tarjeta para la primera y tercera tarjeta */}
+              {index !== 1 && (
+                <div className="absolute bottom-4 w-full text-center text-1xl text-[--colorYellow] py-2 ">
+                  {video.title}
+                </div>
+              )}
             </div>
           </div>
         ))}

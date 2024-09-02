@@ -83,7 +83,7 @@ const Onboarding = () => {
         <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-70">
           <div className="flex flex-col items-center">
             <h1 className="text-[--colorYellow] text-xs text-center">
-              sube la mejor foto que tengas con tu amig@ del alma.
+              sube la mejor foto que tengas con tu amig<span className=" AddingtonCF-thin">@</span> del alma.
               <br />
               si quieres hacer parte de nuestro collage.
             </h1>
