@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const videos = [
-  { src: '/imagenes/videoplaybackk.mp4', title: 'ALFREDO' },
-  { src: '/imagenes/videoplaybackk.mp4', title: 'MAKING OFF' },
-  { src: '/imagenes/videoplaybackk.mp4', title: 'TEQUILA' },
+  { src: "/imagenes/videoplaybackk.mp4", title: "ALFREDO" },
+  { src: "/imagenes/videoplaybackk.mp4", title: "MAKING OFF" },
+  { src: "/imagenes/videoplaybackk.mp4", title: "TEQUILA" },
 ];
 
 const DetrasdeCamaras = () => {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
-  const [activeVideoSrc, setActiveVideoSrc] = useState('');
+  const [activeVideoSrc, setActiveVideoSrc] = useState("");
 
   const handleVideoClick = (src) => {
     setActiveVideoSrc(src);
@@ -17,11 +17,11 @@ const DetrasdeCamaras = () => {
 
   const handleCloseClick = () => {
     setIsVideoOpen(false);
-    setActiveVideoSrc('');
+    setActiveVideoSrc("");
   };
 
   return (
-    <div className="h-screen w-screen relative flex items-center justify-center bg-black overflow-hidden">
+    <div className="h-screen w-full relative flex items-center justify-center bg-black overflow-hidden">
       <div className="flex space-x-28 items-start justify-center">
         {videos.map((video, index) => (
           <div key={index} className="flex flex-col items-center">
@@ -36,7 +36,11 @@ const DetrasdeCamaras = () => {
               />
               <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50">
                 <div className="p-4 rounded-full">
-                  <img className="w-20" src="/iconos/playPequeño.svg" alt="Play" />
+                  <img
+                    className="w-20"
+                    src="/iconos/playPequeño.svg"
+                    alt="Play"
+                  />
                 </div>
               </div>
               {/* Título dentro de la tarjeta para todas las tarjetas */}
@@ -52,7 +56,12 @@ const DetrasdeCamaras = () => {
       {isVideoOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90">
           <div className="relative w-[80%] h-[80%] bg-black rounded-xl overflow-hidden">
-            <video src={activeVideoSrc} className="w-full h-full object-cover" controls autoPlay />
+            <video
+              src={activeVideoSrc}
+              className="w-full h-full object-cover"
+              controls
+              autoPlay
+            />
             <button
               className="absolute top-4 right-4 z-50 text-white text-3xl"
               onClick={handleCloseClick}

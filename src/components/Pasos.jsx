@@ -11,10 +11,6 @@ export const Pasos = ({ DijeValtio, setOpen, camMove, snap }) => {
   const sliderRef = useRef();
   const [currentSlide, setCurrentSlide] = useState(1);
 
-  const resetBack = {
-    position: [-1.5, -1, 3],
-  };
-
   useEffect(() => {
     if (currentSlide == 2) {
       camMove(snap.reset);
@@ -67,7 +63,7 @@ export const Pasos = ({ DijeValtio, setOpen, camMove, snap }) => {
   return (
     <>
       <div
-        className={`p-6 bg-[--bg-black] border border-[--borderCircle] text-[--second] shadowbox box w-full h-full rounded-lg flex flex-col  items-start `}
+        className={`p-6 bg-[--bg-black] border border-[--borderCircle] relative shadowbox box w-full h-full rounded-lg flex flex-col  items-start `}
       >
         <PasosIcons currentSlide={currentSlide} />
 
@@ -77,25 +73,24 @@ export const Pasos = ({ DijeValtio, setOpen, camMove, snap }) => {
           DijeValtio={DijeValtio}
           setOpen={setOpen}
         />
-      </div>
-
-      <div className="arrows flex justify-between w-full absolute">
-        {currentSlide >= 3 && (
-          <figure
-            onClick={prev}
-            className="cursor-pointer hover:bg-black transition-all duration-500 group border border-[--borderOpacity] absolute left-0 rotate-180 w-6 h-6 inline-block p-1.5 rounded-full -translate-y-1/2"
-          >
-            <Arrows color={"stroke-black group-hover:stroke-white"} />
-          </figure>
-        )}
-        {currentSlide > 1 && currentSlide <= 4 && (
-          <figure
-            onClick={next}
-            className="cursor-pointer hover:bg-black transition-all duration-500 group border border-[--borderOpacity] absolute right-0 w-6 h-6 inline-block p-1.5 rounded-full -translate-y-1/2"
-          >
-            <Arrows color={"stroke-black group-hover:stroke-white"} />
-          </figure>
-        )}
+        <div className="arrows flex justify-between w-full h-6 top-1/2 left-0 absolute z-10">
+          {currentSlide >= 3 && (
+            <figure
+              onClick={prev}
+              className="cursor-pointer bg-[--second] hover:bg-black transition-all duration-500 group border border-[--borderOpacity] absolute -left-10 rotate-180 w-6 h-6 inline-block p-1.5 rounded-full -translate-y-1/2"
+            >
+              <Arrows color={"stroke-[--primary] group-hover:stroke-white"} />
+            </figure>
+          )}
+          {currentSlide > 1 && currentSlide <= 5 && (
+            <figure
+              onClick={next}
+              className="cursor-pointer bg-[--second] hover:bg-black transition-all duration-500 group border border-[--borderOpacity] absolute -right-10 w-6 h-6 inline-block p-1.5 rounded-full -translate-y-1/2"
+            >
+              <Arrows color={"stroke-[--primary] group-hover:stroke-white"} />
+            </figure>
+          )}
+        </div>
       </div>
     </>
   );

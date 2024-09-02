@@ -58,7 +58,7 @@ body,
   --primary: #282828;
   --second: #fffae6;
   --thirty: #e1c149;
-  --borderOpacity: #2828283b;
+  --borderOpacity: #fffae614;
   --borderCircle: #4747475c;
   --colorYellow: #fff6c2;
   --bg-black: #19171b;
@@ -130,7 +130,10 @@ h1 {
   @apply border-[--colorYellow] text-[--primary] bg-[--colorYellow];
 }
 .edicion .editorbtn {
-  @apply bg-transparent text-[0.5rem] text-[--primary] border border-[--borderOpacity] py-1 px-2;
+  @apply bg-transparent text-[0.5rem] text-[--second] border border-[--borderOpacity] py-1 px-2;
+}
+.edicion .btncapture {
+  @apply bg-[--second] hover:bg-[#ffffff50] rounded-full shadowbox border-none;
 }
 hr {
   @apply border-[--borderOpacity];
@@ -183,7 +186,7 @@ input[type="number"]::-webkit-inner-spin-button {
   box-shadow: 0px 0px 9px 2px rgba(0, 0, 0, 0.253);
 }
 .custom_Shadow {
-  box-shadow: 0 0 8px 4px #ffffff;
+  @apply shadowbox;
   transition: all 0.3s ease-in-out;
 }
 

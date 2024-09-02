@@ -73,15 +73,15 @@ export const CustomSlide = ({ DijeValtio, reset, setReset }) => {
 
   return (
     <div className="relative ">
-      <div className="w-5/6 left-1/2 -translate-x-1/2 absolute shadowbox top-1/2 -translate-y-1/2 rounded-xl h-3  " />
+      <div className="w-5/6 left-1/2 -translate-x-1/2 absolute shadowbox bg-[--second] top-1/2 -translate-y-1/2 rounded-xl h-2  " />
       <div
         ref={sliderRef}
-        className="w-4/5 m-auto relative h-1  rounded-xl bg-[--primary] my-4"
+        className="w-4/5 m-auto relative h-0.5  rounded-xl bg-[--primary] my-4"
         onMouseDown={handleMouseDown} // Inicio del arrastre
       >
         <span
           style={{ width: `${circlePos}%` }}
-          className="absolute top-0 rounded-full h-1 bg-[#00cfff]"
+          className="absolute top-0 rounded-full h-0.5 bg-[#00cfff]"
         />
         <span
           style={{
