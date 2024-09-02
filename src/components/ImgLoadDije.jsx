@@ -50,7 +50,7 @@ export const ImgLoadDije = ({ DijeValtio }) => {
   };
 
   return (
-    <div className="h-full">
+    <div className="h-full flex flex-col justify-center">
       <div
         className={`botonesBox  my-4 ${
           controles ? "flex justify-between" : "block"

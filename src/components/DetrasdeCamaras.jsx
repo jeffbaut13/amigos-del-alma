@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 const videos = [
   { src: '/imagenes/videoplaybackk.mp4', title: 'ALFREDO' },
-  { src: '/imagenes/videoplaybackk.mp4', title: 'DETRAS DE CAMARAS' },
+  { src: '/imagenes/videoplaybackk.mp4', title: 'MAKING OFF' },
   { src: '/imagenes/videoplaybackk.mp4', title: 'TEQUILA' },
 ];
 
@@ -21,17 +21,10 @@ const DetrasdeCamaras = () => {
   };
 
   return (
-    <div className="h-full w-screen relative flex flex-col items-center justify-center bg-black overflow-hidden">
-      <div className=' w-full h-[300px] flex flex-col justify-center'>
-      <h1 className=' text-4xl text-center text-[--colorYellow]'>MAKING OFF</h1>
-
-      </div>
-
+    <div className="h-screen w-screen relative flex items-center justify-center bg-black overflow-hidden">
       <div className="flex space-x-28 items-start justify-center">
-        
         {videos.map((video, index) => (
           <div key={index} className="flex flex-col items-center">
-
             {/* Contenedor del video */}
             <div
               className="w-80 h-[70vh] overflow-hidden border border-[--colorYellow] bg-black rounded-xl shadow-lg relative cursor-pointer"
@@ -51,9 +44,6 @@ const DetrasdeCamaras = () => {
                 {video.title}
               </div>
             </div>
-            <div className=' h-[500px] w-full bg-black'>
-        </div>
-
           </div>
         ))}
       </div>

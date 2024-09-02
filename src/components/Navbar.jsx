@@ -23,11 +23,11 @@ export const Navbar = () => {
       <figure className="h-full inline-block">
         <img className="h-full" src="/prospero.svg" alt="Logo" />
       </figure>
-      <div className="">
+      {/* <div className="">
         {showLogo && (
           <img className="" src="/iconos/textoLogo.svg" alt="Textologo" />
         )}
-      </div>
+      </div> */}
 
       <div className="burger w-6 py-1 h-full flex flex-col justify-between">
         <div className="line" />
