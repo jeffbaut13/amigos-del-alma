@@ -79,20 +79,22 @@ export const UploadImage = ({
             </span>{" "}
             <div className="w-4 mt-2 h-[1px] bg-white group-hover:bg-black" />
           </button>
-
-          <input
-            type="file"
-            ref={inputRef}
-            style={{ display: "none" }}
-            accept="image/jpeg, image/png, image/jpg"
-            onChange={handleImageUpload}
-          />
         </>
       ) : (
         <>
-          <button className="editorbtn">Subir imagen</button>
+          <button onClick={openFileDialog} className="editorbtn">
+            Subir imagen
+          </button>
         </>
       )}
+
+      <input
+        type="file"
+        ref={inputRef}
+        style={{ display: "none" }}
+        accept="image/jpeg, image/png, image/jpg"
+        onChange={handleImageUpload}
+      />
     </>
   );
 };

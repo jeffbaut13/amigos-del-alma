@@ -4,13 +4,25 @@ const Dije = proxy({
   rotation: 0.003,
   contacto: "",
   nameDog: {
-    position: [1.5, 0, 3.5],
+    rotation: [0, 0, 0],
+    position: [0, -0.5, 0],
+    zoom: 2,
   },
   reset: {
-    position: [-0.5, -1, 5],
+    //position: [-0.5, -1, 5],
+    position: [0, -0.5, 0],
+    rotation: [0, 0.4, 0.2],
+    zoom: 1,
   },
   back: {
-    position: [-1.5, 0, -3],
+    rotation: [0, -3.5, 0],
+    position: [0, -0.6, 0],
+    zoom: 1.5,
+  },
+  EditImage: {
+    rotation: [0, 0, 0],
+    position: [0, -1.5, 0],
+    zoom: 2,
   },
   fontSize: 0.175,
   nombre: "NOMBRE",

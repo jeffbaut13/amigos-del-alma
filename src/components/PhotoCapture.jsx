@@ -13,8 +13,8 @@ export const PhotoCapture = ({
   const [capturedImage, setCapturedImage] = useState(null);
 
   const videoConstraints = {
-    width: 1280,
-    height: 720,
+    width: 640,
+    height: 640,
     facingMode: "user", // Puedes cambiar a "environment" para la cámara trasera en móviles
   };
 
@@ -82,28 +82,33 @@ export const PhotoCapture = ({
                 <IconCam color={"fill-white group-hover:fill-black"} />
               </span>
             </button>
-
-            {isCameraOn && (
-              <div className="py-2">
-                <Webcam
-                  className="rounded-lg"
-                  audio={false}
-                  ref={webcamRef}
-                  screenshotFormat="image/jpeg"
-                  videoConstraints={videoConstraints}
-                />
-                <button className="my-2 text-xs" onClick={capturePhoto}>
-                  Capturar Foto
-                </button>
-              </div>
-            )}
           </div>
         </>
       ) : (
         <>
           {" "}
-          <button className="editorbtn ">Tomar foto</button>
+          <button onClick={startCamera} className="editorbtn ">
+            Tomar foto
+          </button>
         </>
+      )}
+
+      {isCameraOn && (
+        <div className="py-2 fixed top-0 left-0 z-50">
+          <Webcam
+            className="rounded-lg z-0"
+            audio={false}
+            ref={webcamRef}
+            screenshotFormat="image/jpeg"
+            videoConstraints={videoConstraints}
+          />
+          <button
+            className="my-2 text-xs z-10 absolute top-0 left-0"
+            onClick={capturePhoto}
+          >
+            Capturar Foto
+          </button>
+        </div>
       )}
     </>
   );

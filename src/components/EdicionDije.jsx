@@ -4,7 +4,7 @@ import { useSnapshot } from "valtio";
 import { convertToBraille } from "../helpers/BraileConverter";
 import DijeValtio from "../store/index";
 import { Canva } from "../components/Canva";
-import { Navbar } from "../components/Navbar";
+
 import { Price } from "../components/Price";
 import { CardsCustomer } from "../components/CardsCustomer";
 import gsap from "gsap";
@@ -12,6 +12,7 @@ import gsap from "gsap";
 export const EdicionDije = ({ setAbrirDije }) => {
   const snap = useSnapshot(DijeValtio);
   const controlsRef = useRef(null);
+  const DijeRef = useRef(null);
   const [open, setOpen] = useState("");
 
   const handleInputChange = (e) => {
@@ -21,9 +22,18 @@ export const EdicionDije = ({ setAbrirDije }) => {
     DijeValtio.braile = convertToBraille(text);
   };
 
-  const handleButtonClick = (parte) => {
-    if (controlsRef.current) {
-      gsap.to(controlsRef.current.object.position, {
+  const handleButtonClick = (parte, zoom) => {
+    if (DijeRef.current) {
+      gsap.to(DijeRef.current.rotation, {
+        // <-- Actualización aquí
+        x: parte.rotation[0],
+        y: parte.rotation[1],
+        z: parte.rotation[2],
+        duration: 1,
+        ease: "power1.inOut",
+        onUpdate: controlsRef.current.update,
+      });
+      gsap.to(DijeRef.current.position, {
         // <-- Actualización aquí
         x: parte.position[0],
         y: parte.position[1],
@@ -31,6 +41,16 @@ export const EdicionDije = ({ setAbrirDije }) => {
         duration: 1,
         ease: "power1.inOut",
         onUpdate: controlsRef.current.update,
+      });
+    }
+    if (controlsRef.current) {
+      gsap.to(controlsRef.current.object, {
+        zoom: parte.zoom,
+        duration: 1,
+        onUpdate: () => {
+          controlsRef.current.object.updateProjectionMatrix();
+          controlsRef.current.update();
+        },
       });
     }
   };
@@ -51,7 +71,12 @@ export const EdicionDije = ({ setAbrirDije }) => {
         <div className=" "></div>
       </div>
       <div className="w-[42%] h-full z-50 relative">
-        <Canva open={open} snap={snap} cameraControlRef={controlsRef} />
+        <Canva
+          open={open}
+          snap={snap}
+          cameraControlRef={controlsRef}
+          group={DijeRef}
+        />
       </div>
       <div className="w-[18%] h-full z-50 relative overflow-hidden pointer-events-none">
         <Price />

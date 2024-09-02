@@ -21,7 +21,7 @@ function Loader() {
   );
 }
 
-export const Canva = ({ open, snap, cameraControlRef }) => {
+export const Canva = ({ open, snap, cameraControlRef, group }) => {
   return (
     <>
       <Canvas gl={{ antialias: true }} dpr={[1, 1.5]}>
@@ -38,7 +38,7 @@ export const Canva = ({ open, snap, cameraControlRef }) => {
         <directionalLight position={[6, 10, -10]} intensity={20} />
         <directionalLight position={[-6, 10, -10]} intensity={20} />
         <Suspense fallback={<Loader />}>
-          <Dijegbl open={open} snap={snap} />
+          <Dijegbl open={open} snap={snap} group={group} />
         </Suspense>
         <Environment
           //files="/dije2/backgroundEnviroment.hdr"
@@ -54,9 +54,9 @@ export const Canva = ({ open, snap, cameraControlRef }) => {
           color="#000000"
         />
       </Canvas>
-      <span className="absolute bottom-9 left-1/2 -translate-x-1/2 inline-block w-16 h-16">
+      {/* <span className="absolute bottom-9 left-1/2 -translate-x-1/2 inline-block w-16 h-16">
         <img src="/iconos/icon360.svg" alt="" />
-      </span>
+      </span> */}
     </>
   );
 };

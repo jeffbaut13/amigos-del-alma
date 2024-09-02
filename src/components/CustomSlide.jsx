@@ -7,8 +7,6 @@ export const CustomSlide = ({ DijeValtio, reset, setReset }) => {
   const [circlePos, setCirclePos] = useState(50); // Posición del círculo (50 es el centro)
   const [isDragging, setIsDragging] = useState(false);
 
-  console.log(snap.imageHeight);
-
   // Función para actualizar la posición del slider y el escalado de la imagen
   const updatePosition = (e) => {
     if (!isDragging) return;

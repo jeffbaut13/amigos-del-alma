@@ -23,14 +23,11 @@ export const Pasos = ({ DijeValtio, setOpen, camMove, snap }) => {
       camMove(snap.nameDog);
     }
     if (currentSlide == 4) {
-      camMove(resetBack);
-      setTimeout(() => {
-        setOpen(false);
-        camMove(snap.back);
-      }, 700);
+      setOpen(false);
+      camMove(snap.back);
     }
     if (currentSlide == 5) {
-      camMove(snap.reset);
+      camMove(snap.EditImage);
 
       setTimeout(() => {
         setOpen(true);
