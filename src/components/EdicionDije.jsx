@@ -60,7 +60,8 @@ export const EdicionDije = ({ setAbrirDije }) => {
   };
 
   return (
-    <div className="AddingtonCF-light edicion w-[85%] h-4/5 rounded-xl fixed top-1/2 z-[100] -translate-y-1/2 -translate-x-1/2 left-1/2 bg-[--second] flex">
+    <div className="AddingtonCF-light edicion bg-[--second] flex h-screen">
+      {/* <div className="AddingtonCF-light edicion w-[85%] h-4/5 rounded-xl fixed top-1/2 z-[100] -translate-y-1/2 -translate-x-1/2 left-1/2 bg-[--second] flex"> */}
       <div className="backgroundStyle" />
       <div className="fixed top-0 left-0 z-50 flex justify-between px-8 mt-6 w-full h-8">
         <figure></figure>

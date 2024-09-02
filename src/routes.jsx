@@ -8,6 +8,7 @@ import { ErrorPage } from "./ErrorPage";
 import { Administrador } from "./paginas/Administrador";
 import { Gracias } from "./paginas/Gracias";
 import { Layout } from "./Layout";
+import { Home } from "./paginas/Home";
 
 function ScrollToTopOnRouteChange() {
   const { pathname } = useLocation();
@@ -23,10 +24,10 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: (
-      <Layout>
+      <>
         <ScrollToTopOnRouteChange />
-        <Onboarding />
-      </Layout>
+        <Home />
+      </>
     ),
     errorElement: <ErrorPage />,
   },
@@ -41,7 +42,7 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
   },
   {
-    path: "/campana-amigos-del-alma",
+    path: "/comprar-dije",
     element: (
       <Layout>
         <ScrollToTopOnRouteChange />
