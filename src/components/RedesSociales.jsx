@@ -1,5 +1,5 @@
 import React from "react";
-import backgroundImage from "/imagenes/detrasDelAlma.jpg";
+import backgroundImage from "/imagenes/making.jpg";
 
 export const RedesSociales = () => {
   return (

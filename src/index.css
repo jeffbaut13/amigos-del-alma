@@ -116,7 +116,7 @@ h1 {
   @apply border-[--thirty] text-[--primary] bg-transparent;
 }
 .home button {
-  @apply uppercase text-center rounded-md border border-[--colorYellow] transition-all duration-300 bg-transparent text-white cursor-pointer text-base;
+  @apply uppercase text-center rounded-md border border-[--colorYellow] transition-all duration-300 bg-transparent text-[--colorYellow] cursor-pointer text-base;
 }
 .home button:hover {
   @apply border-[--colorYellow] text-[--primary] bg-[--colorYellow];

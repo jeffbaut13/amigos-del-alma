@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 const videos = [
   { src: '/imagenes/videoplaybackk.mp4', title: 'ALFREDO' },
-  { src: '/imagenes/videoplaybackk.mp4', title: 'MAKING OFF' },
+  { src: '/imagenes/videoplaybackk.mp4', title: 'DETRAS DE CAMARAS' },
   { src: '/imagenes/videoplaybackk.mp4', title: 'TEQUILA' },
 ];
 
@@ -21,16 +21,17 @@ const DetrasdeCamaras = () => {
   };
 
   return (
-    <div className="h-screen w-screen relative flex items-center justify-center bg-black overflow-hidden">
+    <div className="h-full w-screen relative flex flex-col items-center justify-center bg-black overflow-hidden">
+      <div className=' w-full h-[300px] flex flex-col justify-center'>
+      <h1 className=' text-4xl text-center text-[--colorYellow]'>MAKING OFF</h1>
+
+      </div>
+
       <div className="flex space-x-28 items-start justify-center">
+        
         {videos.map((video, index) => (
           <div key={index} className="flex flex-col items-center">
-            {/* Contenedor de espacio para el título, siempre presente */}
-            <div className={`w-80 h-[50px] ${index === 1 ? '' : 'flex items-center justify-center'}`}>
-              {index === 1 && (
-                <p className="text-center text-3xl text-[--colorYellow]">{video.title}</p>
-              )}
-            </div>
+
             {/* Contenedor del video */}
             <div
               className="w-80 h-[70vh] overflow-hidden border border-[--colorYellow] bg-black rounded-xl shadow-lg relative cursor-pointer"
@@ -45,13 +46,14 @@ const DetrasdeCamaras = () => {
                   <img className="w-20" src="/iconos/playPequeño.svg" alt="Play" />
                 </div>
               </div>
-              {/* Título dentro de la tarjeta para la primera y tercera tarjeta */}
-              {index !== 1 && (
-                <div className="absolute bottom-4 w-full text-center text-1xl text-[--colorYellow] py-2 ">
-                  {video.title}
-                </div>
-              )}
+              {/* Título dentro de la tarjeta para todas las tarjetas */}
+              <div className="absolute bottom-4 w-full text-center text-1xl text-[--colorYellow] py-2">
+                {video.title}
+              </div>
             </div>
+            <div className=' h-[500px] w-full bg-black'>
+        </div>
+
           </div>
         ))}
       </div>

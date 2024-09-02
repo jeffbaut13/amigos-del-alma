@@ -10,8 +10,7 @@ import { ImageBox } from "./ImageBox";
 import gsap from "gsap";
 import { TextCustomer } from "./TextCustomer";
 
-export function Dijegbl({ open, snap }) {
-  const group = useRef();
+export function Dijegbl({ open, snap, group }) {
   const placa = useRef();
   const { nodes, materials } = useGLTF("/dije.glb");
 
