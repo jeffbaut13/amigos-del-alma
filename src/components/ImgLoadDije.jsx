@@ -52,8 +52,8 @@ export const ImgLoadDije = ({ DijeValtio }) => {
   return (
     <div className="h-full flex flex-col justify-center">
       <div
-        className={`botonesBox  my-4 ${
-          controles ? "flex justify-between" : "block"
+        className={`botonesBox justify-center items-center  my-4 ${
+          controles ? "flex justify-between" : "flex flex-col"
         }`}
       >
         <UploadImage
@@ -73,7 +73,7 @@ export const ImgLoadDije = ({ DijeValtio }) => {
 
       {controles && (
         <div>
-          <h2 className=" w-full text-center mb-4 ">DIRECCIÓN</h2>
+          <h2 className=" w-full text-center mb-4 ">Ubicación</h2>
           {/* Flecha derecha */}
           <div className="relative w-28 h-28 m-auto">
             <ButtonImgEditor

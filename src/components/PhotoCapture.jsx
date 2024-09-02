@@ -72,14 +72,18 @@ export const PhotoCapture = ({
     <>
       {!controles ? (
         <>
-          <div className="mt-6">
-            <p>O TÓMALA DESDE TU DISPOSITIVO</p>
+          <div className="mt-6 w-full flex justify-center items-center flex-col">
+            <p className="text-center mb-2">
+              O toma la foto desde tu dispositivo
+            </p>
             <button
               className="group w-44 h-12 flex items-center justify-center"
               onClick={startCamera}
             >
               <span className="w-6 h-6 inline-block">
-                <IconCam color={"fill-white group-hover:fill-black"} />
+                <IconCam
+                  color={"fill-[--primary] group-hover:fill-[--second]"}
+                />
               </span>
             </button>
           </div>
@@ -94,7 +98,7 @@ export const PhotoCapture = ({
       )}
 
       {isCameraOn && (
-        <div className="py-2 fixed top-0 left-0 z-50">
+        <div className="py-2 absolute w-3/4 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50">
           <Webcam
             className="rounded-lg z-0"
             audio={false}
@@ -103,11 +107,9 @@ export const PhotoCapture = ({
             videoConstraints={videoConstraints}
           />
           <button
-            className="my-2 text-xs z-10 absolute top-0 left-0"
+            className="btncapture my-2 text-xs z-10 w-12 h-12 absolute left-1/2 bottom-0 -translate-x-1/2 -translate-y-1/2"
             onClick={capturePhoto}
-          >
-            Capturar Foto
-          </button>
+          ></button>
         </div>
       )}
     </>

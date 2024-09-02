@@ -68,16 +68,20 @@ export const UploadImage = ({
     <>
       {!controles ? (
         <>
-          <p>SUBE LA MEJOR FOTO EN FORMATO VERTICAL QUE TENGAS CON TU AMIGO</p>
+          <p className="text-center mb-2">
+            Sube la mejor foto que tengas con tu amigo
+          </p>
 
           <button
             className="group w-44 h-12 flex flex-col items-center justify-normal"
             onClick={openFileDialog}
           >
             <span className=" w-4 h-4 inline-block -rotate-90">
-              <Arrows color={"stroke-white  group-hover:stroke-black"} />
+              <Arrows
+                color={"stroke-[--primary]  group-hover:stroke-[--second]"}
+              />
             </span>{" "}
-            <div className="w-4 mt-2 h-[1px] bg-white group-hover:bg-black" />
+            <div className="w-4 mt-2 h-[1px] bg-[--primary] group-hover:bg-[--second]" />
           </button>
         </>
       ) : (

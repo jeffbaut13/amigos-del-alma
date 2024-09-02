@@ -49,7 +49,7 @@ export const SliderPaso = ({ next, sliderRef, DijeValtio, setOpen }) => {
   };
 
   return (
-    <Slider className="w-full h-full " {...settings} ref={sliderRef}>
+    <Slider className="w-full h-full z-20" {...settings} ref={sliderRef}>
       <div>
         <div className="h-full flex flex-col items-center justify-center w-full rounded-lg slide-uno">
           <p className="text-base text-center">
@@ -95,7 +95,7 @@ export const SliderPaso = ({ next, sliderRef, DijeValtio, setOpen }) => {
             {inputChange ? (
               <p
                 onClick={hanldeInputchange}
-                className="border border-[--borderOpacity] rounded-md  py-4 px-1 text-sm"
+                className="border border-[--borderOpacity] rounded-md text-center py-4 px-1 text-sm"
               >
                 ¿CÓMO SE LLAMA TU AMIGO(A)?
               </p>
@@ -110,7 +110,6 @@ export const SliderPaso = ({ next, sliderRef, DijeValtio, setOpen }) => {
                   onChange={(e) => (DijeValtio.nombre = e.target.value)}
                   //placeholder="¿CÓMO SE LLAMA TU AMIGO(A)?"
                 />
-                <IncrementText DijeValtio={DijeValtio} />
               </>
             )}
           </div>
@@ -119,15 +118,16 @@ export const SliderPaso = ({ next, sliderRef, DijeValtio, setOpen }) => {
       <div>
         <div className="h-full flex  flex-col items-start justify-center w-full slide-uno">
           <div className=" w-full py-2 px-1">
-            <p className="text-base">
-              SI ALGUIEN SE ENCUENTRA <br />A TU AMIGO, <br /> ¿A QUÉ NÚMERO
-              LLAMAR?
+            <p className="text-base text-center">
+              si alguien se encuentra a tu amigo,
+              <br />
+              ¿a qué número llamar?
             </p>
             <input
               maxLength={10}
               type="number"
               name="nameDog"
-              className="border mt-6 border-[--borderOpacity] rounded-xl focus:border-[--primary] text-sm NeueHaas-Thin"
+              className="border text-center mt-6 border-[--borderOpacity] rounded-xl focus:border-[--primary] text-sm NeueHaas-Thin"
               onChange={(e) => (DijeValtio.contacto = e.target.value)}
               placeholder="EJ: 320 378 08 02"
             />
@@ -137,6 +137,7 @@ export const SliderPaso = ({ next, sliderRef, DijeValtio, setOpen }) => {
       <div>
         <ImgLoadDije DijeValtio={DijeValtio} />
       </div>
+      <div></div>
     </Slider>
   );
 };
