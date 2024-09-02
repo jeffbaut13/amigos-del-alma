@@ -11,6 +11,10 @@ export const Pasos = ({ DijeValtio, setOpen, camMove, snap }) => {
   const sliderRef = useRef();
   const [currentSlide, setCurrentSlide] = useState(1);
 
+  const resetBack = {
+    position: [-1.5, -1, 3],
+  };
+
   useEffect(() => {
     if (currentSlide == 2) {
       camMove(snap.reset);
@@ -82,7 +86,7 @@ export const Pasos = ({ DijeValtio, setOpen, camMove, snap }) => {
               <Arrows color={"stroke-[--primary] group-hover:stroke-white"} />
             </figure>
           )}
-          {currentSlide > 1 && currentSlide <= 5 && (
+          {currentSlide > 1 && currentSlide <= 4 && (
             <figure
               onClick={next}
               className="cursor-pointer bg-[--second] hover:bg-black transition-all duration-500 group border border-[--borderOpacity] absolute -right-10 w-6 h-6 inline-block p-1.5 rounded-full -translate-y-1/2"

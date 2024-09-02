@@ -114,7 +114,7 @@ export const ImgLoadDije = ({ DijeValtio }) => {
             />
           </div>
           <hr className={`mx-auto my-2  w-full ${controles ? "" : "hidden"}`} />
-          <h2 className="w-full text-center my-4">TAMAÑO DE IMAGEN</h2>
+          <h2 className="w-full text-center my-4">Tamaño de imagen</h2>
           <CustomSlide
             snap={snap}
             DijeValtio={DijeValtio}
