@@ -71,6 +71,7 @@ export const EdicionDije = ({ setAbrirDije }) => {
 
         <div className=" "></div>
       </div> */}
+      
       <div className="w-1/2 h-full z-50 relative">
         <Canva
           open={open}
@@ -78,6 +79,7 @@ export const EdicionDije = ({ setAbrirDije }) => {
           cameraControlRef={controlsRef}
           group={DijeRef}
         />
+
       </div>
       <div className="w-1/2 flex flex-col justify-evenly items-center bg-[--bg-black]">
         <CardsCustomer
@@ -90,7 +92,9 @@ export const EdicionDije = ({ setAbrirDije }) => {
         <div className="w-[18%] absolute h-full z-50  overflow-hidden pointer-events-none">
           <Price />
         </div>
+        
       </div>
+      
     </div>
   );
 };

@@ -21,7 +21,11 @@ const DetrasdeCamaras = () => {
   };
 
   return (
-    <div className="h-screen w-screen relative flex items-center justify-center bg-black overflow-hidden">
+    <div className="h-full w-full relative flex flex-col items-center justify-center bg-gradient-to-b from-[--bg-black] to-black overflow-hidden">
+      {/* Título general */}
+      <h1 className="text-4xl text-[--colorYellow] my-16">MAKING OFF</h1>
+
+      {/* Contenedor de las tarjetas */}
       <div className="flex space-x-28 items-start justify-center">
         {videos.map((video, index) => (
           <div key={index} className="flex flex-col items-center">
@@ -62,6 +66,9 @@ const DetrasdeCamaras = () => {
           </div>
         </div>
       )}
+      <div className=' w-full h-[200px]'>
+
+      </div>
     </div>
   );
 };

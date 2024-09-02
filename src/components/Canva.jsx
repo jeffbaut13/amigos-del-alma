@@ -53,10 +53,12 @@ export const Canva = ({ open, snap, cameraControlRef, group }) => {
           resolution={256}
           color="#000000"
         />
+        
       </Canvas>
       {/* <span className="absolute bottom-9 left-1/2 -translate-x-1/2 inline-block w-16 h-16">
         <img src="/iconos/icon360.svg" alt="" />
       </span> */}
+      
     </>
   );
 };
