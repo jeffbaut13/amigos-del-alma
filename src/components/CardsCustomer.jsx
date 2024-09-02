@@ -10,8 +10,8 @@ export const CardsCustomer = ({
 }) => {
   return (
     <>
-      <div className="card w-full h-full relative">
-        <div className="w-5/6 h-full flex flex-col items-center justify-center relative pr-32">
+      <div className="card w-full h-full flex flex-col items-center justify-center relative">
+        <div className="w-3/5 h-full flex flex-col items-center justify-center relative py-40">
           <Pasos
             DijeValtio={DijeValtio}
             setOpen={setOpen}

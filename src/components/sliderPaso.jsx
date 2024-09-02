@@ -49,12 +49,12 @@ export const SliderPaso = ({ next, sliderRef, DijeValtio, setOpen }) => {
   };
 
   return (
-    <Slider className="w-full h-[55%]" {...settings} ref={sliderRef}>
+    <Slider className="w-full h-full " {...settings} ref={sliderRef}>
       <div>
-        <div className="h-full flex flex-col items-start justify-center w-full rounded-lg slide-uno">
-          <p className="text-base">
-            AHORA TÚ Y TU AMIGO DEL ALMA TAMBIÉN PODRÁN TENER SU PROPIO SÍMBOLO
-            PERSONALIZADO.
+        <div className="h-full flex flex-col items-center justify-center w-full rounded-lg slide-uno">
+          <p className="text-base text-center">
+            Ahora tú y tu amigo del alma también podrán tener su propio símbolo
+            personalizado.
           </p>
           <hr className="w-1/2 my-4" />
 

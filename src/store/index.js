@@ -25,7 +25,7 @@ const Dije = proxy({
     zoom: 2,
   },
   fontSize: 0.175,
-  nombre: "NOMBRE",
+  nombre: "TOÑO",
   braile: "⠝ ⠕ ⠍ ⠃⠗ ⠑",
 
   Imagen: "/file2.jpg",

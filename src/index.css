@@ -18,12 +18,12 @@
 @font-face {
   font-family: "Mories";
   font-style: normal;
-  src: url("./fonts/Mories.ttf");
+  src: url("/font/Mories.ttf");
 }
 @font-face {
   font-family: "sequel";
   font-style: normal;
-  src: url("./fonts/sequel-sans-book-disp.ttf");
+  src: url("/font/sequel-sans-book-disp.ttf");
 }
 
 @font-face {
@@ -35,6 +35,10 @@
   src: url("/font/AddingtonCF-Light.ttf");
 }
 @font-face {
+  font-family: "AddingtonCF-regular";
+  src: url("/font/AddingtonCF-Regular.ttf");
+}
+@font-face {
   font-family: "NeueHaas Bold";
   src: url("/font/NeueHaasDisplayBold.ttf");
 }
@@ -43,7 +47,7 @@
   src: url("/font/NeueHaasDisplayThin.ttf");
 }
 html {
-  @apply uppercase xl:text-[1vw] xs:text-[3vw] sm:text-[1.5vw] lg:text-[1vw] scroll-smooth bg-black;
+  @apply xl:text-[1vw] xs:text-[3vw] sm:text-[1.5vw] lg:text-[1vw] scroll-smooth bg-black;
 }
 body,
 #root {
@@ -52,12 +56,12 @@ body,
 }
 :root {
   --primary: #282828;
-  --second: #fffcf3;
+  --second: #fffae6;
   --thirty: #e1c149;
   --borderOpacity: #2828283b;
-  --borderCircle: #000000;
+  --borderCircle: #4747475c;
   --colorYellow: #fff6c2;
-  --second-color: #000000;
+  --bg-black: #19171b;
   font-family: "Mories";
   letter-spacing: 0.25em;
   font-synthesis: none;
@@ -67,11 +71,15 @@ body,
 }
 .AddingtonCF-thin {
   font-family: "AddingtonCF-thin";
-  @apply tracking-[0.3rem];
+  @apply tracking-[0.2rem];
+}
+.AddingtonCF-regular {
+  font-family: "AddingtonCF-regular";
+  @apply tracking-[0.2rem];
 }
 .AddingtonCF-light {
   font-family: "AddingtonCF-light";
-  @apply tracking-[0.3rem];
+  @apply tracking-[0.2rem];
   -webkit-text-stroke: 0.2px black;
 }
 .NeueHaas-Bold {
@@ -110,10 +118,10 @@ h1 {
 }
 
 .edicion button {
-  @apply uppercase text-center rounded-md border-2 border-[--primary] py-2.5 pl-5 pr-3.5 transition-all duration-300 bg-[--primary] text-[--second] cursor-pointer text-base;
+  @apply uppercase text-center rounded-md border-2 border-[--primary] py-2.5 pl-5 pr-3.5 transition-all duration-300 bg-[--second] text-[--primary]  cursor-pointer text-base;
 }
 .edicion button:hover {
-  @apply border-[--thirty] text-[--primary] bg-transparent;
+  @apply border-[--thirty] text-[--second] bg-transparent;
 }
 .home button {
   @apply uppercase text-center rounded-md border border-[--colorYellow] transition-all duration-300 bg-transparent text-[--colorYellow] cursor-pointer text-base;
@@ -146,7 +154,7 @@ svg {
 }
 
 .text-shadow {
-  text-shadow: 0px 0px 1px black;
+  text-shadow: 0px 0px 1px var(--second);
 }
 input {
   @apply w-full bg-transparent p-4 uppercase focus:outline-none;
@@ -159,7 +167,7 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 .pasosNumer {
-  @apply text-shadow absolute w-4 h-4 text-[0.5rem] flex items-center justify-center border border-[--borderOpacity] rounded-full;
+  @apply text-shadow absolute w-4 h-4 text-[0.5rem] flex items-center justify-center border border-[--second] rounded-full;
 }
 .slick-track {
   @apply flex items-center justify-start;

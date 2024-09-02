@@ -60,9 +60,9 @@ export const EdicionDije = ({ setAbrirDije }) => {
   };
 
   return (
-    <div className="AddingtonCF-light edicion bg-[--second] flex h-screen">
+    <div className="AddingtonCF-regular text-[--colorYellow] edicion bg-[--second] flex h-screen">
       {/* <div className="AddingtonCF-light edicion w-[85%] h-4/5 rounded-xl fixed top-1/2 z-[100] -translate-y-1/2 -translate-x-1/2 left-1/2 bg-[--second] flex"> */}
-      <div className="backgroundStyle" />
+      {/* <div className="backgroundStyle" />
       <div className="fixed top-0 left-0 z-50 flex justify-between px-8 mt-6 w-full h-8">
         <figure></figure>
         <figure>
@@ -70,8 +70,8 @@ export const EdicionDije = ({ setAbrirDije }) => {
         </figure>
 
         <div className=" "></div>
-      </div>
-      <div className="w-[42%] h-full z-50 relative">
+      </div> */}
+      <div className="w-1/2 h-full z-50 relative">
         <Canva
           open={open}
           snap={snap}
@@ -79,10 +79,7 @@ export const EdicionDije = ({ setAbrirDije }) => {
           group={DijeRef}
         />
       </div>
-      <div className="w-[18%] h-full z-50 relative overflow-hidden pointer-events-none">
-        <Price />
-      </div>
-      <div className="w-[42%] flex flex-col justify-evenly items-center ">
+      <div className="w-1/2 flex flex-col justify-evenly items-center bg-[--bg-black]">
         <CardsCustomer
           setOpen={setOpen}
           DijeValtio={DijeValtio}
@@ -90,6 +87,9 @@ export const EdicionDije = ({ setAbrirDije }) => {
           handleInputChange={handleInputChange}
           camMove={camMove}
         />
+        <div className="w-[18%] absolute h-full z-50  overflow-hidden pointer-events-none">
+          <Price />
+        </div>
       </div>
     </div>
   );
