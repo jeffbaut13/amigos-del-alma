@@ -65,11 +65,10 @@ export const SliderPaso = ({ next, sliderRef, DijeValtio, setOpen }) => {
         <div className="h-full flex  flex-col items-start justify-center w-full slide-uno">
           <div className=" w-full py-2">
             <input
-              maxLength={10}
               type="text"
               name="name"
               onChange={null}
-              placeholder=" ¿CUÁL ES TU NOMBRE?"
+              placeholder="¿Cuál es tu nombre?"
               className="focus:border-none focus:outline-none"
             />
 
@@ -77,11 +76,10 @@ export const SliderPaso = ({ next, sliderRef, DijeValtio, setOpen }) => {
           </div>
           <div className=" w-full py-2">
             <input
-              maxLength={10}
-              type="text"
-              name="name"
+              type="email"
+              name="email"
               onChange={null}
-              placeholder="¿TU CORREO?"
+              placeholder="¿Tu correo?"
               className="focus:border-none focus:outline-none"
             />
 
@@ -97,7 +95,7 @@ export const SliderPaso = ({ next, sliderRef, DijeValtio, setOpen }) => {
                 onClick={hanldeInputchange}
                 className="border border-[--borderOpacity] rounded-md text-center py-4 px-1 text-sm"
               >
-                ¿CÓMO SE LLAMA TU AMIGO(A)?
+                ¿Cómo se llama tu amigo(a)?
               </p>
             ) : (
               <>
@@ -119,7 +117,7 @@ export const SliderPaso = ({ next, sliderRef, DijeValtio, setOpen }) => {
         <div className="h-full flex  flex-col items-start justify-center w-full slide-uno">
           <div className=" w-full py-2 px-1">
             <p className="text-base text-center">
-              si alguien se encuentra a tu amigo,
+              Si alguien se encuentra a tu amigo,
               <br />
               ¿a qué número llamar?
             </p>
@@ -137,7 +135,6 @@ export const SliderPaso = ({ next, sliderRef, DijeValtio, setOpen }) => {
       <div>
         <ImgLoadDije DijeValtio={DijeValtio} />
       </div>
-      <div></div>
     </Slider>
   );
 };
