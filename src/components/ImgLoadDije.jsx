@@ -96,24 +96,24 @@ export const ImgLoadDije = ({ DijeValtio, setBtnCompra }) => {
               handleOnMouseLeave={stopAction}
             />
 
-            {/* Flecha izquierda */}
-            <ButtonImgEditor
+            {/* Flecha arriba */}
+            {/* <ButtonImgEditor
               position={"left-1/2 -translate-x-1/2 top-0"}
               rotate={"-rotate-90"}
               handleclick={() => (DijeValtio.imagePositionY += 0.01)}
               handleOnMouseDown={() => startAction("move", 0, 0.01)}
               HandleOnMouseUp={stopAction}
               handleOnMouseLeave={stopAction}
-            />
+            /> */}
             {/* Flecha abajo */}
-            <ButtonImgEditor
+            {/* <ButtonImgEditor
               position={"left-1/2 -translate-x-1/2 bottom-0"}
               rotate={"rotate-90"}
               handleclick={() => (DijeValtio.imagePositionY -= 0.01)}
               handleOnMouseDown={() => startAction("move", 0, -0.01)}
               HandleOnMouseUp={stopAction}
               handleOnMouseLeave={stopAction}
-            />
+            /> */}
           </div>
           <hr className={`mx-auto my-2  w-full ${controles ? "" : "hidden"}`} />
           <h2 className="w-full text-center my-4">Tamaño de imagen</h2>
