@@ -47,6 +47,7 @@ export const SliderPaso = ({ next, sliderRef, DijeValtio, setOpen }) => {
       }
     }, 0);
   };
+console.log(DijeValtio.usuario);
 
   return (
     <Slider className="w-full h-full z-20" {...settings} ref={sliderRef}>
@@ -67,7 +68,7 @@ export const SliderPaso = ({ next, sliderRef, DijeValtio, setOpen }) => {
             <input
               type="text"
               name="name"
-              onChange={null}
+              onChange={(e)=>DijeValtio.usuario=e.target.value}
               placeholder="¿Cuál es tu nombre?"
               className="focus:border-none focus:outline-none"
             />
@@ -78,7 +79,7 @@ export const SliderPaso = ({ next, sliderRef, DijeValtio, setOpen }) => {
             <input
               type="email"
               name="email"
-              onChange={null}
+              onChange={(e)=>DijeValtio.usuario=e.target.value}
               placeholder="¿Tu correo?"
               className="focus:border-none focus:outline-none"
             />

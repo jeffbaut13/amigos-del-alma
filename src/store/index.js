@@ -2,7 +2,12 @@ import { proxy } from "valtio";
 
 const Dije = proxy({
   rotation: 0.003,
+  usuario: "",
+  email: "",
   contacto: "",
+  nombre: "TOÑO",
+  Imagen: "/file2.jpg",
+
   nameDog: {
     rotation: [0, 0, 0],
     position: [0, -0.5, 0],
@@ -25,10 +30,8 @@ const Dije = proxy({
     zoom: 2,
   },
   fontSize: 0.175,
-  nombre: "TOÑO",
   braile: "⠝ ⠕ ⠍ ⠃⠗ ⠑",
 
-  Imagen: "/file2.jpg",
   imageWidth: 1,
   imageHeight: 1,
   imagePositionX: 0,
