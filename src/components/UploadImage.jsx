@@ -11,6 +11,7 @@ export const UploadImage = ({
   controles,
   setControles,
   setReset,
+  setBtnCompra,
 }) => {
   const inputRef = useRef(null);
   const handleImageUpload = (e) => {
@@ -55,6 +56,7 @@ export const UploadImage = ({
       };
       reader.readAsDataURL(file);
       setControles(true);
+      setBtnCompra(true);
     } else {
       alert("Solo se permiten imágenes JPG, JPEG o PNG.");
     }

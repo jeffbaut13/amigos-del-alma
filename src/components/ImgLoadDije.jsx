@@ -6,7 +6,7 @@ import { Arrows } from "./Arrows";
 import { PhotoCapture } from "./PhotoCapture";
 import { UploadImage } from "./UploadImage";
 
-export const ImgLoadDije = ({ DijeValtio }) => {
+export const ImgLoadDije = ({ DijeValtio, setBtnCompra }) => {
   const snap = useSnapshot(DijeValtio);
 
   const intervalRef = useRef(null);
@@ -61,12 +61,14 @@ export const ImgLoadDije = ({ DijeValtio }) => {
           setControles={setControles}
           controles={controles}
           DijeValtio={DijeValtio}
+          setBtnCompra={setBtnCompra}
         />
         <PhotoCapture
           setControles={setControles}
           controles={controles}
           DijeValtio={DijeValtio}
           setReset={setReset}
+          setBtnCompra={setBtnCompra}
         />
       </div>
       <hr className={`mx-auto mb-4 w-full ${controles ? "" : "hidden"}`} />

@@ -7,6 +7,7 @@ export const PhotoCapture = ({
   controles,
   setControles,
   setReset,
+  setBtnCompra,
 }) => {
   const webcamRef = useRef(null);
   const [isCameraOn, setIsCameraOn] = useState(false);
@@ -66,6 +67,7 @@ export const PhotoCapture = ({
     setIsCameraOn(false);
     setControles(true);
     setReset(true);
+    setBtnCompra(true);
   };
 
   return (

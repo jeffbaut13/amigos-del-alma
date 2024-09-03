@@ -10,6 +10,11 @@ import { Arrows } from "./Arrows";
 export const Pasos = ({ DijeValtio, setOpen, camMove, snap }) => {
   const sliderRef = useRef();
   const [currentSlide, setCurrentSlide] = useState(1);
+  const [btnCompra, setBtnCompra] = useState(false);
+
+  const handleCompra = () => {
+    alert("compra");
+  };
 
   const resetBack = {
     position: [-1.5, -1, 3],
@@ -72,11 +77,21 @@ export const Pasos = ({ DijeValtio, setOpen, camMove, snap }) => {
         <PasosIcons currentSlide={currentSlide} />
 
         <SliderPaso
+          setBtnCompra={setBtnCompra}
           next={next}
           sliderRef={sliderRef}
           DijeValtio={DijeValtio}
           setOpen={setOpen}
         />
+        <button
+          disabled={!btnCompra}
+          onClick={handleCompra}
+          className={`${
+            btnCompra ? "block" : "hidden"
+          } absolute bottom-0 translate-y-1/2 left-1/2 -translate-x-1/2`}
+        >
+          Comprar
+        </button>
         <div className="arrows flex justify-between w-full h-6 top-1/2 left-0 absolute z-10">
           {currentSlide >= 3 && (
             <figure

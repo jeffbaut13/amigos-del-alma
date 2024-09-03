@@ -7,7 +7,13 @@ import "slick-carousel/slick/slick-theme.css";
 import IncrementText from "./IncrementText";
 import { ImgLoadDije } from "./ImgLoadDije";
 
-export const SliderPaso = ({ next, sliderRef, DijeValtio, setOpen }) => {
+export const SliderPaso = ({
+  next,
+  sliderRef,
+  DijeValtio,
+  setOpen,
+  setBtnCompra,
+}) => {
   const inputChangeRef = useRef();
   const inputEmail = useRef();
   const [inputChange, setInputChange] = useState(true);
@@ -47,7 +53,7 @@ export const SliderPaso = ({ next, sliderRef, DijeValtio, setOpen }) => {
       }
     }, 0);
   };
-console.log(DijeValtio.usuario);
+  console.log(DijeValtio.usuario);
 
   return (
     <Slider className="w-full h-full z-20" {...settings} ref={sliderRef}>
@@ -68,7 +74,7 @@ console.log(DijeValtio.usuario);
             <input
               type="text"
               name="name"
-              onChange={(e)=>DijeValtio.usuario=e.target.value}
+              onChange={(e) => (DijeValtio.usuario = e.target.value)}
               placeholder="¿Cuál es tu nombre?"
               className="focus:border-none focus:outline-none"
             />
@@ -79,7 +85,7 @@ console.log(DijeValtio.usuario);
             <input
               type="email"
               name="email"
-              onChange={(e)=>DijeValtio.usuario=e.target.value}
+              onChange={(e) => (DijeValtio.usuario = e.target.value)}
               placeholder="¿Tu correo?"
               className="focus:border-none focus:outline-none"
             />
@@ -134,7 +140,7 @@ console.log(DijeValtio.usuario);
         </div>
       </div>
       <div>
-        <ImgLoadDije DijeValtio={DijeValtio} />
+        <ImgLoadDije DijeValtio={DijeValtio} setBtnCompra={setBtnCompra} />
       </div>
     </Slider>
   );
