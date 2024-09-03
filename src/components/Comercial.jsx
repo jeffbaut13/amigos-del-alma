@@ -60,13 +60,24 @@ const Comercial = ({ abrirDije, setAbrirDije }) => {
         style={{
           backgroundImage: `url(${backgroundImage})`,
         }}
-      ></div>
+      >
+        <div className="absolute top-0 left-0 bg-black bg-opacity-55 w-full h-full" />
+        <div className="absolute top-0 left-0  w-full h-full bg-video" />
+        <video
+          className="video w-full h-full object-cover z-10"
+          autoPlay
+          muted
+          loop
+          controls={false}
+          playsInline
+        >
+          <source src="/intro.mp4" type="video/mp4" />
+          Tu navegador no soporta la reproducción de video.
+        </video>
+      </div>
 
       {/* Contenido principal */}
       <div className="flex justify-evenly flex-col items-center h-full relative">
-        <figure className="w-4 h-4 inline-block">
-          <img src="/prospero.svg" alt="Título" />
-        </figure>
         <figure className="w-96">
           <img src="/iconos/TituloCentrado.svg" alt="Título" />
         </figure>
@@ -107,12 +118,6 @@ const Comercial = ({ abrirDije, setAbrirDije }) => {
             </figure>
           </button>
         </div>
-        <button
-          className="group border flex items-center justify-center px-4 border-[--colorYellow] h-10 rounded-lg mt-6 AddingtonCF-thin"
-          onClick={handleVideoEnd}
-        >
-          Omitir
-        </button>
       </div>
 
       {/* Video a pantalla completa */}

@@ -25,8 +25,10 @@ const router = createBrowserRouter([
     path: "/",
     element: (
       <>
-        <ScrollToTopOnRouteChange />
-        <Home />
+        <Layout>
+          <ScrollToTopOnRouteChange />
+          <Home />
+        </Layout>
       </>
     ),
     errorElement: <ErrorPage />,
