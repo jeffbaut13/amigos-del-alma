@@ -12,9 +12,33 @@ export const Pasos = ({ DijeValtio, setOpen, camMove, snap }) => {
   const [currentSlide, setCurrentSlide] = useState(1);
   const [btnCompra, setBtnCompra] = useState(false);
 
-  const handleCompra = () => {
-    alert("compra");
-  };
+const handleCompra = async () => {
+  const formData = new FormData();
+  formData.append('usuario', DijeValtio.usuario);
+  formData.append('email', DijeValtio.email);
+  formData.append('contacto', DijeValtio.contacto);
+  formData.append('nombre', DijeValtio.nombre);
+
+  const response = await fetch(DijeValtio.Imagen);
+  const blob = await response.blob();
+
+  formData.append('image', new File([blob], 'imagen.jpg', { type: 'image/jpeg' }));
+
+  try {
+    const res = await fetch('http://localhost:3001/comprar', {
+      method: 'POST',
+      body: formData,
+    });
+
+    if (res.ok) {
+      alert('Compra realizada con éxito');
+    } else {
+      alert('Error al realizar la compra');
+    }
+  } catch (error) {
+    console.error('Error:', error);
+  }
+};
 
   const resetBack = {
     position: [-1.5, -1, 3],
