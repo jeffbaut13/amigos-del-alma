@@ -85,7 +85,7 @@ export const SliderPaso = ({
             <input
               type="email"
               name="email"
-              onChange={(e) => (DijeValtio.usuario = e.target.value)}
+              onChange={(e) => (DijeValtio.email = e.target.value)}
               placeholder="¿Tu correo?"
               className="focus:border-none focus:outline-none"
             />
