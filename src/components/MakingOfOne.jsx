@@ -31,7 +31,7 @@ export const MakingOfOne = () => {
           amigos del alma, hay historias de vida <br />
           que nos inspiraron y que deberías conocer.
         </h2>
-        <div className="videos w-5/6 flex justify-between">
+        <div className="videos w-5/6 mx-auto flex justify-between">
           {videos.map((video, index) => (
             <VideoComponent
               key={index}
