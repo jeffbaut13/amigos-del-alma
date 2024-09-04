@@ -53,7 +53,7 @@ const Comercial = ({ abrirDije, setAbrirDije }) => {
   }, [isVideoPlaying]);
 
   return (
-    <div className="home h-screen w-full relative">
+    <div className="h-screen w-full relative">
       {/* Fondo de la pantalla principal */}
       <div
         className="absolute inset-0 bg-cover bg-center"
@@ -62,7 +62,7 @@ const Comercial = ({ abrirDije, setAbrirDije }) => {
         }}
       >
         <div className="absolute top-0 left-0 bg-black bg-opacity-55 w-full h-full" />
-        <div className="absolute top-0 left-0  w-full h-full bg-video" />
+        {/* <div className="absolute top-0 left-0  w-full h-full bg-video" /> */}
         <video
           className="video w-full h-full object-cover z-10"
           autoPlay
@@ -78,46 +78,48 @@ const Comercial = ({ abrirDije, setAbrirDije }) => {
 
       {/* Contenido principal */}
       <div className="flex justify-evenly flex-col items-center h-full relative">
-        <figure className="w-96">
-          <img src="/iconos/TituloCentrado.svg" alt="Título" />
-        </figure>
         <div className="h-[45%] flex flex-col justify-center items-center">
-          <div className="mt-16" />
-          <h1 className="text-[--colorYellow] text-sm text-center">
-            conoce la historia de alejo y toño
+          <div className="mt-60" />
+          <figure className="w-96">
+            <img src="/iconos/TituloCentrado.svg" alt="Título" />
+          </figure>
+          <h1 className="text-[--colorYellow] text-sm text-center my-8">
+            SOLO CUANDO LOS AMIGOS SE UNEN SUCEDEN COSAS INCREÍBLES.
           </h1>
-          <button
-            className="group border flex items-center justify-between px-4 border-[--colorYellow] w-52 h-10 rounded-lg mt-6 AddingtonCF-thin"
-            onClick={handlePlayClick}
-          >
-            {" "}
-            reproducir
-            <figure className="w-5 h-5 block">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                version="1.1"
-                viewBox="0 0 33.02 33.1"
+        </div>
+        <button
+          className="group btn-home text-xs flex items-center justify-between"
+          onClick={handlePlayClick}
+        >
+          {" "}
+          <figure className="w-5 h-5 block mr-2">
+            <svg
+              id="uuid-33665910-3a4d-40e8-b75a-77f636257843"
+              data-name="Capa 2"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 32.18 32.18"
+            >
+              <g
+                id="uuid-900a6ba8-4252-43fa-84a9-899d16c59bb9"
+                data-name="Capa 1"
               >
                 <g>
-                  <g id="Capa_1">
-                    <g>
-                      <path
-                        className="fill-none stroke-[--colorYellow] group-hover:stroke-[--primary]"
-                        style={{ strokeMiterlimit: 10 }}
-                        d="M16.51.7C7.91.7.92,7.69.92,16.29s6.99,15.59,15.59,15.59,15.59-6.99,15.59-15.59S25.11.7,16.51.7Z"
-                      />
-                      <path
-                        className="fill-none stroke-[--colorYellow] group-hover:stroke-[--primary]"
-                        style={{ strokeMiterlimit: 10 }}
-                        d="M11.13,10.47c0-1.3.92-1.83,2.05-1.18l10.59,6.11c1.13.65,1.13,1.72,0,2.37l-10.59,6.11c-1.13.65-2.05.12-2.05-1.18v-12.23Z"
-                      />
-                    </g>
-                  </g>
+                  <path
+                    className="fill-[--primary] group-hover:fill-[--second] stroke-[--primary] group-hover:stroke-[--second]"
+                    d="m16.09.5C7.49.5.5,7.49.5,16.09s6.99,15.59,15.59,15.59,15.59-6.99,15.59-15.59S24.69.5,16.09.5Z"
+                    style={{ strokeMiterlimit: 10 }}
+                  />
+                  <path
+                    className="fill-[--second] group-hover:fill-[--primary] stroke-[--second] group-hover:stroke-[--primary]"
+                    style={{ strokeMiterlimit: 10, strokeWidth: "0.5px" }}
+                    d="m10.71,10.27c0-1.3.92-1.83,2.05-1.18l10.59,6.11c1.13.65,1.13,1.72,0,2.37l-10.59,6.11c-1.13.65-2.05.12-2.05-1.18v-12.23Z"
+                  />
                 </g>
-              </svg>
-            </figure>
-          </button>
-        </div>
+              </g>
+            </svg>
+          </figure>
+          VER AHORA
+        </button>
       </div>
 
       {/* Video a pantalla completa */}

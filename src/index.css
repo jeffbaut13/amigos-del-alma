@@ -56,7 +56,8 @@ body,
 }
 :root {
   --primary: #282828;
-  --second: #fffae6;
+  --second: #fff6c2;
+  --bg-clar: #fffae6;
   --thirty: #e1c149;
   --borderOpacity: #fffae614;
   --borderCircle: #4747475c;
@@ -72,6 +73,10 @@ body,
 .AddingtonCF-thin {
   font-family: "AddingtonCF-thin";
   @apply tracking-[0.2rem];
+}
+.moires {
+  font-family: "Mories";
+  @apply tracking-[0.3rem] uppercase;
 }
 .AddingtonCF-regular {
   font-family: "AddingtonCF-regular";
@@ -215,9 +220,18 @@ input[type="number"]::-webkit-inner-spin-button {
 .bg-video {
   background: linear-gradient(
     0deg,
-    rgb(0, 0, 0, 60%) 0%,
+    rgb(0 0 0 / 97%) 0%,
     rgba(255, 255, 255, 0) 14%,
     rgba(255, 255, 255, 0) 86%,
-    rgb(0, 0, 0, 60%) 100%
+    rgb(0 0 0) 100%
   );
+}
+
+.btn-home {
+  @apply moires bg-[--second] border border-[--second] text-[--primary] py-2.5 pl-5 pr-3.5 transition-all duration-300 rounded-md
+  hover:bg-[#ffffff00] hover:text-[--second];
+  -webkit-text-stroke: 1px var(--primary);
+}
+.btn-home:hover {
+  -webkit-text-stroke: 0.5px var(--second);
 }
