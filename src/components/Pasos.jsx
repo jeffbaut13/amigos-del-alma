@@ -100,8 +100,8 @@ const handleCompra = async () => {
       <div
         className={`p-6  border-[--borderCircle] relative border shadowbox w-full h-full rounded-lg flex flex-col  items-start `}
       >
-        <PasosIcons currentSlide={currentSlide} />
-
+{/*         <PasosIcons currentSlide={currentSlide} />
+ */}
         <SliderPaso
         handleCompra={handleCompra}
           setBtnCompra={setBtnCompra}
