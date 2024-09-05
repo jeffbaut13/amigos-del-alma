@@ -12,7 +12,7 @@ export const Marketing = () => {
     <div
       style={{
         backgroundImage: "url(/imagenes/foto_perro_retocar.webp)",
-        backgroundPosition: "8rem center",
+        backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
       }}
       className="section relative AddingtonCF-light flex items-center justify-center"

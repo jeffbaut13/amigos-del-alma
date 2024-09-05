@@ -47,7 +47,7 @@
   src: url("/font/NeueHaasDisplayThin.ttf");
 }
 html {
-  @apply xl:text-[1vw] xs:text-[3vw] sm:text-[1.5vw] lg:text-[1vw] scroll-smooth bg-black;
+  @apply overflow-x-hidden xl:text-[1vw] xs:text-[3vw] sm:text-[1.5vw] lg:text-[1vw] scroll-smooth bg-black;
 }
 body,
 #root {
@@ -85,7 +85,7 @@ body,
 .AddingtonCF-light {
   font-family: "AddingtonCF-light";
   @apply tracking-[0.2rem];
-  -webkit-text-stroke: 0.2px black;
+  /*-webkit-text-stroke: 0.2px black;*/
 }
 .NeueHaas-Bold {
   font-family: "NeueHaas Bold";
@@ -234,4 +234,21 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 .btn-home:hover {
   -webkit-text-stroke: 0.5px var(--second);
+}
+.videoCard {
+  @apply opacity-100;
+}
+
+.videoCard .contenidoCard {
+  @apply hidden;
+}
+
+.firstVideo {
+  @apply bottom-0 left-0 h-[49.5%] w-full;
+}
+.thirtVideo {
+  @apply top-0 right-0 h-[49.5%] w-[49.5%];
+}
+.secondVideo {
+  @apply top-0 left-0 h-[49.5%] w-[49.5%];
 }
