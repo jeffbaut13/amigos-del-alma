@@ -10,23 +10,12 @@ import { Gracias } from "./paginas/Gracias";
 import { Layout } from "./Layout";
 import { Home } from "./paginas/Home";
 
-function ScrollToTopOnRouteChange() {
-  const { pathname } = useLocation();
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
-
-  return null;
-}
-
 const router = createBrowserRouter([
   {
     path: "/",
     element: (
       <>
         <Layout>
-          <ScrollToTopOnRouteChange />
           <Home />
         </Layout>
       </>
@@ -37,7 +26,6 @@ const router = createBrowserRouter([
     path: "/collage",
     element: (
       <Layout>
-        <ScrollToTopOnRouteChange />
         <Collage />
       </Layout>
     ),
@@ -47,7 +35,6 @@ const router = createBrowserRouter([
     path: "/comprar-dije",
     element: (
       <Layout>
-        <ScrollToTopOnRouteChange />
         <Campaña />
       </Layout>
     ),
@@ -57,7 +44,6 @@ const router = createBrowserRouter([
     path: "/administrador",
     element: (
       <Layout>
-        <ScrollToTopOnRouteChange />
         <Administrador />
       </Layout>
     ),
@@ -67,7 +53,6 @@ const router = createBrowserRouter([
     path: "/gracias",
     element: (
       <Layout>
-        <ScrollToTopOnRouteChange />
         <Gracias />
       </Layout>
     ),

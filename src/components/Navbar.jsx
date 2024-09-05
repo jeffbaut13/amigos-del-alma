@@ -54,7 +54,7 @@ export const Navbar = () => {
       <Prospero showLogo={showLogo} />
 
       <Burger handleClick={handleClick} showLogo={showLogo} active={active} />
-      <LinkRouter setActive={setActive} />
+      <LinkRouter setActive={setActive} showLogo={showLogo} />
     </div>
   );
 };
