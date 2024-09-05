@@ -30,7 +30,7 @@ export const RedesSociales = () => {
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   version="1.1"
-                  viewBox="0 0 40.59 40.02"
+                  viewBox="0 0 41 42"
                 >
                   <g>
                     <g id="Capa_1">
@@ -56,7 +56,7 @@ export const RedesSociales = () => {
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   version="1.1"
-                  viewBox="0 0 41 40.11"
+                  viewBox="0 0 41 42"
                 >
                   <g>
                     <g id="Capa_1">
@@ -82,7 +82,7 @@ export const RedesSociales = () => {
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   version="1.1"
-                  viewBox="0 0 40.23 40.17"
+                  viewBox="0 0 41 42.5"
                 >
                   <g>
                     <g id="Capa_1">
