@@ -13,7 +13,6 @@ export const Home = () => {
       <Comercial />
       <Marketing />
       <MakingOfOne />
-      <MakingOfOTwo />
       <Footer />
     </>
   );
