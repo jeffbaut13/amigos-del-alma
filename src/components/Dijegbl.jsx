@@ -126,7 +126,7 @@ export function Dijegbl({ open, snap, group }) {
               font={"/font/ArtifexCF-Bold.ttf"}
             />
 
-            <TextCustomer
+            {/*  <TextCustomer
               materials={materials.Material_0}
               snap={snap.braile}
               position={[0, 0.001248, 0.032]}
@@ -137,7 +137,7 @@ export function Dijegbl({ open, snap, group }) {
               letterSpacing={-0.1}
               color={"black"}
               materialTrue={true}
-            />
+            /> */}
           </mesh>
         </group>
         <group
