@@ -43,6 +43,7 @@ export const MakingOfOne = () => {
 
   return (
     <div
+      id="detras"
       style={{
         backgroundImage: "url(/imagenes/bg-videos-section.webp)",
         backgroundPosition: "center",
@@ -52,7 +53,7 @@ export const MakingOfOne = () => {
     >
       <div className="absolute top-0 left-0 bg-black bg-opacity-80 w-full h-full" />
       <div className="absolute top-0 left-0 z-0 w-full h-full bg-video" />
-      <div className="z-10 relative w-full h-4/6 flex px-40">
+      <div className="z-10 relative w-full h-3/4 flex px-40">
         <div className="videos relative w-[40%] flex flex-wrap px-2 h-full">
           {videos.map((video, index) => (
             <div

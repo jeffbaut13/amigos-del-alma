@@ -53,7 +53,7 @@ const Comercial = ({ abrirDije, setAbrirDije }) => {
   }, [isVideoPlaying]);
 
   return (
-    <div className="h-screen w-full relative">
+    <div id="comercial" className="h-screen w-full relative">
       {/* Fondo de la pantalla principal */}
       <div
         className="absolute inset-0 bg-cover bg-center"
@@ -77,49 +77,49 @@ const Comercial = ({ abrirDije, setAbrirDije }) => {
       </div>
 
       {/* Contenido principal */}
-      <div className="flex justify-evenly flex-col items-center h-full relative">
-        <div className="h-[45%] flex flex-col justify-center items-center">
-          <div className="mt-60" />
+      <div className="flex justify-around flex-col items-start mx-24 h-full relative">
+        <div />
+        <div className=" flex flex-col justify-end items-start">
           <figure className="w-96">
             <img src="/iconos/TituloCentrado.svg" alt="Título" />
           </figure>
-          <h1 className="text-[--colorYellow] text-sm text-center my-8">
+          <h1 className="text-[--colorYellow] text-sm text-center mx-3 my-8">
             SOLO CUANDO LOS AMIGOS SE UNEN SUCEDEN COSAS INCREÍBLES.
           </h1>
-        </div>
-        <button
-          className="group btn-home text-xs flex items-center justify-between"
-          onClick={handlePlayClick}
-        >
-          {" "}
-          <figure className="w-5 h-5 block mr-2">
-            <svg
-              id="uuid-33665910-3a4d-40e8-b75a-77f636257843"
-              data-name="Capa 2"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 32.18 32.18"
-            >
-              <g
-                id="uuid-900a6ba8-4252-43fa-84a9-899d16c59bb9"
-                data-name="Capa 1"
+          <button
+            className="group btn-home text-xs flex items-center justify-between ml-2"
+            onClick={handlePlayClick}
+          >
+            {" "}
+            <figure className="w-5 h-5 block mr-2">
+              <svg
+                id="uuid-33665910-3a4d-40e8-b75a-77f636257843"
+                data-name="Capa 2"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 32.18 32.18"
               >
-                <g>
-                  <path
-                    className="fill-[--primary] group-hover:fill-[--second] stroke-[--primary] group-hover:stroke-[--second]"
-                    d="m16.09.5C7.49.5.5,7.49.5,16.09s6.99,15.59,15.59,15.59,15.59-6.99,15.59-15.59S24.69.5,16.09.5Z"
-                    style={{ strokeMiterlimit: 10 }}
-                  />
-                  <path
-                    className="fill-[--second] group-hover:fill-[--primary] stroke-[--second] group-hover:stroke-[--primary]"
-                    style={{ strokeMiterlimit: 10, strokeWidth: "0.5px" }}
-                    d="m10.71,10.27c0-1.3.92-1.83,2.05-1.18l10.59,6.11c1.13.65,1.13,1.72,0,2.37l-10.59,6.11c-1.13.65-2.05.12-2.05-1.18v-12.23Z"
-                  />
+                <g
+                  id="uuid-900a6ba8-4252-43fa-84a9-899d16c59bb9"
+                  data-name="Capa 1"
+                >
+                  <g>
+                    <path
+                      className="fill-[--primary] group-hover:fill-[--second] stroke-[--primary] group-hover:stroke-[--second]"
+                      d="m16.09.5C7.49.5.5,7.49.5,16.09s6.99,15.59,15.59,15.59,15.59-6.99,15.59-15.59S24.69.5,16.09.5Z"
+                      style={{ strokeMiterlimit: 10 }}
+                    />
+                    <path
+                      className="fill-[--second] group-hover:fill-[--primary] stroke-[--second] group-hover:stroke-[--primary]"
+                      style={{ strokeMiterlimit: 10, strokeWidth: "0.5px" }}
+                      d="m10.71,10.27c0-1.3.92-1.83,2.05-1.18l10.59,6.11c1.13.65,1.13,1.72,0,2.37l-10.59,6.11c-1.13.65-2.05.12-2.05-1.18v-12.23Z"
+                    />
+                  </g>
                 </g>
-              </g>
-            </svg>
-          </figure>
-          VER AHORA
-        </button>
+              </svg>
+            </figure>
+            VER AHORA
+          </button>
+        </div>
       </div>
 
       {/* Video a pantalla completa */}
