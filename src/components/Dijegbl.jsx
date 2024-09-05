@@ -115,7 +115,8 @@ export function Dijegbl({ open, snap, group }) {
             <TextCustomer
               materials={materials.Material_0}
               snap={snap.nombre}
-              position={[0, 0.001248, 0.023]}
+              //position={[0, 0.001248, 0.023]}
+              position={[0, 0.001248, 0.027]}
               fontSize={snap.fontSize}
               scale={0.02}
               maxWidth={1.5}
