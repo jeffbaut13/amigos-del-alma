@@ -144,7 +144,7 @@ h1 {
   @apply border-[--colorYellow] text-[--primary] bg-[--colorYellow];
 }
 .edicion .editorbtn {
-  @apply bg-transparent text-[0.5rem] text-[--second] border border-[--borderOpacity] py-1 px-2;
+  @apply bg-black text-[0.5rem] text-white border border-[--borderOpacity] py-1 px-2;
 }
 .edicion .btncapture {
   @apply bg-[--second] hover:bg-[#ffffff50] rounded-full shadowbox border-none;

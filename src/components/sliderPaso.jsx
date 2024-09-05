@@ -13,6 +13,7 @@ export const SliderPaso = ({
   DijeValtio,
   setOpen,
   setBtnCompra,
+  handleCompra,
 }) => {
   const inputChangeRef = useRef();
   const inputEmail = useRef();
@@ -76,7 +77,7 @@ export const SliderPaso = ({
               name="name"
               onChange={(e) => (DijeValtio.usuario = e.target.value)}
               placeholder="¿Cuál es tu nombre?"
-              className="focus:border-none focus:outline-none pt-4 text-center pla placeholder-[#E2D6AF]"
+              className="focus:border-none focus:outline-none pt-4 text-center text-[#E2D6AF] placeholder-[#E2D6AF]"
             />
 
           </div>
@@ -86,7 +87,7 @@ export const SliderPaso = ({
               name="email"
               onChange={(e) => (DijeValtio.email = e.target.value)}
               placeholder="¿Tu correo?"
-              className="focus:border-none focus:outline-none pt-4 text-center placeholder-[#E2D6AF]"
+              className="focus:border-none focus:outline-none pt-4 text-center text-[#E2D6AF] placeholder-[#E2D6AF]"
             />
 
           </div>
@@ -114,13 +115,13 @@ export const SliderPaso = ({
                   maxLength={10}
                   type="text"
                   name="nameDog"
-                  className="border-b border-black uppercase   text-xl"
+                  className="border-b border-black uppercase text-center text-[#E2D6AF]  text-xl"
                   onChange={(e) => (DijeValtio.nombre = e.target.value)}
                   //placeholder="¿CÓMO SE LLAMA TU AMIGO(A)?"
                 />
               </>
             )}
-                      <div className=" w-full h-full flex flex-col items-center justify-center">
+                      <div className=" w-full h-full flex mt-4  flex-col items-center justify-center">
           <button className=" bg-black" onClick={next}>Siguiente</button>
 
           </div>
@@ -141,12 +142,12 @@ export const SliderPaso = ({
               maxLength={10}
               type="number"
               name="nameDog"
-              className="border text-center mt-6 border-[--borderOpacity] rounded-xl focus:border-[--primary] placeholder-[#E2D6AF] text-sm NeueHaas-Thin"
+              className="border text-center mt-6 border-[--borderOpacity] text-[#E2D6AF] rounded-xl placeholder-[#E2D6AF] text-sm NeueHaas-Thin"
               onChange={(e) => (DijeValtio.contacto = e.target.value)}
               placeholder="EJ: 320 378 08 02"
             />
           </div>
-          <div className=" w-full h-full flex flex-col items-center justify-center">
+          <div className=" w-full h-full flex mt-4 flex-col items-center justify-center">
           <button className=" bg-black" onClick={next}>Siguiente</button>
 
           </div>
@@ -154,7 +155,7 @@ export const SliderPaso = ({
         </div>
       </div>
       <div>
-        <ImgLoadDije DijeValtio={DijeValtio} setBtnCompra={setBtnCompra} />
+        <ImgLoadDije  DijeValtio={DijeValtio} setBtnCompra={setBtnCompra} handleCompra={handleCompra}  />
       </div>
     </Slider>
   );
