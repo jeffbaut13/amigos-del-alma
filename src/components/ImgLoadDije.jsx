@@ -6,7 +6,7 @@ import { Arrows } from "./Arrows";
 import { PhotoCapture } from "./PhotoCapture";
 import { UploadImage } from "./UploadImage";
 
-export const ImgLoadDije = ({ DijeValtio, setBtnCompra }) => {
+export const ImgLoadDije = ({ DijeValtio, setBtnCompra, handleCompra }) => {
   const snap = useSnapshot(DijeValtio);
 
   const intervalRef = useRef(null);
@@ -52,7 +52,7 @@ export const ImgLoadDije = ({ DijeValtio, setBtnCompra }) => {
   return (
     <div className="h-full flex flex-col justify-center">
       <div
-        className={`botonesBox justify-center items-center  my-4 ${
+        className={`botonesBox justify-center items-center  mb-2 ${
           controles ? "flex justify-between" : "flex flex-col"
         }`}
       >
@@ -75,9 +75,9 @@ export const ImgLoadDije = ({ DijeValtio, setBtnCompra }) => {
 
       {controles && (
         <div>
-          <h2 className=" w-full text-center mb-4 ">Ubicación</h2>
+          <h2 className=" w-full text-center  text-[#1B191D] ">Ubicación</h2>
           {/* Flecha derecha */}
-          <div className="relative w-28 h-28 m-auto">
+          <div className="relative w-28 h-16 m-auto">
             <ButtonImgEditor
               position={"left-0 top-1/2 -translate-y-1/2"}
               rotate={"rotate-180"}
@@ -115,16 +115,31 @@ export const ImgLoadDije = ({ DijeValtio, setBtnCompra }) => {
               handleOnMouseLeave={stopAction}
             /> */}
           </div>
-          <hr className={`mx-auto my-2  w-full ${controles ? "" : "hidden"}`} />
-          <h2 className="w-full text-center my-4">Tamaño de imagen</h2>
+          <hr className={`mx-auto   w-full ${controles ? "" : "hidden"}`} />
+          <h2 className="w-full text-center mb-4 text-[#1B191D]">Tamaño de imagen</h2>
           <CustomSlide
             snap={snap}
             DijeValtio={DijeValtio}
             reset={reset}
             setReset={setReset}
           />
+                <div className=" w-full flex flex-col py-8 items-center">
+      <button
+              className="bg-black text-white py-2 px-6 rounded-lg hover:bg-gray-700"
+              onClick={() => {
+                handleCompra();
+                setBtnCompra(true);
+                console.log("Compra iniciada");
+              }}
+            >
+              Comprar
+            </button>
+
+      </div>
+
         </div>
       )}
+
     </div>
   );
 };

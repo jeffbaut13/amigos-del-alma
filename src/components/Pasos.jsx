@@ -103,13 +103,16 @@ const handleCompra = async () => {
         <PasosIcons currentSlide={currentSlide} />
 
         <SliderPaso
+        handleCompra={handleCompra}
           setBtnCompra={setBtnCompra}
           next={next}
           sliderRef={sliderRef}
           DijeValtio={DijeValtio}
           setOpen={setOpen}
+          
+          
         />
-        <button
+{/*         <button
           disabled={!btnCompra}
           onClick={handleCompra}
           className={`${
@@ -118,21 +121,21 @@ const handleCompra = async () => {
         >
           Comprar
         </button>
-        <div className="arrows flex justify-between w-full h-6 top-1/2 left-0 absolute z-10">
+ */}        <div className="arrows flex justify-between w-full h-6 top-1/2 left-0 absolute z-10">
           {currentSlide >= 3 && (
             <figure
               onClick={prev}
-              className="cursor-pointer bg-[--second] hover:bg-black transition-all duration-500 group border border-[--borderOpacity] absolute -left-10 rotate-180 w-6 h-6 inline-block p-1.5 rounded-full -translate-y-1/2"
+              className="cursor-pointer bg-black hover:bg-[#e1c149] transition-all duration-500 group border border-[--borderOpacity] absolute -left-10 rotate-180 w-6 h-6 inline-block p-1.5 rounded-full -translate-y-1/2"
             >
-              <Arrows color={"stroke-[--primary] group-hover:stroke-white"} />
+              <Arrows color={"stroke-white group-hover:stroke-black"} />
             </figure>
           )}
           {currentSlide > 1 && currentSlide <= 4 && (
             <figure
               onClick={next}
-              className="cursor-pointer bg-[--second] hover:bg-black transition-all duration-500 group border border-[--borderOpacity] absolute -right-10 w-6 h-6 inline-block p-1.5 rounded-full -translate-y-1/2"
+              className="cursor-pointer bg-black hover:bg-[#e1c149] transition-all duration-500 group border border-[--borderOpacity] absolute -right-10 w-6 h-6 inline-block p-1.5 rounded-full -translate-y-1/2"
             >
-              <Arrows color={"stroke-[--primary] group-hover:stroke-white"} />
+              <Arrows color={"stroke-white group-hover:stroke-"} />
             </figure>
           )}
         </div>

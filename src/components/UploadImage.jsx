@@ -70,7 +70,7 @@ export const UploadImage = ({
     <>
       {!controles ? (
         <>
-          <p className="text-center mb-2">
+          <p className="text-center mb-2 text-[#1B191D]">
             Sube la mejor foto que tengas con tu amigo
           </p>
 
@@ -80,10 +80,10 @@ export const UploadImage = ({
           >
             <span className=" w-4 h-4 inline-block -rotate-90">
               <Arrows
-                color={"stroke-[--primary]  group-hover:stroke-[--second]"}
+                color={"stroke-white  group-hover:stroke-black"}
               />
             </span>{" "}
-            <div className="w-4 mt-2 h-[1px] bg-[--primary] group-hover:bg-[--second]" />
+            <div className="w-4 mt-2 h-[1px] bg-white group-hover:bg-black" />
           </button>
         </>
       ) : (
