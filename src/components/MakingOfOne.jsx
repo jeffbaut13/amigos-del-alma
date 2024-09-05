@@ -64,9 +64,9 @@ export const MakingOfOne = () => {
                 {activeVideo === index && (
                   <span
                     onClick={() => resetComponent(true)}
-                    className="cursor-pointer absolute right-0 top-0 z-30"
+                    className="cursor-pointer absolute -right-12 -top-10 z-30 w-8 h-8"
                   >
-                    close
+                    <img src="/iconos/closevideo.svg" alt="" />
                   </span>
                 )}
                 <div className="h-full border border-[--second] border-dashed rounded-xl p-2 flex flex-col">
