@@ -80,7 +80,7 @@ export const EdicionDije = ({ setAbrirDije }) => {
           group={DijeRef}
         />
       </div>
-      <div className="w-1/2 flex flex-col justify-evenly items-center bg-[--bg-black]">
+      <div className="w-1/2 flex flex-col items-center">
         <CardsCustomer
           setOpen={setOpen}
           DijeValtio={DijeValtio}
@@ -88,9 +88,8 @@ export const EdicionDije = ({ setAbrirDije }) => {
           handleInputChange={handleInputChange}
           camMove={camMove}
         />
-        <div className="w-[18%] uppercase absolute h-full z-50  overflow-hidden pointer-events-none">
-          <Price />
-        </div>
+          
+        
       </div>
     </div>
   );
