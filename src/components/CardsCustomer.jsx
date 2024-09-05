@@ -18,8 +18,10 @@ export const CardsCustomer = ({
             camMove={camMove}
             snap={snap}
           />
-          {/* <button onClick={() => camMove(snap.reset)}>Resetear</button> */}
+          {/* <button onClick={() => camMove(snap.reset)}>Resetear</buttocen> */}
+          
         </div>
+        
       </div>
 
       {/* <button onClick={() => setOpen(true)}>Abrir</button>

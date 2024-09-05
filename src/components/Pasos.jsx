@@ -6,6 +6,7 @@ import { PasosIcons } from "./PasosIcons";
 import { SliderPaso } from "./sliderPaso";
 import { useSnapshot } from "valtio";
 import { Arrows } from "./Arrows";
+import { Price } from "./Price";
 
 export const Pasos = ({ DijeValtio, setOpen, camMove, snap }) => {
   const sliderRef = useRef();
@@ -95,8 +96,9 @@ const handleCompra = async () => {
 
   return (
     <>
+    <div className=" p-2  border-[--borderCircle] relative border-dashed border w-full h-full rounded-lg flex flex-col  items-start  ">
       <div
-        className={`p-6 bg-[--bg-black] border border-[--borderCircle] relative shadowbox box w-full h-full rounded-lg flex flex-col  items-start `}
+        className={`p-6  border-[--borderCircle] relative border shadowbox w-full h-full rounded-lg flex flex-col  items-start `}
       >
         <PasosIcons currentSlide={currentSlide} />
 
@@ -134,7 +136,10 @@ const handleCompra = async () => {
             </figure>
           )}
         </div>
+        <Price />
       </div>
+
+    </div>
     </>
   );
 };

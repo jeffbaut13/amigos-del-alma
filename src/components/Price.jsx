@@ -2,23 +2,15 @@ import React from "react";
 
 export const Price = () => {
   return (
-    <div className="absolute AddingtonCF-thin bottom-0 left-1/2 -translate-x-1/2 h-24 w-full border-t bg-[--bg-black] border-x border-[--borderCircle] shadowbox rounded-t-lg">
-      <div className="relative rounded-t-lg h-full flex justify-around">
-        <div className="amount flex flex-col justify-evenly py-6 items-start">
-          <p className="w-full text-start text-[0.5rem]">Disponible</p>
-          <hr className="my-1 w-20" />
-          <p className=" text-2xl">500</p>
+    <div className="NeueHassRoman flex flex-col items-center justify-center text-[#1B191D] h-24 w-full border-t border-black">
+      <div className="flex flex-col items-center w-full">
+        <div className=" flex justify-between ">
+        <h1 className="text-2xl">PRECIO:</h1><span className=" text-2xl">$30.000</span>
+
         </div>
-        <hr className="absolute w-[35%] border-t rotate-90 bottom-6 -translate-x-0.5" />
-        <div className="price flex flex-col justify-evenly py-6 items-start">
-          <p className="w-full text-start text-[0.5rem]">Precio</p>
-          <hr className="my-1 w-20" />
-          <p className=" text-2xl relative">
-            <span className="text-sm absolute top-1/2 -left-4 -translate-y-1/2">
-              $
-            </span>
-            30.000
-          </p>
+        <div className="text-xs flex items-center">
+          <p className=" text-[10px]">UNIDADES DISPONIBLES:</p>
+          <span className="text-2xl">500</span>
         </div>
       </div>
     </div>

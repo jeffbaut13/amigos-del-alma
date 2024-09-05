@@ -58,40 +58,43 @@ export const SliderPaso = ({
   return (
     <Slider className="w-full h-full z-20" {...settings} ref={sliderRef}>
       <div>
-        <div className="h-full flex flex-col items-center justify-center w-full rounded-lg slide-uno">
-          <p className="text-base text-center">
-            Ahora tú y tu amigo del alma también podrán tener su propio símbolo
+        <div className="h-full flex text-[#1B191D] flex-col items-center justify-center w-full rounded-lg slide-uno">
+          <p className="text-base moires px-8 text-center">
+            Ahora tú y tu amigo del<br/> alma también podrán<br/> tener su propio símbolo<br/>
             personalizado.
           </p>
           <hr className="w-1/2 my-4" />
 
-          <button onClick={next}>Siguiente</button>
+          <button className=" bg-black" onClick={next}>Siguiente</button>
         </div>
       </div>
       <div>
-        <div className="h-full flex  flex-col items-start justify-center w-full slide-uno">
-          <div className=" w-full py-2">
+        <div className="h-full flex  flex-col items-center justify-end   w-full slide-uno">
+          <div className=" w-full pt-6  border-b">
             <input
               type="text"
               name="name"
               onChange={(e) => (DijeValtio.usuario = e.target.value)}
               placeholder="¿Cuál es tu nombre?"
-              className="focus:border-none focus:outline-none"
+              className="focus:border-none focus:outline-none pt-4 text-center pla placeholder-[#E2D6AF]"
             />
 
-            <hr className="w-full" />
           </div>
-          <div className=" w-full py-2">
+          <div className=" w-full pt-10 border-b">
             <input
               type="email"
               name="email"
               onChange={(e) => (DijeValtio.email = e.target.value)}
               placeholder="¿Tu correo?"
-              className="focus:border-none focus:outline-none"
+              className="focus:border-none focus:outline-none pt-4 text-center placeholder-[#E2D6AF]"
             />
 
-            <hr className="w-full" />
           </div>
+          <div className=" w-full h-full flex flex-col items-center justify-center">
+          <button className=" bg-black" onClick={next}>Siguiente</button>
+
+          </div>
+
         </div>
       </div>
       <div>
@@ -100,9 +103,9 @@ export const SliderPaso = ({
             {inputChange ? (
               <p
                 onClick={hanldeInputchange}
-                className="border border-[--borderOpacity] rounded-md text-center py-4 px-1 text-sm"
+                className="border-b border-black text-[#E2D6AF]  text-center py-4 px-1 text-xl"
               >
-                ¿Cómo se llama tu amigo(a)?
+                ¿Cómo se llama tu amigo?
               </p>
             ) : (
               <>
@@ -111,19 +114,25 @@ export const SliderPaso = ({
                   maxLength={10}
                   type="text"
                   name="nameDog"
-                  className="border uppercase border-[--borderOpacity] rounded-md  text-sm"
+                  className="border-b border-black uppercase   text-xl"
                   onChange={(e) => (DijeValtio.nombre = e.target.value)}
                   //placeholder="¿CÓMO SE LLAMA TU AMIGO(A)?"
                 />
               </>
             )}
+                      <div className=" w-full h-full flex flex-col items-center justify-center">
+          <button className=" bg-black" onClick={next}>Siguiente</button>
+
           </div>
+
+          </div>
+          
         </div>
       </div>
       <div>
         <div className="h-full flex  flex-col items-start justify-center w-full slide-uno">
-          <div className=" w-full py-2 px-1">
-            <p className="text-base text-center">
+          <div className=" w-full pt-8 pb-2 px-1 border-b border-black">
+            <p className="text-base text-center text-[#1B191D]">
               Si alguien se encuentra a tu amigo,
               <br />
               ¿a qué número llamar?
@@ -132,11 +141,16 @@ export const SliderPaso = ({
               maxLength={10}
               type="number"
               name="nameDog"
-              className="border text-center mt-6 border-[--borderOpacity] rounded-xl focus:border-[--primary] text-sm NeueHaas-Thin"
+              className="border text-center mt-6 border-[--borderOpacity] rounded-xl focus:border-[--primary] placeholder-[#E2D6AF] text-sm NeueHaas-Thin"
               onChange={(e) => (DijeValtio.contacto = e.target.value)}
               placeholder="EJ: 320 378 08 02"
             />
           </div>
+          <div className=" w-full h-full flex flex-col items-center justify-center">
+          <button className=" bg-black" onClick={next}>Siguiente</button>
+
+          </div>
+
         </div>
       </div>
       <div>

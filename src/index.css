@@ -46,6 +46,10 @@
   font-family: "NeueHaas Thin";
   src: url("/font/NeueHaasDisplayThin.ttf");
 }
+@font-face {
+  font-family: "NeueHaas Roman";
+  src: url("/font/NeueHaasDisplayRoman.ttf");
+}
 html {
   @apply xl:text-[1vw] xs:text-[3vw] sm:text-[1.5vw] lg:text-[1vw] scroll-smooth bg-black;
 }
@@ -69,6 +73,10 @@ body,
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+.NeueHassRoman{
+  font-family: "NeueHaas Roman";
+  @apply tracking-[0.2rem];
 }
 .AddingtonCF-thin {
   font-family: "AddingtonCF-thin";
@@ -123,10 +131,10 @@ h1 {
 }
 
 .edicion button {
-  @apply uppercase text-center rounded-md border-2 border-[--primary] py-2.5 pl-5 pr-3.5 transition-all duration-300 bg-[--second] text-[--primary]  cursor-pointer text-base;
+  @apply uppercase text-center rounded-md border-2 border-[--primary] py-2.5 pl-5 pr-3.5 transition-all duration-300 bg-black text-[#FFFAE6]  cursor-pointer text-base;
 }
 .edicion button:hover {
-  @apply border-[--thirty] text-[--second] bg-transparent;
+  @apply border-[--thirty] text-black bg-[#e1c149];
 }
 .home button {
   @apply uppercase text-center rounded-md border border-[--colorYellow] transition-all duration-300 bg-transparent text-[--colorYellow] cursor-pointer text-base;
@@ -165,7 +173,7 @@ svg {
   text-shadow: 0px 0px 1px var(--second);
 }
 input {
-  @apply w-full bg-transparent p-4 uppercase focus:outline-none;
+  @apply w-full bg-transparent uppercase focus:outline-none;
 }
 /* Chrome, Safari, Edge, Opera */
 input[type="number"]::-webkit-outer-spin-button,
@@ -188,7 +196,7 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 .shadowbox {
-  box-shadow: 0px 0px 9px 2px rgba(0, 0, 0, 0.253);
+  box-shadow: 3px 3px 9px 2px rgba(0, 0, 0, 0.253);
 }
 .custom_Shadow {
   @apply shadowbox;
