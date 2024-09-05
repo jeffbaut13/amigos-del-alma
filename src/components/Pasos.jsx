@@ -25,7 +25,7 @@ const handleCompra = async () => {
   formData.append('image', new File([blob], 'imagen.jpg', { type: 'image/jpeg' }));
 
   try {
-    const res = await fetch('http://localhost:3001/comprar', {
+    const res = await fetch('https://server-amigos.onrender.com/comprar', {
       method: 'POST',
       body: formData,
     });
