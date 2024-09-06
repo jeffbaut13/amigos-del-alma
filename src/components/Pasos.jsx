@@ -47,43 +47,38 @@ export const Pasos = ({ DijeValtio, setOpen, camMove, snap }) => {
       );
 
       // Enviar la solicitud POST al servidor principal
-      const res = await fetch("http://localhost:3001/comprar", {
+      const res = await fetch("https://server-amigos.onrender.com/comprar", {
         method: "POST",
         body: formData,
       });
 
       if (res.ok) {
         alert("Compra realizada con éxito");
+
+        // Construir la cadena de consulta con el email
+        const dataSend = {
+          email: DijeValtio.email,
+          usuario: DijeValtio.usuario,
+          promoid: DijeValtio.promoid,
+          // Solo el campo email
+        };
+        const queryString = Object.keys(dataSend)
+          .map((key) => key + "=" + encodeURIComponent(dataSend[key]))
+          .join("&");
+
+        // Redirigir a la URL de "completacarrito" con la cadena de consulta
+        const urlAlcarrito = "https://al.completacarrito.com/promo/addtocart";
+        window.location.href = `${urlAlcarrito}?${queryString}`;
       } else {
         const errorText = await res.text();
         alert(`Error al realizar la compra: ${errorText}`);
-      }
-
-      // Enviar el email a la URL adicional
-      try {
-        const emailRes = await fetch("https://alcarrito.com/promo/addtocart", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ email: DijeValtio.email }),
-        });
-
-        if (!emailRes.ok) {
-          throw new Error("Error al enviar el email a la URL adicional");
-        }
-
-        // Manejar respuesta si es necesario
-        console.log("Email enviado a la URL adicional");
-      } catch (error) {
-        console.error("Error al enviar el email a la URL adicional:", error);
-        alert("Error al enviar el email a la URL adicional");
       }
     } catch (error) {
       console.error("Error:", error);
       alert("Error al realizar la compra");
     }
   };
+
   const resetBack = {
     position: [-1.5, -1, 3],
   };
