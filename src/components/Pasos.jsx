@@ -15,64 +15,74 @@ export const Pasos = ({ DijeValtio, setOpen, camMove, snap }) => {
 
   const handleCompra = async () => {
     // Verifica que todos los datos requeridos estén presentes
-    if (!DijeValtio.usuario || !DijeValtio.email || !DijeValtio.contacto || !DijeValtio.nombre || !DijeValtio.Imagen) {
-      alert('Faltan datos necesarios para realizar la compra');
+    if (
+      !DijeValtio.usuario ||
+      !DijeValtio.email ||
+      !DijeValtio.contacto ||
+      !DijeValtio.nombre ||
+      !DijeValtio.Imagen
+    ) {
+      alert("Faltan datos necesarios para realizar la compra");
       return;
     }
-  
+
     const formData = new FormData();
-    formData.append('usuario', DijeValtio.usuario);
-    formData.append('email', DijeValtio.email);
-    formData.append('contacto', DijeValtio.contacto);
-    formData.append('nombre', DijeValtio.nombre);
-  
+    formData.append("usuario", DijeValtio.usuario);
+    formData.append("email", DijeValtio.email);
+    formData.append("contacto", DijeValtio.contacto);
+    formData.append("nombre", DijeValtio.nombre);
+    formData.append("promoid", DijeValtio.promoid);
+
     try {
       // Descargar la imagen
       const response = await fetch(DijeValtio.Imagen);
       if (!response.ok) {
-        throw new Error('No se pudo descargar la imagen');
+        throw new Error("No se pudo descargar la imagen");
       }
       const blob = await response.blob();
-  
+
       // Agregar la imagen al FormData
-      formData.append('image', new File([blob], 'imagen.jpg', { type: 'image/jpeg' }));
-  
+      formData.append(
+        "image",
+        new File([blob], "imagen.jpg", { type: "image/jpeg" })
+      );
+
       // Enviar la solicitud POST al servidor principal
-      const res = await fetch('http://localhost:3001/comprar', {
-        method: 'POST',
+      const res = await fetch("http://localhost:3001/comprar", {
+        method: "POST",
         body: formData,
       });
-  
+
       if (res.ok) {
-        alert('Compra realizada con éxito');
+        alert("Compra realizada con éxito");
       } else {
         const errorText = await res.text();
         alert(`Error al realizar la compra: ${errorText}`);
       }
-  
+
       // Enviar el email a la URL adicional
       try {
-        const emailRes = await fetch('https://alcarrito.com/promo/addtocart', {
-          method: 'POST',
+        const emailRes = await fetch("https://alcarrito.com/promo/addtocart", {
+          method: "POST",
           headers: {
-            'Content-Type': 'application/json',
+            "Content-Type": "application/json",
           },
           body: JSON.stringify({ email: DijeValtio.email }),
         });
-  
+
         if (!emailRes.ok) {
-          throw new Error('Error al enviar el email a la URL adicional');
+          throw new Error("Error al enviar el email a la URL adicional");
         }
-  
+
         // Manejar respuesta si es necesario
-        console.log('Email enviado a la URL adicional');
+        console.log("Email enviado a la URL adicional");
       } catch (error) {
-        console.error('Error al enviar el email a la URL adicional:', error);
-        alert('Error al enviar el email a la URL adicional');
+        console.error("Error al enviar el email a la URL adicional:", error);
+        alert("Error al enviar el email a la URL adicional");
       }
     } catch (error) {
-      console.error('Error:', error);
-      alert('Error al realizar la compra');
+      console.error("Error:", error);
+      alert("Error al realizar la compra");
     }
   };
   const resetBack = {
@@ -130,23 +140,21 @@ export const Pasos = ({ DijeValtio, setOpen, camMove, snap }) => {
 
   return (
     <>
-    <div className=" p-2  border-[--borderCircle] relative border-dashed border w-full h-full rounded-lg flex flex-col  items-start  ">
-      <div
-        className={`p-6  border-[--borderCircle] relative border shadowbox w-full h-full rounded-lg flex flex-col  items-start `}
-      >
-{/*         <PasosIcons currentSlide={currentSlide} />
- */}
-        <SliderPaso
-        handleCompra={handleCompra}
-          setBtnCompra={setBtnCompra}
-          next={next}
-          sliderRef={sliderRef}
-          DijeValtio={DijeValtio}
-          setOpen={setOpen}
-          
-          
-        />
-{/*         <button
+      <div className=" p-2  border-[--borderCircle] relative border-dashed border w-full h-full rounded-lg flex flex-col  items-start  ">
+        <div
+          className={`p-6  border-[--borderCircle] relative border shadowbox w-full h-full rounded-lg flex flex-col  items-start `}
+        >
+          {/*         <PasosIcons currentSlide={currentSlide} />
+           */}
+          <SliderPaso
+            handleCompra={handleCompra}
+            setBtnCompra={setBtnCompra}
+            next={next}
+            sliderRef={sliderRef}
+            DijeValtio={DijeValtio}
+            setOpen={setOpen}
+          />
+          {/*         <button
           disabled={!btnCompra}
           onClick={handleCompra}
           className={`${
@@ -155,28 +163,28 @@ export const Pasos = ({ DijeValtio, setOpen, camMove, snap }) => {
         >
           Comprar
         </button>
- */}        <div className="arrows flex justify-between w-full h-6 top-1/2 left-0 absolute z-10">
-          {currentSlide >= 3 && (
-            <figure
-              onClick={prev}
-              className="cursor-pointer bg-black hover:bg-[#e1c149] transition-all duration-500 group border border-[--borderOpacity] absolute -left-10 rotate-180 w-6 h-6 inline-block p-1.5 rounded-full -translate-y-1/2"
-            >
-              <Arrows color={"stroke-white group-hover:stroke-black"} />
-            </figure>
-          )}
-          {currentSlide > 1 && currentSlide <= 4 && (
-            <figure
-              onClick={next}
-              className="cursor-pointer bg-black hover:bg-[#e1c149] transition-all duration-500 group border border-[--borderOpacity] absolute -right-10 w-6 h-6 inline-block p-1.5 rounded-full -translate-y-1/2"
-            >
-              <Arrows color={"stroke-white group-hover:stroke-"} />
-            </figure>
-          )}
+ */}{" "}
+          <div className="arrows flex justify-between w-full h-6 top-1/2 left-0 absolute z-10">
+            {currentSlide >= 3 && (
+              <figure
+                onClick={prev}
+                className="cursor-pointer bg-black hover:bg-[#e1c149] transition-all duration-500 group border border-[--borderOpacity] absolute -left-10 rotate-180 w-6 h-6 inline-block p-1.5 rounded-full -translate-y-1/2"
+              >
+                <Arrows color={"stroke-white group-hover:stroke-black"} />
+              </figure>
+            )}
+            {currentSlide > 1 && currentSlide <= 4 && (
+              <figure
+                onClick={next}
+                className="cursor-pointer bg-black hover:bg-[#e1c149] transition-all duration-500 group border border-[--borderOpacity] absolute -right-10 w-6 h-6 inline-block p-1.5 rounded-full -translate-y-1/2"
+              >
+                <Arrows color={"stroke-white group-hover:stroke-"} />
+              </figure>
+            )}
+          </div>
+          <Price />
         </div>
-        <Price />
       </div>
-
-    </div>
     </>
   );
 };
