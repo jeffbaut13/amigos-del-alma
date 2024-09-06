@@ -7,7 +7,6 @@ const Dije = proxy({
   contacto: "",
   nombre: "TOÑO",
   Imagen: "/file2.jpg",
-  promoid: "amigoalma",
   readyVideo: false,
   nameDog: {
     rotation: [0, 0, 0],

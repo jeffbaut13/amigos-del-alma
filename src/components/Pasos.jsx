@@ -31,7 +31,6 @@ export const Pasos = ({ DijeValtio, setOpen, camMove, snap }) => {
     formData.append("email", DijeValtio.email);
     formData.append("contacto", DijeValtio.contacto);
     formData.append("nombre", DijeValtio.nombre);
-    formData.append("promoid", DijeValtio.promoid);
 
     try {
       // Descargar la imagen
