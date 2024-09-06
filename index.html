@@ -9,5 +9,28 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-analytics.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+    
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyCsrj2aSTCHxSZjgmv2ST0li2j4WUoF8JM",
+        authDomain: "amigos-ef0e5.firebaseapp.com",
+        projectId: "amigos-ef0e5",
+        storageBucket: "amigos-ef0e5.appspot.com",
+        messagingSenderId: "95906645447",
+        appId: "1:95906645447:web:2404bfb465dcd161ac85e2",
+        measurementId: "G-EX63R0ZFQG"
+      };
+    
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+    </script>
   </body>
 </html>
