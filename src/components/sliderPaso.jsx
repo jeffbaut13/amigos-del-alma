@@ -60,13 +60,18 @@ export const SliderPaso = ({
     <Slider className="w-full h-full z-20" {...settings} ref={sliderRef}>
       <div>
         <div className="h-full flex text-[#1B191D] flex-col items-center justify-center w-full rounded-lg slide-uno">
-          <p className="text-base moires px-8 text-center">
-            Ahora tú y tu amigo del<br/> alma también podrán<br/> tener su propio símbolo<br/>
+          <p className="text-base Utopia px-8 text-center">
+            Ahora tú y tu amigo del
+            <br /> alma también podrán
+            <br /> tener su propio símbolo
+            <br />
             personalizado.
           </p>
           <hr className="w-1/2 my-4" />
 
-          <button className=" bg-black" onClick={next}>Siguiente</button>
+          <button className=" bg-black" onClick={next}>
+            Siguiente
+          </button>
         </div>
       </div>
       <div>
@@ -79,7 +84,6 @@ export const SliderPaso = ({
               placeholder="¿Cuál es tu nombre?"
               className="focus:border-none focus:outline-none pt-4 text-center text-[#E2D6AF] placeholder-[#E2D6AF]"
             />
-
           </div>
           <div className=" w-full pt-10 border-b">
             <input
@@ -89,13 +93,12 @@ export const SliderPaso = ({
               placeholder="¿Tu correo?"
               className="focus:border-none focus:outline-none pt-4 text-center text-[#E2D6AF] placeholder-[#E2D6AF]"
             />
-
           </div>
           <div className=" w-full h-full flex flex-col items-center justify-center">
-          <button className=" bg-black" onClick={next}>Siguiente</button>
-
+            <button className=" bg-black" onClick={next}>
+              Siguiente
+            </button>
           </div>
-
         </div>
       </div>
       <div>
@@ -121,13 +124,12 @@ export const SliderPaso = ({
                 />
               </>
             )}
-                      <div className=" w-full h-full flex mt-4  flex-col items-center justify-center">
-          <button className=" bg-black" onClick={next}>Siguiente</button>
-
+            <div className=" w-full h-full flex mt-4  flex-col items-center justify-center">
+              <button className=" bg-black" onClick={next}>
+                Siguiente
+              </button>
+            </div>
           </div>
-
-          </div>
-          
         </div>
       </div>
       <div>
@@ -148,14 +150,18 @@ export const SliderPaso = ({
             />
           </div>
           <div className=" w-full h-full flex mt-4 flex-col items-center justify-center">
-          <button className=" bg-black" onClick={next}>Siguiente</button>
-
+            <button className=" bg-black" onClick={next}>
+              Siguiente
+            </button>
           </div>
-
         </div>
       </div>
       <div>
-        <ImgLoadDije  DijeValtio={DijeValtio} setBtnCompra={setBtnCompra} handleCompra={handleCompra}  />
+        <ImgLoadDije
+          DijeValtio={DijeValtio}
+          setBtnCompra={setBtnCompra}
+          handleCompra={handleCompra}
+        />
       </div>
     </Slider>
   );

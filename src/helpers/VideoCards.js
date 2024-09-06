@@ -54,8 +54,6 @@ export const handleGsasp = (activeBox, funcion) => {
     tl.to(
       ".firstVideo",
       {
-        top: "0%",
-        bottom: "50%",
         height: "100%",
         ease: easeEffect,
         duration: time,
@@ -109,7 +107,7 @@ export const handleGsasp = (activeBox, funcion) => {
       {
         width: "100%",
         height: "100%",
-        left: "0%",
+
         ease: easeEffect,
         duration: time,
       },
@@ -139,7 +137,7 @@ export const handleGsasp = (activeBox, funcion) => {
     },
     {
       position: "relative",
-      bottom: "0rem%",
+      bottom: "0rem",
       height: "20%",
       ease: easeEffect,
       opacity: 1,
@@ -183,7 +181,7 @@ export const resetAnimation = (activeBox) => {
     ".cajaTitulos",
 
     {
-      bottom: "2rem",
+      bottom: "1rem",
       ease: easeEffect,
       opacity: 0,
       duration: time,
@@ -231,8 +229,8 @@ export const resetAnimation = (activeBox) => {
         width: "100%",
       },
       {
-        height: "50%",
-        width: "50%",
+        height: "49.5%",
+        width: "49.5%",
         ease: easeEffect,
         duration: time,
       },
@@ -253,18 +251,17 @@ export const resetAnimation = (activeBox) => {
     });
   }
   if (activeBox === "thirtVideo") {
-    console.log(activeBox);
     tl.fromTo(
       ".thirtVideo",
       {
         height: "100%",
-        left: "0%",
+
         width: "100%",
       },
       {
-        height: "50%",
-        left: "50%",
-        width: "50%",
+        height: "49.5%",
+
+        width: "49.5%",
         ease: easeEffect,
         duration: time,
       },
@@ -288,14 +285,10 @@ export const resetAnimation = (activeBox) => {
     tl.fromTo(
       ".firstVideo",
       {
-        top: "0%",
-        bottom: "50%",
         height: "100%",
       },
       {
-        top: "50%",
-        bottom: "0%",
-        height: "50%",
+        height: "49.5%",
         ease: easeEffect,
         duration: time,
       },
@@ -316,11 +309,18 @@ export const resetAnimation = (activeBox) => {
     });
   }
   tl.to(
+    ".contenidoCard ",
+    {
+      display: "none",
+    },
+    "<"
+  );
+  tl.to(
     ".cajaTitulos",
     {
       position: "absolute",
     },
-    "<-=2"
+    "<"
   );
 
   tl.to(`.titleCard`, {
@@ -331,7 +331,13 @@ export const resetAnimation = (activeBox) => {
   tl.to(`.${activeBox} br`, {
     display: "block",
   });
-  tl.to(".contenidoCard ", {
-    display: "none",
-  });
+
+  tl.to(
+    ".cajaTitulos",
+    {
+      bottom: "1rem",
+      opacity: 1,
+    },
+    "<"
+  );
 };

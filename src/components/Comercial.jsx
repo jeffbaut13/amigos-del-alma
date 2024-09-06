@@ -2,55 +2,33 @@ import React, { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { useNavigate } from "react-router-dom"; // Importar useNavigate
 import backgroundImage from "/imagenes/amigosDelAlma.jpg";
+import { VideoComercial } from "./VideoComercial";
+import { videos } from "../data/videos";
+import DijeValtio from "../store/index";
+import { useSnapshot } from "valtio";
 
-const Comercial = ({ abrirDije, setAbrirDije }) => {
+const Comercial = () => {
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
   const [showSkipButton, setShowSkipButton] = useState(false);
   const [btnAbrirDije, setBtnAbrirDije] = useState(false);
   const videoRef = useRef(null);
   const skipButtonRef = useRef(null);
   const navigate = useNavigate(); // Inicializar useNavigate
+  const span = useSnapshot(DijeValtio);
+
+  const [playVideo, setPlayVideo] = useState(false);
+
+  const onLoadVideo = () => {
+    DijeValtio.readyVideo = true;
+  };
+
+  //console.log(span.readyVideo);
 
   // Función para manejar el clic en el botón "play"
 
   const handlePlayClick = () => {
-    const tl = gsap.timeline();
-    tl.add(() => setIsVideoPlaying(true));
-
-    setTimeout(() => {
-      tl.to(".capaBlur", {
-        opacity: 1,
-        ease: "power1.inOut",
-        duration: 1,
-      });
-      tl.to(".video", {
-        opacity: 1,
-        ease: "power1.inOut",
-        duration: 0.5,
-      });
-    }, 100);
+    setPlayVideo(true);
   };
-
-  // Función para manejar el fin del video
-  const handleVideoEnd = () => {
-    navigate("/comprar-dije");
-  };
-
-  useEffect(() => {
-    if (isVideoPlaying) {
-      // Mostrar el botón "omitir" después de 5 segundos
-      const timer = setTimeout(() => {
-        setShowSkipButton(true);
-        gsap.fromTo(
-          skipButtonRef.current,
-          { opacity: 0 },
-          { opacity: 1, duration: 0.5 }
-        );
-      }, 5000);
-
-      return () => clearTimeout(timer);
-    }
-  }, [isVideoPlaying]);
 
   return (
     <div id="comercial" className="h-screen w-full relative">
@@ -80,14 +58,14 @@ const Comercial = ({ abrirDije, setAbrirDije }) => {
       <div className="flex justify-around flex-col items-start mx-24 h-full relative">
         <div />
         <div className=" flex flex-col justify-end items-start">
-          <figure className="w-96">
+          <figure className="w-[32rem]">
             <img src="/iconos/TituloCentrado.svg" alt="Título" />
           </figure>
-          <h1 className="text-[--colorYellow] text-sm text-center mx-3 my-8">
-            SOLO CUANDO LOS AMIGOS SE UNEN SUCEDEN COSAS INCREÍBLES.
+          <h1 className="text-[--colorYellow] text-base text-center mx-3 my-8">
+            Solo cuando los amigos se unen suceden cosas increíbles.
           </h1>
           <button
-            className="group btn-home text-xs flex items-center justify-between ml-2"
+            className="group btn-home text-lg flex items-center justify-between ml-2"
             onClick={handlePlayClick}
           >
             {" "}
@@ -117,40 +95,16 @@ const Comercial = ({ abrirDije, setAbrirDije }) => {
                 </g>
               </svg>
             </figure>
-            VER AHORA
+            Ver ahora
           </button>
         </div>
       </div>
 
-      {/* Video a pantalla completa */}
-      {isVideoPlaying && (
-        <div
-          ref={videoRef}
-          className="fixed inset-0 z-20  flex items-center justify-center"
-        >
-          <div className="capaBlur opacity-0 absolute top-0 left-0 bg-black w-full h-full bg-opacity-20 backdrop-blur-lg z-0" />
-          <video
-            className="video opacity-0 w-3/4 h-auto object-cover z-10 rounded-2xl"
-            autoPlay
-            onEnded={handleVideoEnd}
-            controls
-          >
-            <source src="/imagenes/videoplaybackk.mp4" type="video/mp4" />
-            Tu navegador no soporta la reproducción de video.
-          </video>
-
-          {/* Botón "omitir" */}
-          {showSkipButton && (
-            <button
-              ref={skipButtonRef}
-              onClick={handleVideoEnd}
-              className="absolute bottom-24 right-10 z-20 border border-[--colorYellow] w-44 h-10 text-1xl rounded-lg"
-            >
-              Omitir
-            </button>
-          )}
-        </div>
-      )}
+      <VideoComercial
+        playVideo={playVideo}
+        VideoReady={onLoadVideo}
+        setPlayVideo={setPlayVideo}
+      />
     </div>
   );
 };

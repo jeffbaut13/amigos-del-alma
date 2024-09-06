@@ -49,7 +49,7 @@ export const MakingOfOne = () => {
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
       }}
-      className="section relative AddingtonCF-light flex items-center justify-center overflow-hidden"
+      className="section relative flex items-center justify-center overflow-hidden"
     >
       <div className="absolute top-0 left-0 bg-black bg-opacity-80 w-full h-full" />
       <div className="absolute top-0 left-0 z-0 w-full h-full bg-video" />
@@ -70,7 +70,7 @@ export const MakingOfOne = () => {
                     <img src="/iconos/closevideo.svg" alt="" />
                   </span>
                 )}
-                <div className="h-full border border-[--second] border-dashed rounded-xl p-2 flex flex-col">
+                <div className="h-full border border-[#BCBCBC70] border-dashed rounded-xl p-2 flex flex-col">
                   <VideoComponent
                     reset={reset}
                     isActive={activeVideo === index}
@@ -83,10 +83,10 @@ export const MakingOfOne = () => {
                   <div className="px-4 cajaTitulos pointer-events-none w-full absolute bottom-8  flex items-center justify-start z-30">
                     <h2
                       dangerouslySetInnerHTML={{ __html: video.title }}
-                      className="uppercase titleCard text-xs w-1/2 "
+                      className="titleCard text-xs w-1/2 "
                     />
                     <p
-                      className={` block contenidoCard w-1/2 text-[--bg-clar] text-xs`}
+                      className={` NeueHassRoman text-start text-xs text-[--tercero] block contenidoCard w-1/2`}
                     >
                       {video.content}
                     </p>

@@ -14,7 +14,6 @@ export const LinkRouter = ({ setActive }) => {
   const handleClick = (hash) => {
     setActive(false);
 
-    // Si ya estamos en el home
     if (window.location.pathname === "/") {
       window.location.hash = hash;
 

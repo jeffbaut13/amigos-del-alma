@@ -16,6 +16,12 @@
 }
 
 @font-face {
+  font-family: "Utopia";
+  font-style: normal;
+  src: url("/font/Utopia-Std-Bold-Display.ttf");
+}
+
+@font-face {
   font-family: "Mories";
   font-style: normal;
   src: url("/font/Mories.ttf");
@@ -61,15 +67,15 @@ body,
 :root {
   --primary: #282828;
   --second: #fff6c2;
-
+  --tercero: #e7e5da;
   --bg-clar: #fffae6;
   --thirty: #e1c149;
-  --borderOpacity: #fffae614;
+  --borderOpacity: #ddc7b870;
   --borderCircle: #4747475c;
   --colorYellow: #fff6c2;
   --bg-black: #19171b;
-  font-family: "Mories";
-  letter-spacing: 0.25em;
+  font-family: "Utopia";
+  @apply tracking-[0.1rem];
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -83,9 +89,21 @@ body,
   font-family: "AddingtonCF-thin";
   @apply tracking-[0.2rem];
 }
-.moires {
-  font-family: "Mories";
-  @apply tracking-[0.3rem] uppercase;
+.fontStrokeBlack {
+  -webkit-text-stroke: 0.5px var(--primary);
+}
+.fontStrokeLigth {
+  -webkit-text-stroke: 0.5px var(--second);
+}
+button {
+  @apply fontStrokeBlack;
+}
+button:hover {
+  @apply fontStrokeLigth;
+}
+.Utopia {
+  font-family: "Utopia";
+  font-weight: 900;
 }
 .AddingtonCF-regular {
   font-family: "AddingtonCF-regular";
@@ -132,13 +150,13 @@ h1 {
 }
 
 .edicion button {
-  @apply uppercase text-center rounded-md border-2 border-[--primary] py-2.5 pl-5 pr-3.5 transition-all duration-300 bg-black text-[#FFFAE6]  cursor-pointer text-base;
+  @apply text-center rounded-md border-2 border-[--primary] py-2.5 pl-5 pr-3.5 transition-all duration-300 bg-black text-[#FFFAE6]  cursor-pointer text-base;
 }
 .edicion button:hover {
   @apply border-[--thirty] text-black bg-[#e1c149];
 }
 .home button {
-  @apply uppercase text-center rounded-md border border-[--colorYellow] transition-all duration-300 bg-transparent text-[--colorYellow] cursor-pointer text-base;
+  @apply text-center rounded-md border border-[--colorYellow] transition-all duration-300 bg-transparent text-[--colorYellow] cursor-pointer text-base;
 }
 .home button:hover {
   @apply border-[--colorYellow] text-[--primary] bg-[--colorYellow];
@@ -171,7 +189,7 @@ svg {
   text-shadow: 0px 0px 1px var(--second);
 }
 input {
-  @apply w-full bg-transparent uppercase focus:outline-none;
+  @apply w-full bg-transparent  focus:outline-none;
 }
 /* Chrome, Safari, Edge, Opera */
 input[type="number"]::-webkit-outer-spin-button,
@@ -234,12 +252,12 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 .btn-home {
-  @apply moires bg-[--second] border border-[--second] text-[--primary] py-2.5 pl-5 pr-3.5 transition-all duration-300 rounded-md
+  @apply Utopia bg-[--second] border border-[--second] text-[--primary] py-2.5 pl-5 pr-3.5 transition-all duration-300 rounded-sm
   hover:bg-[#ffffff00] hover:text-[--second];
-  -webkit-text-stroke: 1px var(--primary);
+  /* -webkit-text-stroke: 1px var(--primary); */
 }
 .btn-home:hover {
-  -webkit-text-stroke: 0.5px var(--second);
+  /* -webkit-text-stroke: 0.5px var(--second); */
 }
 .videoCard {
   @apply opacity-100;

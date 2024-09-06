@@ -60,7 +60,7 @@ export const VideoComponent = ({
   };
 
   return (
-    <div className="relative border border-[--second] rounded-xl w-full h-full videoCajas flex justify-center items-center p-2">
+    <div className="relative border border-[--borderOpacity] rounded-xl w-full h-full videoCajas flex justify-center items-center overflow-hidden">
       {!localIsPlaying && (
         <figure
           onClick={() => {
