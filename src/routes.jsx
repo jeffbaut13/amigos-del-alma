@@ -5,7 +5,7 @@ import Onboarding from "./paginas/Onboarding";
 import Collage from "./paginas/Collage";
 import { Campaña } from "./paginas/Campaña";
 import { ErrorPage } from "./ErrorPage";
-import { Administrador } from "./paginas/Administrador";
+import  Administrador  from "./paginas/Admin";
 import { Gracias } from "./paginas/Gracias";
 import { Layout } from "./Layout";
 import { Home } from "./paginas/Home";
