@@ -9,5 +9,5 @@ export const Gracias = () => {
     }
   }, [first]);
 
-  return <div>Gracias</div>;
+  return <div className="text-white">Gracias</div>;
 };
