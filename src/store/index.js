@@ -20,6 +20,11 @@ const Dije = proxy({
     rotation: [0, 0.4, 0.2],
     zoom: 1,
   },
+  home: {
+    position: [0, -0.6, 0],
+    rotation: [0, 0, 0],
+    zoom: 1,
+  },
   back: {
     rotation: [0, -3.5, 0],
     position: [0, -0.6, 0],

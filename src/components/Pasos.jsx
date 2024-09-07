@@ -134,9 +134,9 @@ export const Pasos = ({ DijeValtio, setOpen, camMove, snap }) => {
 
   return (
     <>
-      <div className=" p-2  border-[--borderCircle] relative border-dashed border w-full h-full rounded-lg flex flex-col  items-start  ">
+      <div className="  relative border-dashed border w-full h-full rounded-lg flex flex-col  items-start  ">
         <div
-          className={`p-6  border-[--borderCircle] relative border shadowbox w-full h-full rounded-lg flex flex-col  items-start `}
+          className={`  relative border shadowbox w-full h-full rounded-lg flex flex-col  items-start `}
         >
           {/*         <PasosIcons currentSlide={currentSlide} />
            */}
@@ -147,22 +147,12 @@ export const Pasos = ({ DijeValtio, setOpen, camMove, snap }) => {
             sliderRef={sliderRef}
             DijeValtio={DijeValtio}
             setOpen={setOpen}
-          />
-          {/*         <button
-          disabled={!btnCompra}
-          onClick={handleCompra}
-          className={`${
-            btnCompra ? "block" : "hidden"
-          } absolute bottom-0 translate-y-1/2 left-1/2 -translate-x-1/2`}
-        >
-          Comprar
-        </button>
- */}{" "}
-          <div className="arrows flex justify-between w-full h-6 top-1/2 left-0 absolute z-10">
-            {currentSlide >= 3 && (
+          />{" "}
+          <div className="arrows flex justify-between w-full h-6 top-1/2 left-0 absolute z-50">
+            {currentSlide >= 2 && (
               <figure
                 onClick={prev}
-                className="cursor-pointer bg-black hover:bg-[#e1c149] transition-all duration-500 group border border-[--borderOpacity] absolute -left-10 rotate-180 w-6 h-6 inline-block p-1.5 rounded-full -translate-y-1/2"
+                className="cursor-pointer bg-black hover:bg-transparent transition-all duration-500 group border border-black absolute left-2 rotate-180 w-6 h-6 inline-block p-1.5 rounded-full -translate-y-1/2"
               >
                 <Arrows color={"stroke-white group-hover:stroke-black"} />
               </figure>
@@ -170,13 +160,12 @@ export const Pasos = ({ DijeValtio, setOpen, camMove, snap }) => {
             {currentSlide > 1 && currentSlide <= 4 && (
               <figure
                 onClick={next}
-                className="cursor-pointer bg-black hover:bg-[#e1c149] transition-all duration-500 group border border-[--borderOpacity] absolute -right-10 w-6 h-6 inline-block p-1.5 rounded-full -translate-y-1/2"
+                className="cursor-pointer bg-black hover:bg-transparent transition-all duration-500 group border border-black absolute right-2 w-6 h-6 inline-block p-1.5 rounded-full -translate-y-1/2"
               >
-                <Arrows color={"stroke-white group-hover:stroke-"} />
+                <Arrows color={"stroke-white group-hover:stroke-black"} />
               </figure>
             )}
           </div>
-          <Price />
         </div>
       </div>
     </>

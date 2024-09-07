@@ -1,5 +1,5 @@
 import React, { Suspense, useEffect, useRef } from "react";
-import { Canvas } from "@react-three/fiber";
+import { Canvas, useThree } from "@react-three/fiber";
 import {
   CameraControls,
   useProgress,
@@ -21,7 +21,14 @@ function Loader() {
   );
 }
 
-export const Canva = ({ open, snap, cameraControlRef, group }) => {
+export const Canva = ({
+  open,
+  snap,
+  cameraControlRef,
+  group,
+
+  abrirDije,
+}) => {
   return (
     <>
       <Canvas gl={{ antialias: true }} dpr={[1, 1.5]}>
@@ -38,7 +45,12 @@ export const Canva = ({ open, snap, cameraControlRef, group }) => {
         <directionalLight position={[6, 10, -10]} intensity={20} />
         <directionalLight position={[-6, 10, -10]} intensity={20} />
         <Suspense fallback={<Loader />}>
-          <Dijegbl open={open} snap={snap} group={group} />
+          <Dijegbl
+            abrirDije={abrirDije}
+            open={open}
+            snap={snap}
+            group={group}
+          />
         </Suspense>
         <Environment
           //files="/dije2/backgroundEnviroment.hdr"
@@ -53,12 +65,10 @@ export const Canva = ({ open, snap, cameraControlRef, group }) => {
           resolution={256}
           color="#000000"
         />
-        
       </Canvas>
       {/* <span className="absolute bottom-9 left-1/2 -translate-x-1/2 inline-block w-16 h-16">
         <img src="/iconos/icon360.svg" alt="" />
       </span> */}
-      
     </>
   );
 };

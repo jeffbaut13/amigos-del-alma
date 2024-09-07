@@ -9,8 +9,9 @@ import { ImageBox } from "./ImageBox";
 
 import gsap from "gsap";
 import { TextCustomer } from "./TextCustomer";
+import { useFrame } from "@react-three/fiber";
 
-export function Dijegbl({ open, snap, group }) {
+export function Dijegbl({ open, snap, group, abrirDije }) {
   const placa = useRef();
   const { nodes, materials } = useGLTF("/dije.glb");
 
@@ -22,6 +23,14 @@ export function Dijegbl({ open, snap, group }) {
       ease: "power2.out",
     });
   }, [open]);
+
+  useFrame(() => {
+    if (!abrirDije) {
+      setTimeout(() => {
+        group.current.rotation.y += 0.01;
+      }, 500);
+    }
+  });
 
   return (
     <group

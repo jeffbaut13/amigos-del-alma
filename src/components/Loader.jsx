@@ -78,14 +78,14 @@ const Loader = ({ setLoader }) => {
           <Lottie
             lottieRef={lottieRef}
             animationData={Piano}
-            className="w-full h-1/2"
+            className="w-full h-24"
           />
           {/*  <Lottie
             lottieRef={lottieRef}
             animationData={PianoTwo}
             className="w-full h-full"
           /> */}
-          <span className="-translate-y-14 text-[--second] NeueHaas-Thin">
+          <span className="-translate-y-4 text-[--second] NeueHaas-Thin">
             {percentage}%
           </span>
         </div>

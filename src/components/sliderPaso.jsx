@@ -6,6 +6,10 @@ import "slick-carousel/slick/slick-theme.css";
 
 import IncrementText from "./IncrementText";
 import { ImgLoadDije } from "./ImgLoadDije";
+import { CardUno } from "./CardUno";
+import { CardDos } from "./CardDos";
+import { CardTres } from "./CardTres";
+import { CardCuatro } from "./CardCuatro";
 
 export const SliderPaso = ({
   next,
@@ -23,7 +27,7 @@ export const SliderPaso = ({
   const settings = {
     dots: false,
     infinite: false,
-    fade: true,
+    /* fade: true, */
     speed: 1000,
     slidesToShow: 1,
     centerPadding: "0",
@@ -33,19 +37,6 @@ export const SliderPaso = ({
     touchMove: false,
   };
 
-  /*   const handleKeyDown = (e) => {
-      if (sliderRef.current) {
-        if (e.key === "Enter") {
-          sliderRef.current.slickNext();
-        } else if (e.key === "Tab" && e.shiftKey) {
-          sliderRef.current.slickPrev();
-        } else if (e.key === "Tab") {
-          sliderRef.current.slickNext();
-        }
-      }
-    };
-   */
-
   const hanldeInputchange = () => {
     setInputChange(false);
     setTimeout(() => {
@@ -54,107 +45,20 @@ export const SliderPaso = ({
       }
     }, 0);
   };
-  console.log(DijeValtio.usuario);
 
   return (
     <Slider className="w-full h-full z-20" {...settings} ref={sliderRef}>
       <div>
-        <div className="h-full flex text-[#1B191D] flex-col items-center justify-center w-full rounded-lg slide-uno">
-          <p className="text-base Utopia px-8 text-center">
-            Ahora tú y tu amigo del
-            <br /> alma también podrán
-            <br /> tener su propio símbolo
-            <br />
-            personalizado.
-          </p>
-          <hr className="w-1/2 my-4" />
-
-          <button className=" bg-black" onClick={next}>
-            Siguiente
-          </button>
-        </div>
+        <CardUno next={next} />
       </div>
       <div>
-        <div className="h-full flex  flex-col items-center justify-end   w-full slide-uno">
-          <div className=" w-full pt-6  border-b">
-            <input
-              type="text"
-              name="name"
-              onChange={(e) => (DijeValtio.usuario = e.target.value)}
-              placeholder="¿Cuál es tu nombre?"
-              className="focus:border-none focus:outline-none pt-4 text-center text-[#E2D6AF] placeholder-[#E2D6AF]"
-            />
-          </div>
-          <div className=" w-full pt-10 border-b">
-            <input
-              type="email"
-              name="email"
-              onChange={(e) => (DijeValtio.email = e.target.value)}
-              placeholder="¿Tu correo?"
-              className="focus:border-none focus:outline-none pt-4 text-center text-[#E2D6AF] placeholder-[#E2D6AF]"
-            />
-          </div>
-          <div className=" w-full h-full flex flex-col items-center justify-center">
-            <button className=" bg-black" onClick={next}>
-              Siguiente
-            </button>
-          </div>
-        </div>
+        <CardDos DijeValtio={DijeValtio} next={next} />
       </div>
       <div>
-        <div className="h-full flex  flex-col items-start justify-center w-full slide-uno">
-          <div className=" w-full py-2 px-0.5 relative">
-            {inputChange ? (
-              <p
-                onClick={hanldeInputchange}
-                className="border-b border-black text-[#E2D6AF]  text-center py-4 px-1 text-xl"
-              >
-                ¿Cómo se llama tu amigo?
-              </p>
-            ) : (
-              <>
-                <input
-                  ref={inputChangeRef}
-                  maxLength={10}
-                  type="text"
-                  name="nameDog"
-                  className="border-b border-black uppercase text-center text-[#E2D6AF]  text-xl"
-                  onChange={(e) => (DijeValtio.nombre = e.target.value)}
-                  //placeholder="¿CÓMO SE LLAMA TU AMIGO(A)?"
-                />
-              </>
-            )}
-            <div className=" w-full h-full flex mt-4  flex-col items-center justify-center">
-              <button className=" bg-black" onClick={next}>
-                Siguiente
-              </button>
-            </div>
-          </div>
-        </div>
+        <CardTres DijeValtio={DijeValtio} next={next} />
       </div>
       <div>
-        <div className="h-full flex  flex-col items-start justify-center w-full slide-uno">
-          <div className=" w-full pt-8 pb-2 px-1 border-b border-black">
-            <p className="text-base text-center text-[#1B191D]">
-              Si alguien se encuentra a tu amigo,
-              <br />
-              ¿a qué número llamar?
-            </p>
-            <input
-              maxLength={10}
-              type="number"
-              name="nameDog"
-              className="border text-center mt-6 border-[--borderOpacity] text-[#E2D6AF] rounded-xl placeholder-[#E2D6AF] text-sm NeueHaas-Thin"
-              onChange={(e) => (DijeValtio.contacto = e.target.value)}
-              placeholder="EJ: 320 378 08 02"
-            />
-          </div>
-          <div className=" w-full h-full flex mt-4 flex-col items-center justify-center">
-            <button className=" bg-black" onClick={next}>
-              Siguiente
-            </button>
-          </div>
-        </div>
+        <CardCuatro DijeValtio={DijeValtio} next={next} />
       </div>
       <div>
         <ImgLoadDije

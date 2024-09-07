@@ -61,7 +61,7 @@ const Comercial = () => {
           <figure className="w-[32rem]">
             <img src="/iconos/TituloCentrado.svg" alt="Título" />
           </figure>
-          <h1 className="text-[--colorYellow] text-base text-center mx-3 my-8">
+          <h1 className="moires text-[--colorYellow] text-base text-center mx-3 my-8">
             Solo cuando los amigos se unen suceden cosas increíbles.
           </h1>
           <button

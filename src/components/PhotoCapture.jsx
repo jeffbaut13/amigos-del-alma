@@ -74,18 +74,16 @@ export const PhotoCapture = ({
     <>
       {!controles ? (
         <>
-          <div className="mt-6 w-full flex justify-center items-center flex-col">
-            <p className="text-center mb-2 text-[#1B191D]">
-              O toma la foto desde tu dispositivo
+          <div className="w-1/3 flex justify-between items-start flex-col h-full">
+            <p className="text-2xl text-start mb-4 text-[#1B191D]">
+              O toma la foto <br /> desde tu <br /> dispositivo
             </p>
             <button
               className="group w-44 h-12 flex items-center justify-center"
               onClick={startCamera}
             >
               <span className="w-6 h-6 inline-block">
-                <IconCam
-                  color={"fill-white group-hover:fill-black"}
-                />
+                <IconCam color={"fill-white group-hover:fill-black"} />
               </span>
             </button>
           </div>
@@ -93,9 +91,7 @@ export const PhotoCapture = ({
       ) : (
         <>
           {" "}
-          <button onClick={startCamera} className="editorbtn ">
-            Tomar foto
-          </button>
+          <button onClick={startCamera}>Tomar foto</button>
         </>
       )}
 

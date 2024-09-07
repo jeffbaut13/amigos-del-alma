@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { useSnapshot } from "valtio";
 import { convertToBraille } from "../helpers/BraileConverter";
@@ -9,7 +9,7 @@ import { Price } from "../components/Price";
 import { CardsCustomer } from "../components/CardsCustomer";
 import gsap from "gsap";
 
-export const EdicionDije = ({ setAbrirDije }) => {
+export const EdicionDije = ({ abrirDije, setabrirDije, dijeCanvaRef }) => {
   const snap = useSnapshot(DijeValtio);
   const controlsRef = useRef(null);
   const DijeRef = useRef(null);
@@ -21,6 +21,16 @@ export const EdicionDije = ({ setAbrirDije }) => {
     DijeValtio.nombre = text;
     DijeValtio.braile = convertToBraille(text);
   };
+
+  useEffect(() => {
+    setTimeout(() => {
+      if (abrirDije) {
+        camMove(snap.reset);
+      } else if (abrirDije == null || abrirDije == false) {
+        camMove(snap.home);
+      }
+    }, 2000);
+  }, [abrirDije]);
 
   const handleButtonClick = (parte, zoom) => {
     if (DijeRef.current) {
@@ -60,27 +70,30 @@ export const EdicionDije = ({ setAbrirDije }) => {
   };
 
   return (
-    <div className="AddingtonCF-regular text-[--second] edicion bg-[--bg-clar] flex h-screen">
-      {/* <div className="AddingtonCF-light edicion w-[85%] h-4/5 rounded-xl fixed top-1/2 z-[100] -translate-y-1/2 -translate-x-1/2 left-1/2 bg-[--second] flex"> */}
-      {/* <div className="backgroundStyle" />
-      <div className="fixed top-0 left-0 z-50 flex justify-between px-8 mt-6 w-full h-8">
-        <figure></figure>
-        <figure>
-          <img src="/logo.svg" alt="" />
-        </figure>
-
-        <div className=" "></div>
-      </div> */}
-
-      <div className="w-1/2 h-full z-50 relative">
+    <div
+      className={` relative text-[--second] edicion bg-[#FDFBF3] flex w-full h-full`}
+    >
+      <span
+        onClick={() => setabrirDije(false)}
+        className="z-50 cursor-pointer absolute right-4 top-2 inline-block w-4 h-4"
+      >
+        {" "}
+        <img src="/iconos/closeCardDije.svg" alt="" />
+      </span>
+      <div
+        ref={dijeCanvaRef}
+        className={`w-full dijeCanva bg-[#F3F3F3] h-full z-50 relative`}
+      >
         <Canva
+          abrirDije={abrirDije}
           open={open}
           snap={snap}
           cameraControlRef={controlsRef}
           group={DijeRef}
         />
       </div>
-      <div className="w-1/2 flex flex-col items-center">
+
+      <div className="cardDije overflow-hidden w-0 flex flex-col items-center">
         <CardsCustomer
           setOpen={setOpen}
           DijeValtio={DijeValtio}
@@ -88,8 +101,6 @@ export const EdicionDije = ({ setAbrirDije }) => {
           handleInputChange={handleInputChange}
           camMove={camMove}
         />
-          
-        
       </div>
     </div>
   );

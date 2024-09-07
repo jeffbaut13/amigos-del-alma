@@ -95,6 +95,13 @@ body,
 .fontStrokeLigth {
   -webkit-text-stroke: 0.5px var(--second);
 }
+.fontStroke {
+  -webkit-text-stroke: 0.5px white;
+}
+.fontStrokeHover {
+  -webkit-text-stroke: 0.5px black;
+}
+
 button {
   @apply fontStrokeBlack;
 }
@@ -103,6 +110,10 @@ button:hover {
 }
 .Utopia {
   font-family: "Utopia";
+  font-weight: 900;
+}
+.moires {
+  font-family: "Mories";
   font-weight: 900;
 }
 .AddingtonCF-regular {
@@ -150,10 +161,10 @@ h1 {
 }
 
 .edicion button {
-  @apply text-center rounded-md border-2 border-[--primary] py-2.5 pl-5 pr-3.5 transition-all duration-300 bg-black text-[#FFFAE6]  cursor-pointer text-base;
+  @apply fontStroke text-center rounded-md border-2 border-[--primary] py-1.5 px-8  transition-all duration-300 bg-black text-[#FFFAE6]  cursor-pointer text-base;
 }
 .edicion button:hover {
-  @apply border-[--thirty] text-black bg-[#e1c149];
+  @apply fontStrokeHover text-black bg-transparent transition-all duration-300;
 }
 .home button {
   @apply text-center rounded-md border border-[--colorYellow] transition-all duration-300 bg-transparent text-[--colorYellow] cursor-pointer text-base;

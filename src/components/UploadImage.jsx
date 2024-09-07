@@ -69,9 +69,10 @@ export const UploadImage = ({
   return (
     <>
       {!controles ? (
-        <>
-          <p className="text-center mb-2 text-[#1B191D]">
-            Sube la mejor foto que tengas con tu amigo
+        <div className="w-1/3 flex flex-col justify-between items-start h-full">
+          <p className="text-2xl text-start mb-4 text-black">
+            Sube la mejor <br />
+            foto que tengas <br /> con tu amigo.
           </p>
 
           <button
@@ -79,18 +80,14 @@ export const UploadImage = ({
             onClick={openFileDialog}
           >
             <span className=" w-4 h-4 inline-block -rotate-90">
-              <Arrows
-                color={"stroke-white  group-hover:stroke-black"}
-              />
+              <Arrows color={"stroke-white  group-hover:stroke-black"} />
             </span>{" "}
             <div className="w-4 mt-2 h-[1px] bg-white group-hover:bg-black" />
           </button>
-        </>
+        </div>
       ) : (
         <>
-          <button onClick={openFileDialog} className="editorbtn">
-            Subir imagen
-          </button>
+          <button onClick={openFileDialog}>Subir imagen</button>
         </>
       )}
 
