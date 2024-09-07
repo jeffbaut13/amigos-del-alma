@@ -1,9 +1,7 @@
-import React, { useState, useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { useNavigate } from "react-router-dom"; // Importar useNavigate
+import React, { useState, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import backgroundImage from "/imagenes/amigosDelAlma.jpg";
 import { VideoComercial } from "./VideoComercial";
-import { videos } from "../data/videos";
 import DijeValtio from "../store/index";
 import { useSnapshot } from "valtio";
 
@@ -11,21 +9,16 @@ const Comercial = () => {
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
   const [showSkipButton, setShowSkipButton] = useState(false);
   const [btnAbrirDije, setBtnAbrirDije] = useState(false);
+  const [playVideo, setPlayVideo] = useState(false);
   const videoRef = useRef(null);
-  const skipButtonRef = useRef(null);
   const navigate = useNavigate(); // Inicializar useNavigate
   const span = useSnapshot(DijeValtio);
 
-  const [playVideo, setPlayVideo] = useState(false);
-
-  const onLoadVideo = () => {
-    DijeValtio.readyVideo = true;
-  };
-
-  //console.log(span.readyVideo);
+  // Constantes para las rutas del video
+  const videoSrcMobile = "/intro-vertical.mp4";
+  const videoSrcDesktop = "/intro.mp4";
 
   // Función para manejar el clic en el botón "play"
-
   const handlePlayClick = () => {
     setPlayVideo(true);
   };
@@ -40,7 +33,6 @@ const Comercial = () => {
         }}
       >
         <div className="absolute top-0 left-0 bg-black bg-opacity-55 w-full h-full" />
-        {/* <div className="absolute top-0 left-0  w-full h-full bg-video" /> */}
         <video
           className="video w-full h-full object-cover z-10"
           autoPlay
@@ -48,17 +40,25 @@ const Comercial = () => {
           loop
           controls={false}
           playsInline
+          ref={videoRef}
         >
-          <source src="/intro.mp4" type="video/mp4" />
+          <source
+            src={
+              window.matchMedia("(max-width: 600px)").matches
+                ? videoSrcMobile
+                : videoSrcDesktop
+            }
+            type="video/mp4"
+          />
           Tu navegador no soporta la reproducción de video.
         </video>
       </div>
 
       {/* Contenido principal */}
-      <div className="flex justify-around flex-col items-start mx-24 h-full relative">
+      <div className="flex lg:justify-around xs:justify-center flex-col lg:items-start md:items-center lg:mx-24 xs:px-2 h-full relative">
         <div />
-        <div className=" flex flex-col justify-end items-start">
-          <figure className="w-[32rem]">
+        <div className="flex flex-col lg:justify-end xs:justify-center lg:items-start xs:items-center">
+          <figure className="lg:w-[32rem] xs:w-[24rem]">
             <img src="/iconos/TituloCentrado.svg" alt="Título" />
           </figure>
           <h1 className="moires text-[--colorYellow] text-base text-center mx-3 my-8">
@@ -102,7 +102,9 @@ const Comercial = () => {
 
       <VideoComercial
         playVideo={playVideo}
-        VideoReady={onLoadVideo}
+        VideoReady={() => {
+          DijeValtio.readyVideo = true;
+        }}
         setPlayVideo={setPlayVideo}
       />
     </div>

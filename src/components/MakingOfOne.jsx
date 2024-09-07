@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useLayoutEffect, } from "react";
 import { VideoComponent } from "./VideoComponent";
 import { CajaVideosTitulos } from "./CajaVideosTitulos";
 
@@ -29,7 +29,6 @@ const videos = [
 export const MakingOfOne = () => {
   const [activeVideo, setActiveVideo] = useState(null);
   const [reset, setReset] = useState(false);
-  //console.log(reset);
 
   const handleSetActiveVideo = (index) => {
     setActiveVideo(index);
@@ -40,6 +39,16 @@ export const MakingOfOne = () => {
     setReset(true);
     setActiveVideo(null);
   };
+
+  // Detectar el tamaño de la pantalla
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 600);
+
+  useLayoutEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 600);
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <div
@@ -53,15 +62,18 @@ export const MakingOfOne = () => {
     >
       <div className="absolute top-0 left-0 bg-black bg-opacity-80 w-full h-full" />
       <div className="absolute top-0 left-0 z-0 w-full h-full bg-video" />
-      <div className="z-10 relative w-full h-3/4 flex px-40">
-        <div className="videos relative w-[40%] flex flex-wrap px-2 h-full">
+    
+      <div className="z-10 relative w-full h-3/4 flex lg:flex-wrap xs:flex-col lg:px-40 xs:px-10">
+      {isMobile && <CajaVideosTitulos />}
+
+        <div className="videos relative lg:w-[40%] xs:w-full flex flex-wrap px-2 lg:mt-0 xs:mt-4 h-full">
           {videos.map((video, index) => (
             <div
               key={index}
               className={`${video.videoCss}   
       ${activeVideo === index ? "active" : "no-show"} videoCard absolute `}
             >
-              <div className="relative w-full h-full">
+              <div className="relative w-full h-full pruebaUno">
                 {activeVideo === index && (
                   <span
                     onClick={() => resetComponent(true)}
@@ -70,7 +82,7 @@ export const MakingOfOne = () => {
                     <img src="/iconos/closevideo.svg" alt="" />
                   </span>
                 )}
-                <div className="h-full border border-[#BCBCBC70] border-dashed rounded-xl p-2 flex flex-col">
+                <div className="h-full border border-[#BCBCBC70] border-dashed rounded-xl p-2 flex flex-col pruebaDos">
                   <VideoComponent
                     reset={reset}
                     isActive={activeVideo === index}
@@ -96,8 +108,8 @@ export const MakingOfOne = () => {
             </div>
           ))}
         </div>
-
-        <CajaVideosTitulos />
+       
+        {!isMobile && <CajaVideosTitulos />}
       </div>
     </div>
   );

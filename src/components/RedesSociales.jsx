@@ -10,10 +10,10 @@ export const RedesSociales = () => {
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
       }}
-      className=" Utopia h-screen w-full relative flex items-center justify-center px-40"
+      className=" Utopia h-screen w-full relative flex items-center justify-center lg:px-40 xs:px-0"
     >
       <div className="absolute top-0 left-0 w-full h-full bg-video z-10" />
-      <div className="flex items-center h-2/3 w-[70%] relative border border-[--borderOpacity] p-2 border-dashed rounded-xl overflow-hidden">
+      <div className="flex items-center lg:h-2/3 xs:h-1/2 w-[70%] relative border border-[--borderOpacity] p-2 border-dashed rounded-xl overflow-hidden">
         <div className="border border-[--borderOpacity] w-full h-full flex flex-col items-center justify-evenly bg-black bg-opacity-30 rounded-xl">
           <div className="flex z-10 relative">
             <h2 className="text-[--colorYellow] text-lg text-center">

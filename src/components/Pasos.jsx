@@ -67,7 +67,7 @@ export const Pasos = ({ DijeValtio, setOpen, camMove, snap }) => {
           .join("&");
 
         // Redirigir a la URL de "completacarrito" con la cadena de consulta
-        const urlAlcarrito = "https://al.completacarrito.com/promo/addtocart";
+        const urlAlcarrito = "local/promo/addtocart";
         window.location.href = `${urlAlcarrito}?${queryString}`;
       } else {
         const errorText = await res.text();
