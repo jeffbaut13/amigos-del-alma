@@ -2,7 +2,7 @@ import React from "react";
 
 export const CajaVideosTitulos = () => {
   return (
-    <div className="titulos h-full px-2 w-[60%]  whitespace-nowrap">
+    <div className="titulos h-full px-2 lg:w-[60%] xs:w-full whitespace-nowrap">
       <div className="border border-[--borderOpacity] border-dashed  p-2 rounded-xl w-full h-full">
         <div className="border border-[--borderOpacity] rounded-xl w-full h-full flex justify-center items-center">
           <div className="w-4/5">
