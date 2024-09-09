@@ -7,7 +7,7 @@ export const CajaVideosTitulos = () => {
         <div className="border border-[--borderOpacity] rounded-xl w-full h-full flex justify-center items-center">
           <div className="w-4/5">
             <div className="titleBox w-full flex justify-center items-center">
-              <h3 className="text-start text-5xl">
+              <h3 className="text-start lg:text-5xl xs:text-4xl">
                 Detrás de la emotiva <br /> producción Amigos <br /> del Alma.
                 <figure className="w-full mx-auto my-6">
                   <svg
@@ -35,8 +35,10 @@ export const CajaVideosTitulos = () => {
                 </figure>
               </h3>
             </div>
-            <p className="NeueHaas-Ligth text-center text-sm text-[--tercero]">
-              Hay historias de vida que nos inspiraron y que deberías conocer.
+            <p className="NeueHaas-Ligth text-center lg:text-sm xs:text-xs text-[--tercero]">
+              Hay historias de vida que nos inspiraron y{" "}
+              <br className="lg:hidden" />
+              que deberías conocer.
             </p>
           </div>
         </div>
