@@ -136,7 +136,7 @@ export const Pasos = ({ DijeValtio, setOpen, camMove, snap }) => {
     <>
       <div className="  relative border-dashed border w-full h-full rounded-lg flex flex-col  items-start  ">
         <div
-          className={`  relative border shadowbox w-full h-full rounded-lg flex flex-col  items-start `}
+          className={`relative border-none shadowbox w-full h-full flex flex-col  items-start `}
         >
           {/*         <PasosIcons currentSlide={currentSlide} />
            */}

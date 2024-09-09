@@ -2,7 +2,7 @@ import React from "react";
 
 export const CardUno = ({ next }) => {
   return (
-    <div className="h-full flex text-[#1B191D] flex-col items-center justify-evenly py-12 w-full rounded-lg slide-uno">
+    <div className="h-full flex text-[#1B191D] flex-col items-center justify-evenly py-12 w-full rounded-lg slide-uno border-none">
       <div className="flex flex-col items-center justify-center">
         <h2 className="text-4xl text-center">
           Collar <br />
