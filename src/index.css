@@ -83,7 +83,7 @@ body,
 }
 .NeueHassRoman {
   font-family: "NeueHaas Roman";
-  @apply tracking-[0.2rem];
+  @apply tracking-[0.1rem];
 }
 .AddingtonCF-thin {
   font-family: "AddingtonCF-thin";

@@ -14,16 +14,17 @@ export const CardUno = ({ next }) => {
       <div className="flex flex-col items-center justify-center">
         <p className="text-4xl">$30.000</p>
         <p className="text-sm">Disponibles: 1500</p>
+        <hr className="border-black border w-1/3 mt-4" />
       </div>
 
       <button className=" bg-black" onClick={next}>
         Siguiente
       </button>
 
-      <p className="text-xs Utopia px-8 text-center">
-        Este collar de finas terminaciones enmarcado en un contenedor de <br />
-        cuero y un estético dije que llevará impresa su foto, será el símbolo
-        ideal <br /> para que todo el mundo reconozca a tu Amigo del Alma.
+      <p className="NeueHassRoman text-xs px-8 text-center w-5/6">
+        Este collar de finas terminaciones enmarcado en un contenedor de cuero y
+        un estético dije que llevará impresa su foto, será el símbolo ideal para
+        que todo el mundo reconozca a tu Amigo del Alma.
       </p>
     </div>
   );
