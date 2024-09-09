@@ -50,13 +50,10 @@ export const Navbar = () => {
   }, [active]);
 
   return (
-    <div className="fixed block top-0 left-0 z-[200] px-8 mt-6 w-full h-6">
-      <div className="relative w-full h-full block">
-        <Prospero showLogo={showLogo} />
+    <div className="fixed top-0 left-0 z-[200] px-8 mt-6 w-full h-6">
+      <Prospero showLogo={showLogo} />
 
-        <Burger handleClick={handleClick} showLogo={showLogo} active={active} />
-      </div>
-
+      <Burger handleClick={handleClick} showLogo={showLogo} active={active} />
       <LinkRouter setActive={setActive} showLogo={showLogo} />
     </div>
   );
