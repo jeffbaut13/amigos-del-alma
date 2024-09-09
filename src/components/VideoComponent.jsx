@@ -71,7 +71,7 @@ export const VideoComponent = ({
               setLocalIsPlaying(true);
             }
           }}
-          className="cursor-pointer z-20 w-10 h-10 inline-block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+          className="cursor-pointer z-20 w-10 h-10 inline-block absolute  top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
         >
           <img src={"/iconos/playVideos.svg"} alt="Play" />
         </figure>
