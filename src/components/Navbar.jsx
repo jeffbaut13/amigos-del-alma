@@ -50,7 +50,7 @@ export const Navbar = () => {
   }, [active]);
 
   return (
-    <div className="fixed top-0 left-0 z-[200] flex justify-between items-center px-8 mt-6 w-full h-6">
+    <div className="fixed top-0 left-0 z-[200] flex justify-start items-center px-8 mt-6 w-full h-6">
       <Prospero showLogo={showLogo} />
 
       <Burger handleClick={handleClick} showLogo={showLogo} active={active} />

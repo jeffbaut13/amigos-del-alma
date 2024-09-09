@@ -2,7 +2,7 @@ import React from "react";
 
 export const Prospero = ({ showLogo }) => {
   return (
-    <figure className="h-full inline-block">
+    <figure className="w-6 h-full inline-block">
       <svg
         id="uuid-acb04939-5dee-4d33-b95d-d44bd88ca0ef"
         data-name="Capa 2"
