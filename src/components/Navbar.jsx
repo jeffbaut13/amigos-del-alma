@@ -51,7 +51,7 @@ export const Navbar = () => {
 
   return (
     <div className="fixed top-0 left-0 z-[200] px-8 mt-6 w-full h-6">
-      <div className="relative w-full h-full grid grid-cols-2 grid-rows-1 gap-4 ">
+      <div className="relative w-full h-full">
         <Prospero showLogo={showLogo} />
 
         <Burger handleClick={handleClick} showLogo={showLogo} active={active} />
