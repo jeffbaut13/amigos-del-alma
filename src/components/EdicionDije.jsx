@@ -82,7 +82,7 @@ export const EdicionDije = ({ abrirDije, setabrirDije, dijeCanvaRef }) => {
       </span>
       <div
         ref={dijeCanvaRef}
-        className={`w-full dijeCanva bg-[#F3F3F3] h-full z-50 relative`}
+        className={`w-full dijeCanva bg-[#F3F3F3] h-full z-50 relative  `}
       >
         <Canva
           abrirDije={abrirDije}
