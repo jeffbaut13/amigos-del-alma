@@ -65,13 +65,13 @@ export const ImgLoadDije = ({ DijeValtio, setBtnCompra, handleCompra }) => {
           DijeValtio={DijeValtio}
           setBtnCompra={setBtnCompra}
         />
-        <PhotoCapture
+        {/*  <PhotoCapture
           setControles={setControles}
           controles={controles}
           DijeValtio={DijeValtio}
           setReset={setReset}
           setBtnCompra={setBtnCompra}
-        />
+        /> */}
       </div>
 
       {controles && (

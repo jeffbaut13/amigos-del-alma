@@ -8,11 +8,9 @@ export const CustomSlide = ({ DijeValtio, reset, setReset }) => {
   const [isDragging, setIsDragging] = useState(false);
 
   // Función para actualizar la posición del slider y el escalado de la imagen
-  const updatePosition = (e) => {
-    if (!isDragging) return;
-
+  const updatePosition = (clientX) => {
     const sliderBounds = sliderRef.current.getBoundingClientRect();
-    let newPos = ((e.clientX - sliderBounds.left) / sliderBounds.width) * 100;
+    let newPos = ((clientX - sliderBounds.left) / sliderBounds.width) * 100;
 
     // Limitar el movimiento dentro del slider (0% a 100%)
     newPos = Math.max(0, Math.min(newPos, 100));
@@ -34,32 +32,53 @@ export const CustomSlide = ({ DijeValtio, reset, setReset }) => {
     DijeValtio.imageHeight = newHeight;
   };
 
-  // Función para detectar el inicio del drag
-  const handleMouseDown = (e) => {
+  // Función para manejar el inicio del arrastre (ratón o toque)
+  const startDragging = (e) => {
     setIsDragging(true);
+    if (e.type === "mousedown") {
+      updatePosition(e.clientX);
+    } else if (e.type === "touchstart") {
+      updatePosition(e.touches[0].clientX);
+    }
   };
 
   // Función para detectar el fin del drag
-  const handleMouseUp = () => {
+  const stopDragging = () => {
     setIsDragging(false);
   };
 
-  // Efecto para añadir y eliminar eventos globales de mousemove y mouseup
+  // Efecto para añadir y eliminar eventos globales de mousemove/touchmove y mouseup/touchend
   useEffect(() => {
+    const handleMove = (e) => {
+      if (isDragging) {
+        if (e.type === "mousemove") {
+          updatePosition(e.clientX);
+        } else if (e.type === "touchmove") {
+          updatePosition(e.touches[0].clientX);
+        }
+      }
+    };
+
     if (isDragging) {
       // Añadir eventos al documento cuando se está arrastrando
-      document.addEventListener("mousemove", updatePosition);
-      document.addEventListener("mouseup", handleMouseUp);
+      document.addEventListener("mousemove", handleMove);
+      document.addEventListener("touchmove", handleMove);
+      document.addEventListener("mouseup", stopDragging);
+      document.addEventListener("touchend", stopDragging);
     } else {
       // Eliminar eventos cuando no se está arrastrando
-      document.removeEventListener("mousemove", updatePosition);
-      document.removeEventListener("mouseup", handleMouseUp);
+      document.removeEventListener("mousemove", handleMove);
+      document.removeEventListener("touchmove", handleMove);
+      document.removeEventListener("mouseup", stopDragging);
+      document.removeEventListener("touchend", stopDragging);
     }
 
     // Cleanup de los eventos cuando el componente se desmonte
     return () => {
-      document.removeEventListener("mousemove", updatePosition);
-      document.removeEventListener("mouseup", handleMouseUp);
+      document.removeEventListener("mousemove", handleMove);
+      document.removeEventListener("touchmove", handleMove);
+      document.removeEventListener("mouseup", stopDragging);
+      document.removeEventListener("touchend", stopDragging);
     };
   }, [isDragging]);
 
@@ -77,7 +96,8 @@ export const CustomSlide = ({ DijeValtio, reset, setReset }) => {
       <div
         ref={sliderRef}
         className="w-4/5 m-auto relative h-0.5  rounded-xl bg-[--primary] my-4"
-        onMouseDown={handleMouseDown} // Inicio del arrastre
+        onMouseDown={startDragging}
+        onTouchStart={startDragging}
       >
         <span
           style={{ width: `${circlePos}%` }}
