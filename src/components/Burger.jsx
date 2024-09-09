@@ -7,7 +7,7 @@ export const Burger = ({ active, handleClick, showLogo }) => {
         onClick={handleClick}
         className={`${
           active ? "active" : ""
-        } absolute right-0 0burger w-6 cursor-pointer items-center h-5/6 flex flex-col justify-between z-[201]`}
+        } absolute right-0 burger w-6 cursor-pointer items-center h-5/6 flex flex-col justify-between z-[201]`}
       >
         <div
           className={`line ${

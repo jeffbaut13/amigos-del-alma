@@ -41,7 +41,7 @@ export const Prospero = ({ showLogo }) => {
 
   return (
     <>
-      <figure
+      <span
         ref={secondSvgRef}
         className="w-fit h-full block absolute left-0 opacity-0"
       >
@@ -98,7 +98,7 @@ export const Prospero = ({ showLogo }) => {
             </g>
           </g>
         </svg>
-      </figure>
+      </span>
     </>
   );
 };
