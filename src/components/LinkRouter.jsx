@@ -44,7 +44,7 @@ export const LinkRouter = ({ setActive }) => {
         {links.map((link) => (
           <li
             key={link.position}
-            className="group py-2 relative w-2/5 text-center"
+            className="cursor-pointer group py-2 relative w-2/5 text-center"
             onClick={() => handleClick(link.url)}
           >
             <span className="absolute h-[1px] left-0 bottom-0 w-0 group-hover:w-full bg-[#E1C149] transition-all ease-in-out duration-500" />
