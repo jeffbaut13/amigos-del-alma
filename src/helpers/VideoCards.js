@@ -1,54 +1,109 @@
 import gsap from "gsap";
+import { full, laptop, minilaptop, mobile, tablet } from "./Medidas";
+
+const destopk = full || minilaptop || laptop;
 
 export const handleGsasp = (activeBox, funcion) => {
   const tl = gsap.timeline();
   const time = 1;
   const easeEffect = "power4.inOut";
 
-  tl.fromTo(
-    ".titulos",
-    {
-      transform: "translate3d(0vw, 0vw, 0px)",
-      //opacity: 1,
-      width: "60%",
-    },
-    {
-      transform: "translate3d(95vw, 0vw, 0px)",
-      //opacity: 0,
-      width: "0%",
-      ease: easeEffect,
-      duration: time,
-    }
-  );
-  tl.fromTo(
-    ".videos",
-    {
-      width: "40%",
-      left: "0%",
-      translateX: "0%",
-    },
-    {
-      width: "70%",
-      left: "50%",
-      translateX: "-50%",
-      ease: easeEffect,
-      duration: time,
-    },
-    "<  "
-  );
-  gsap.fromTo(
-    ".videoCajas",
-    {
-      height: "100%",
-    },
-    {
-      height: "80%",
-      ease: easeEffect,
-      //opacity: 0,
-      duration: time,
-    }
-  ),
-    "<";
+  if (destopk) {
+    tl.fromTo(
+      ".titulos",
+      {
+        transform: "translate3d(0vw, 0vw, 0px)",
+        //opacity: 1,
+        width: "60%",
+      },
+      {
+        transform: "translate3d(95vw, 0vw, 0px)",
+        //opacity: 0,
+        width: "0%",
+        ease: easeEffect,
+        duration: time,
+      }
+    );
+    tl.fromTo(
+      ".videos",
+      {
+        width: "40%",
+        left: "0%",
+        translateX: "0%",
+      },
+      {
+        width: "70%",
+        left: "50%",
+        translateX: "-50%",
+        ease: easeEffect,
+        duration: time,
+      },
+      "<  "
+    );
+    gsap.fromTo(
+      ".videoCajas",
+      {
+        height: "100%",
+      },
+      {
+        height: "80%",
+        ease: easeEffect,
+        //opacity: 0,
+        duration: time,
+      }
+    ),
+      "<";
+  }
+  if (mobile || tablet) {
+    tl.fromTo(
+      ".titulos",
+      {
+        transform: "translate3d(0vw, 0vw, 0px)",
+        //opacity: 1,
+
+        height: "50%",
+      },
+      {
+        transform: "translate3d(95vw, 0vw, 0px)",
+        //opacity: 0,
+
+        height: "0%",
+        ease: easeEffect,
+        duration: time,
+      }
+    );
+    tl.fromTo(
+      ".videos",
+      {
+        width: "100%",
+        height: "50%",
+        left: "0%",
+        translateX: "0%",
+      },
+      {
+        width: "100%",
+        height: "100%",
+        left: "50%",
+        translateX: "-50%",
+        ease: easeEffect,
+        duration: time,
+      },
+      "<  "
+    );
+    gsap.fromTo(
+      ".videoCajas",
+      {
+        height: "100%",
+      },
+      {
+        height: "50%",
+        ease: easeEffect,
+        //opacity: 0,
+        duration: time,
+      }
+    ),
+      "<";
+  }
 
   if (activeBox === "firstVideo") {
     tl.to(
@@ -128,23 +183,42 @@ export const handleGsasp = (activeBox, funcion) => {
       duration: time,
     });
   }
-
-  tl.fromTo(
-    ".cajaTitulos",
-    {
-      bottom: "2rem",
-      opacity: 0,
-    },
-    {
-      position: "relative",
-      bottom: "0rem",
-      height: "20%",
-      ease: easeEffect,
-      opacity: 1,
-      duration: time,
-    },
-    "<+=0.5"
-  );
+  if (destopk) {
+    tl.fromTo(
+      ".cajaTitulos",
+      {
+        bottom: "2rem",
+        opacity: 0,
+      },
+      {
+        position: "relative",
+        bottom: "0rem",
+        height: "20%",
+        ease: easeEffect,
+        opacity: 1,
+        duration: time,
+      },
+      "<+=0.5"
+    );
+  }
+  if (mobile || tablet) {
+    tl.fromTo(
+      ".cajaTitulos",
+      {
+        bottom: "2rem",
+        opacity: 0,
+      },
+      {
+        position: "relative",
+        bottom: "0rem",
+        height: "50%",
+        ease: easeEffect,
+        opacity: 1,
+        duration: time,
+      },
+      "<+=0.5"
+    );
+  }
   tl.to(
     ".contenidoCard ",
     {
@@ -187,28 +261,58 @@ export const resetAnimation = (activeBox) => {
       duration: time,
     }
   );
-  tl.to(
-    ".titulos",
-    {
-      transform: "translate3d(0vw, 0vw, 0px)",
-      //opacity: 1,
-      width: "60%",
-      ease: easeEffect,
-      duration: time,
-    },
-    "<"
-  );
-  tl.to(
-    ".videos",
-    {
-      width: "40%",
-      left: "0%",
-      translateX: "0%",
-      ease: easeEffect,
-      duration: time,
-    },
-    "<"
-  );
+
+  if (destopk) {
+    tl.to(
+      ".titulos",
+      {
+        transform: "translate3d(0vw, 0vw, 0px)",
+        //opacity: 1,
+        width: "60%",
+        ease: easeEffect,
+        duration: time,
+      },
+      "<"
+    );
+    tl.to(
+      ".videos",
+      {
+        width: "40%",
+        left: "0%",
+        translateX: "0%",
+        ease: easeEffect,
+        duration: time,
+      },
+      "<"
+    );
+  }
+  if (mobile || tablet) {
+    tl.to(
+      ".titulos",
+      {
+        transform: "translate3d(0vw, 0vw, 0px)",
+        //opacity: 1,
+        width: "100%",
+        height: "50%",
+        ease: easeEffect,
+        duration: time,
+      },
+      "<"
+    );
+    tl.to(
+      ".videos",
+      {
+        width: "100%",
+        height: "50%",
+        left: "0%",
+        translateX: "0%",
+        ease: easeEffect,
+        duration: time,
+      },
+      "<"
+    );
+  }
+
   gsap.to(
     ".videoCajas",
     {
@@ -319,6 +423,7 @@ export const resetAnimation = (activeBox) => {
     ".cajaTitulos",
     {
       position: "absolute",
+      height: "20%",
     },
     "<"
   );

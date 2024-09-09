@@ -64,7 +64,7 @@ export const MakingOfOne = () => {
       <div className="absolute top-0 left-0 bg-black bg-opacity-80 w-full h-full" />
       <div className="absolute top-0 left-0 z-0 w-full h-full bg-video" />
 
-      <div className="z-10 relative w-full h-3/4 flex lg:flex-wrap xs:flex-col lg:px-40 xs:px-10">
+      <div className="z-10 relative w-full lg:h-3/4 xs:h-3/4 flex lg:flex-wrap xs:flex-col lg:px-40 xs:px-10">
         {isMobile && <CajaVideosTitulos />}
 
         <div className="videos relative lg:w-[40%] xs:w-full flex flex-wrap px-2 lg:mt-0 xs:mt-4 h-full">
@@ -78,7 +78,7 @@ export const MakingOfOne = () => {
                 {activeVideo === index && (
                   <span
                     onClick={() => resetComponent(true)}
-                    className="cursor-pointer absolute -right-12 -top-10 z-30 w-8 h-8"
+                    className="cursor-pointer absolute lg:-right-12 xs:right-0 -top-10 z-30 w-8 h-8"
                   >
                     <img src="/iconos/closevideo.svg" alt="" />
                   </span>
@@ -93,13 +93,13 @@ export const MakingOfOne = () => {
                     videoNameCss={video.videoCss}
                   />
 
-                  <div className="px-4 cajaTitulos pointer-events-none w-full absolute bottom-8  flex lg:flex-row xs:flex-col  items-center justify-start z-30">
+                  <div className="px-4 cajaTitulos pointer-events-none w-full absolute bottom-8 flex max-lg:flex-col items-center lg:justify-start xs:justify-center z-30">
                     <h2
                       dangerouslySetInnerHTML={{ __html: video.title }}
-                      className="titleCard text-xs w-1/2 "
+                      className="titleCard text-xs lg:w-1/2 xs:w-5/6 "
                     />
                     <p
-                      className={` NeueHassRoman text-start text-xs text-[--tercero] block contenidoCard w-1/2`}
+                      className={` NeueHassRoman text-start mt-12 text-xs text-[--tercero] block contenidoCard lg:w-1/2 xs:w-5/6`}
                     >
                       {video.content}
                     </p>
