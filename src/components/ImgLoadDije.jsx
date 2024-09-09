@@ -54,8 +54,8 @@ export const ImgLoadDije = ({ DijeValtio, setBtnCompra, handleCompra }) => {
       <div
         className={`botonesBox justify-center items-center mb-2 ${
           controles
-            ? "flex justify-between"
-            : "h-42 flex flex-row justify-evenly items-center"
+            ? "flex justify-center"
+            : "h-42 flex flex-row justify-center items-center"
         }`}
       >
         <UploadImage

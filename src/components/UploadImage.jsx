@@ -87,7 +87,7 @@ export const UploadImage = ({
         </div>
       ) : (
         <>
-          <button onClick={openFileDialog}>Subir imagen</button>
+          <button onClick={openFileDialog}>Usar otra imagen</button>
         </>
       )}
 
