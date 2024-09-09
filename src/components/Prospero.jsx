@@ -43,7 +43,7 @@ export const Prospero = ({ showLogo }) => {
     <>
       <figure
         ref={secondSvgRef}
-        className="w-fit h-7 inline-block absolute left-6 top-0 opacity-0"
+        className="w-fit h-full inline-block opacity-0"
       >
         <svg
           className="fill-[--second]"
