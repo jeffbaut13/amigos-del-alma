@@ -200,7 +200,7 @@ svg {
   text-shadow: 0px 0px 1px var(--second);
 }
 input {
-  @apply w-full bg-transparent  focus:outline-none;
+  @apply w-full bg-transparent  focus:outline-none text-sm;
 }
 /* Chrome, Safari, Edge, Opera */
 input[type="number"]::-webkit-outer-spin-button,
