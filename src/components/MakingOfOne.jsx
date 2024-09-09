@@ -93,7 +93,7 @@ export const MakingOfOne = () => {
                     videoNameCss={video.videoCss}
                   />
 
-                  <div className="px-4 cajaTitulos pointer-events-none w-full absolute bottom-8  flex items-center justify-start z-30">
+                  <div className="px-4 cajaTitulos pointer-events-none w-full absolute bottom-8  flex lg:flex-row xs:flex-col  items-center justify-start z-30">
                     <h2
                       dangerouslySetInnerHTML={{ __html: video.title }}
                       className="titleCard text-xs w-1/2 "

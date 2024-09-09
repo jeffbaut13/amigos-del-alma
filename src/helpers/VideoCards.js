@@ -13,7 +13,7 @@ export const handleGsasp = (activeBox, funcion) => {
       width: "60%",
     },
     {
-      transform: "translate3d(66vw, 0vw, 0px)",
+      transform: "translate3d(95vw, 0vw, 0px)",
       //opacity: 0,
       width: "0%",
       ease: easeEffect,
