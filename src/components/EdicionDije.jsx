@@ -71,11 +71,11 @@ export const EdicionDije = ({ abrirDije, setabrirDije, dijeCanvaRef }) => {
 
   return (
     <div
-      className={` relative text-[--second] edicion bg-[#FDFBF3] flex w-full h-full`}
+      className={` relative text-[--second] edicion bg-[#FDFBF3] flex max-lg:flex-col w-full h-full`}
     >
       <span
         onClick={() => setabrirDije(false)}
-        className="z-50 cursor-pointer absolute right-4 top-2 inline-block w-4 h-4"
+        className="closeCard hidden z-[51] cursor-pointer absolute lg:right-4 xs:right-6 lg:top-2 xs:top-3 inline-block xs:w-6 xs:h-6 lg:w-4 lg:h-4"
       >
         {" "}
         <img src="/iconos/closeCardDije.svg" alt="" />
@@ -93,7 +93,7 @@ export const EdicionDije = ({ abrirDije, setabrirDije, dijeCanvaRef }) => {
         />
       </div>
 
-      <div className="cardDije overflow-hidden w-0 flex flex-col items-center">
+      <div className="cardDije overflow-hidden lg:w-0 lg:h-full xs:h-0 xs:w-full flex flex-col items-center">
         <CardsCustomer
           setOpen={setOpen}
           DijeValtio={DijeValtio}

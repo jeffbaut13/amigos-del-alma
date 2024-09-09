@@ -69,14 +69,14 @@ export const UploadImage = ({
   return (
     <>
       {!controles ? (
-        <div className="w-1/3 flex flex-col justify-between items-start h-full">
-          <p className="text-2xl text-start mb-4 text-black">
+        <div className="lg:w-1/3 xs:w-[45%] flex flex-col justify-between items-start h-full">
+          <p className="lg:text-2xl xs:text-base text-start mb-4 text-black">
             Sube la mejor <br />
             foto que tengas <br /> con tu amigo.
           </p>
 
           <button
-            className="group w-44 h-12 flex flex-col items-center justify-normal"
+            className="group lg:w-44 xs:w-full h-12 flex flex-col items-center justify-normal"
             onClick={openFileDialog}
           >
             <span className=" w-4 h-4 inline-block -rotate-90">

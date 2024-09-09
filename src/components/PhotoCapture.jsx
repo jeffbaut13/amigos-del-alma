@@ -74,12 +74,12 @@ export const PhotoCapture = ({
     <>
       {!controles ? (
         <>
-          <div className="w-1/3 flex justify-between items-start flex-col h-full">
-            <p className="text-2xl text-start mb-4 text-[#1B191D]">
+          <div className="lg:w-1/3 xs:w-[45%] flex justify-between items-start flex-col h-full">
+            <p className="lg:text-2xl xs:text-base text-start mb-4 text-[#1B191D]">
               O toma la foto <br /> desde tu <br /> dispositivo
             </p>
             <button
-              className="group w-44 h-12 flex items-center justify-center"
+              className="group lg:w-44 xs:w-full h-12 flex items-center justify-center"
               onClick={startCamera}
             >
               <span className="w-6 h-6 inline-block">

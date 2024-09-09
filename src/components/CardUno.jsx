@@ -21,7 +21,7 @@ export const CardUno = ({ next }) => {
         Siguiente
       </button>
 
-      <p className="NeueHassRoman text-xs px-8 text-center w-5/6">
+      <p className="NeueHassRoman text-xs px-8 text-center lg:w-5/6 xs:w-full">
         Este collar de finas terminaciones enmarcado en un contenedor de cuero y
         un estético dije que llevará impresa su foto, será el símbolo ideal para
         que todo el mundo reconozca a tu Amigo del Alma.
