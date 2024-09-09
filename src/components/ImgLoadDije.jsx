@@ -111,7 +111,6 @@ export const ImgLoadDije = ({ DijeValtio, setBtnCompra, handleCompra }) => {
           />
           <div className=" w-full flex flex-col py-8 items-center">
             <button
-              className="bg-black text-white py-2 px-6 rounded-lg hover:bg-gray-700"
               onClick={() => {
                 handleCompra();
                 setBtnCompra(true);

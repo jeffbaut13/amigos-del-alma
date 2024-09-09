@@ -18,7 +18,7 @@ export const ButtonImgEditor = ({
         onMouseUp={HandleOnMouseUp}
         onMouseLeave={handleOnMouseLeave}
       >
-        <span className="inline-block transition-all duration-500 bg-white border border-white hover:border-black group-hover:bg-transparent shadowbox w-8 h-8 absolute p-3 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full">
+        <span className="inline-block transition-all duration-500 bg-[#f6f4ea] group-hover:bg-[#dad5bf] shadowbox w-8 h-8 absolute p-3 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full">
           <Arrows color={"stroke-black group-hover:stroke-black"} />
         </span>
       </span>

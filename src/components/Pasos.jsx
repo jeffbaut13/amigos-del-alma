@@ -136,7 +136,7 @@ export const Pasos = ({ DijeValtio, setOpen, camMove, snap }) => {
     <>
       <div className="  relative border-dashed border w-full h-full rounded-lg flex flex-col  items-start  ">
         <div
-          className={`relative border-none shadowbox w-full h-full flex flex-col  items-start `}
+          className={`NeueHassRoman relative border-none shadowbox w-full h-full flex flex-col  items-start `}
         >
           {/*         <PasosIcons currentSlide={currentSlide} />
            */}
@@ -152,17 +152,17 @@ export const Pasos = ({ DijeValtio, setOpen, camMove, snap }) => {
             {currentSlide >= 2 && (
               <figure
                 onClick={prev}
-                className="cursor-pointer bg-black hover:bg-transparent transition-all duration-500 group border border-black absolute left-2 rotate-180 w-6 h-6 inline-block p-1.5 rounded-full -translate-y-1/2"
+                className="cursor-pointer bg-black hover:bg-[--hoverBlack] transition-all duration-300 group border border-black absolute left-2 rotate-180 w-6 h-6 inline-block p-1.5 rounded-full -translate-y-1/2"
               >
-                <Arrows color={"stroke-white group-hover:stroke-black"} />
+                <Arrows color={"stroke-white transition-all duration-300 "} />
               </figure>
             )}
             {currentSlide > 1 && currentSlide <= 4 && (
               <figure
                 onClick={next}
-                className="cursor-pointer bg-black hover:bg-transparent transition-all duration-500 group border border-black absolute right-2 w-6 h-6 inline-block p-1.5 rounded-full -translate-y-1/2"
+                className="cursor-pointer bg-black hover:bg-[--hoverBlack] transition-all duration-300 group border border-black absolute right-2 w-6 h-6 inline-block p-1.5 rounded-full -translate-y-1/2"
               >
-                <Arrows color={"stroke-white group-hover:stroke-black"} />
+                <Arrows color={"stroke-white transition-all duration-300 "} />
               </figure>
             )}
           </div>

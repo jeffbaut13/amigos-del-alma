@@ -237,8 +237,9 @@ export const handleGsasp = (activeBox, funcion) => {
     `.titleCard`,
     {
       textAlign: "center",
-      fontSize: "1.125rem",
-      lineHeight: "1.75rem",
+      width: "50%",
+      fontSize: "1.875rem",
+      lineHeight: "2.25rem",
     },
     "<-=1"
   );
@@ -430,8 +431,9 @@ export const resetAnimation = (activeBox) => {
 
   tl.to(`.titleCard`, {
     textAlign: "start",
-    fontSize: "0.75rem",
-    lineHeight: "1rem",
+    width: "100%",
+    fontSize: "0.875rem",
+    lineHeight: "1.25rem",
   });
   tl.to(`.${activeBox} br`, {
     display: "block",

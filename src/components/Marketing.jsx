@@ -51,7 +51,10 @@ export const Marketing = () => {
             </button>
           </div>
           <div className=" btnMarket whitespace-nowrap overflow-hidden w-1/2 lg:flex xs:hidden items-center justify-center">
-            <button onClick={handleVideoEnd} className="btn-home text-base">
+            <button
+              onClick={handleVideoEnd}
+              className="btn-home hover:bg-white text-base"
+            >
               Personaliza el tuyo aquí
             </button>
           </div>

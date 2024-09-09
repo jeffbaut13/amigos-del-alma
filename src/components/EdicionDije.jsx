@@ -75,7 +75,7 @@ export const EdicionDije = ({ abrirDije, setabrirDije, dijeCanvaRef }) => {
     >
       <span
         onClick={() => setabrirDije(false)}
-        className="closeCard hidden z-[51] cursor-pointer absolute lg:right-4 xs:right-6 lg:top-2 xs:top-3 inline-block xs:w-6 xs:h-6 lg:w-4 lg:h-4"
+        className="closeCard hidden z-[51] cursor-pointer absolute lg:right-4 xs:right-6 lg:top-2 xs:top-3 xs:w-6 xs:h-6 lg:w-4 lg:h-4"
       >
         {" "}
         <img src="/iconos/closeCardDije.svg" alt="" />

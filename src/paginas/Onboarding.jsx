@@ -66,11 +66,11 @@ const Onboarding = () => {
             </h1>
           </div>
           <div className="flex justify-between items-center w-[30%] h-[45%]">
-            <button className="border border-[--colorYellow] w-44 h-10 text-sm rounded-lg AddingtonCF-thin">
+            <button className="border border-[--colorYellow] w-44 h-10 text-sm rounded-lg ">
               omitir
             </button>
             <button
-              className="border border-[--colorYellow] w-44 h-10 rounded-lg AddingtonCF-thin"
+              className="border border-[--colorYellow] w-44 h-10 rounded-lg  "
               onClick={handleNextClick}
             >
               siguiente
@@ -83,7 +83,8 @@ const Onboarding = () => {
         <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-70">
           <div className="flex flex-col items-center">
             <h1 className="text-[--colorYellow] text-xs text-center">
-              sube la mejor foto que tengas con tu amig<span className=" AddingtonCF-thin">@</span> del alma.
+              sube la mejor foto que tengas con tu amig
+              <span className="">@</span> del alma.
               <br />
               si quieres hacer parte de nuestro collage.
             </h1>
@@ -104,8 +105,7 @@ const Onboarding = () => {
                       />
                     ) : (
                       <p className=" text-[0.7rem]  z-50 border-b-[1px] pb-2  ">
-                        arrastra o carga <br /> tu
-                         foto aquí
+                        arrastra o carga <br /> tu foto aquí
                       </p>
                     )}
                     <input
@@ -120,7 +120,7 @@ const Onboarding = () => {
             </div>
             <div className="pt-16">
               <button
-                className="border border-[--colorYellow] text-white w-44 h-10 rounded-lg AddingtonCF-thin"
+                className="border border-[--colorYellow] text-white w-44 h-10 rounded-lg"
                 onClick={handleNextClick}
               >
                 siguiente

@@ -16,37 +16,17 @@
 }
 
 @font-face {
-  font-family: "Utopia";
-  font-style: normal;
-  src: url("/font/Utopia-Std-Bold-Display.ttf");
-}
-
-@font-face {
-  font-family: "Mories";
-  font-style: normal;
-  src: url("/font/Mories.ttf");
-}
-@font-face {
-  font-family: "sequel";
-  font-style: normal;
-  src: url("/font/sequel-sans-book-disp.ttf");
-}
-
-@font-face {
   font-family: "AddingtonCF-thin";
   src: url("/font/AddingtonCF-Thin.ttf");
 }
 @font-face {
-  font-family: "AddingtonCF-light";
-  src: url("/font/AddingtonCF-Light.ttf");
+  font-family: "NeueHaas Medium";
+  font-style: normal;
+  src: url("/font/NeueHaasDisplayMediu.ttf");
 }
 @font-face {
-  font-family: "AddingtonCF-regular";
-  src: url("/font/AddingtonCF-Regular.ttf");
-}
-@font-face {
-  font-family: "NeueHaas Bold";
-  src: url("/font/NeueHaasDisplayBold.ttf");
+  font-family: "NeueHaas Ligth";
+  src: url("/font/NeueHaasDisplayLight.ttf");
 }
 @font-face {
   font-family: "NeueHaas Thin";
@@ -56,6 +36,24 @@
   font-family: "NeueHaas Roman";
   src: url("/font/NeueHaasDisplayRoman.ttf");
 }
+.AddingtonCF-thin {
+  font-family: "AddingtonCF-thin";
+  @apply tracking-[0.2rem];
+}
+
+.NeueHaas-Medium {
+  font-family: "NeueHaas Medium";
+}
+.NeueHaas-Ligth {
+  font-family: "NeueHaas Ligth";
+}
+.NeueHaas-Thin {
+  font-family: "NeueHaas Thin";
+}
+.NeueHassRoman {
+  font-family: "NeueHaas Roman";
+}
+
 html {
   @apply overflow-x-hidden xl:text-[1vw] xs:text-[3vw] sm:text-[1.5vw] lg:text-[1vw] scroll-smooth bg-black;
 }
@@ -69,73 +67,28 @@ body,
   --second: #fff6c2;
   --tercero: #e7e5da;
   --bg-clar: #fffae6;
+  --hoverBlack: #3d3d3d;
   --thirty: #e1c149;
   --borderOpacity: #ddc7b870;
   --borderCircle: #4747475c;
   --colorYellow: #fff6c2;
   --bg-black: #19171b;
-  font-family: "Utopia";
+  font-family: "NeueHaas Medium", "san serif";
   @apply tracking-[0.1rem];
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.NeueHassRoman {
-  font-family: "NeueHaas Roman";
-  @apply tracking-[0.1rem];
-}
-.AddingtonCF-thin {
-  font-family: "AddingtonCF-thin";
-  @apply tracking-[0.2rem];
-}
-.fontStrokeBlack {
-  -webkit-text-stroke: 0.5px var(--primary);
-}
-.fontStrokeLigth {
-  -webkit-text-stroke: 0.5px var(--second);
-}
-.fontStroke {
-  -webkit-text-stroke: 0.5px white;
-}
-.fontStrokeHover {
-  -webkit-text-stroke: 0.5px black;
-}
 
 button {
-  @apply fontStrokeBlack;
+  @apply py-0 px-5 rounded-full transition-all duration-300;
 }
-button:hover {
-  @apply fontStrokeLigth;
+.btn-home {
+  @apply bg-[--second] border border-[--second] text-[--primary] hover:bg-white text-base;
 }
-.Utopia {
-  font-family: "Utopia";
-  font-weight: 900;
-}
-.moires {
-  font-family: "Mories";
-  font-weight: 900;
-}
-.AddingtonCF-regular {
-  font-family: "AddingtonCF-regular";
-  @apply tracking-[0.2rem];
-}
-.AddingtonCF-light {
-  font-family: "AddingtonCF-light";
-  @apply tracking-[0.2rem];
-  /*-webkit-text-stroke: 0.2px black;*/
-}
-.NeueHaas-Bold {
-  font-family: "NeueHaas Bold";
-}
-.NeueHaas-Thin {
-  font-family: "NeueHaas Thin";
-}
-.number {
-  @apply NeueHaas-Thin tracking-wider;
-}
-.numberBold {
-  @apply NeueHaas-Bold tracking-wider;
+.edicion button {
+  @apply py-2 text-white bg-black hover:bg-[--hoverBlack] NeueHaas-Medium;
 }
 
 a {
@@ -160,24 +113,6 @@ h1 {
   line-height: 1.1;
 }
 
-.edicion button {
-  @apply fontStroke text-center rounded-md border-2 border-[--primary] py-1.5 px-8  transition-all duration-300 bg-black text-[#FFFAE6]  cursor-pointer text-base;
-}
-.edicion button:hover {
-  @apply fontStrokeHover text-black bg-transparent transition-all duration-300;
-}
-.home button {
-  @apply text-center rounded-md border border-[--colorYellow] transition-all duration-300 bg-transparent text-[--colorYellow] cursor-pointer text-base;
-}
-.home button:hover {
-  @apply border-[--colorYellow] text-[--primary] bg-[--colorYellow];
-}
-.edicion .editorbtn {
-  @apply bg-black text-[0.5rem] text-white border border-[--borderOpacity] py-1 px-2;
-}
-.edicion .btncapture {
-  @apply bg-[--second] hover:bg-[#ffffff50] rounded-full shadowbox border-none;
-}
 hr {
   @apply border-[--borderOpacity];
 }
@@ -262,14 +197,6 @@ input[type="number"]::-webkit-inner-spin-button {
   );
 }
 
-.btn-home {
-  @apply Utopia bg-[--second] border border-[--second] text-[--primary] py-2.5 pl-5 pr-3.5 transition-all duration-300 rounded-sm
-  hover:bg-[#ffffff00] hover:text-[--second];
-  /* -webkit-text-stroke: 1px var(--primary); */
-}
-.btn-home:hover {
-  /* -webkit-text-stroke: 0.5px var(--second); */
-}
 .videoCard {
   @apply opacity-100;
 }

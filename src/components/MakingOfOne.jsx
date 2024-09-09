@@ -4,14 +4,14 @@ import { CajaVideosTitulos } from "./CajaVideosTitulos";
 
 const videos = [
   {
-    title: "El amigo <br/>del alma",
+    title: "El amigo del alma",
     content:
       "Conoce a Tequila, quien interpretó a Toño y que al final de esta producción se convirtió en la amiga del alma de Teresa, una señora que la adoptó para convertirla ahora en la protagonista historias de la vida real.",
     videoCss: "secondVideo",
     urlVideo: "/imagenes/videoplaybackk.mp4",
   },
   {
-    title: "Detrás <br/>de cámaras",
+    title: "Detrás de cámaras",
     content:
       "Conoce el detrás de cámaras y todo lo que sucedió para que la historia de Alejo y Toño fuera tan cercana que miles de espectadores la sintieran como propia.",
     videoCss: "thirtVideo",
@@ -96,10 +96,10 @@ export const MakingOfOne = () => {
                   <div className="px-4 cajaTitulos pointer-events-none w-full absolute bottom-8 flex max-lg:flex-col items-center lg:justify-start xs:justify-center z-30">
                     <h2
                       dangerouslySetInnerHTML={{ __html: video.title }}
-                      className="titleCard text-xs lg:w-1/2 xs:w-5/6 "
+                      className="titleCard lg:w-full xs:w-5/6 text-sm"
                     />
                     <p
-                      className={` NeueHassRoman text-start mt-12 text-xs text-[--tercero] block contenidoCard lg:w-1/2 xs:w-5/6`}
+                      className={`NeueHaas-Ligth text-start max-lg:mt-6 text-xs text-[--tercero] block contenidoCard lg:w-1/2 xs:w-5/6`}
                     >
                       {video.content}
                     </p>

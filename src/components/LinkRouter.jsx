@@ -2,10 +2,10 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 const links = [
-  { name: "COMERCIAL", url: "#comercial", position: 1 },
-  { name: "COMPRA EL COLLAR", url: "#comprar", position: 2 },
-  { name: "DETRÁS DE CÁMARAS", url: "#detras", position: 3 },
-  { name: "COMPARTE", url: "#compartir", position: 4 },
+  { name: "Comercial", url: "#comercial", position: 1 },
+  { name: "Compra el collar", url: "#comprar", position: 2 },
+  { name: "Detrás de cámaras", url: "#detras", position: 3 },
+  { name: "Comparte", url: "#compartir", position: 4 },
 ];
 
 export const LinkRouter = ({ setActive }) => {
@@ -39,7 +39,7 @@ export const LinkRouter = ({ setActive }) => {
   };
 
   return (
-    <div className="AddingtonCF-thin z-[200] menuLink fixed top-0 left-0 w-full h-full bg-black flex justify-evenly items-center">
+    <div className="   z-[200] menuLink fixed top-0 left-0 w-full h-full bg-black flex justify-evenly items-center">
       <ul className="w-full h-2/4 flex flex-col justify-evenly items-center">
         {links.map((link) => (
           <li
@@ -48,10 +48,10 @@ export const LinkRouter = ({ setActive }) => {
             onClick={() => handleClick(link.url)}
           >
             <span className="absolute h-[1px] left-0 bottom-0 w-0 group-hover:w-full bg-[#E1C149] transition-all ease-in-out duration-500" />
-            <span className="text-[--bg-clar] group-hover:text-[#E1C149] absolute left-0 opacity-0 group-hover:opacity-100 transition-all ease-in-out duration-1000">
+            <span className="AddingtonCF-thin text-[--second] absolute left-0 opacity-0 group-hover:opacity-100 transition-all ease-in-out duration-1000">
               0{link.position}
             </span>
-            <span className="text-[--bg-clar] group-hover:text-[#E1C149]">
+            <span className="text-[--second] group-hover:text-[#e1c149]">
               {link.name}
             </span>
           </li>

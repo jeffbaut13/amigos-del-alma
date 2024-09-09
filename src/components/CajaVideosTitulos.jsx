@@ -6,36 +6,37 @@ export const CajaVideosTitulos = () => {
       <div className="border border-[--borderOpacity] border-dashed  p-2 rounded-xl w-full h-full">
         <div className="border border-[--borderOpacity] rounded-xl w-full h-full flex justify-center items-center">
           <div className="w-4/5">
-            <h3 className="text-center Utopia text-3xl">
-              Detrás <br />
-              de la emotiva <br /> producción <br /> Amigos del Alma.
-              <figure className="w-[85%] mx-auto my-6">
-                <svg
-                  id="uuid-8e4034d7-59df-41ec-bec8-16573a19c1cf"
-                  data-name="Capa 2"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 607.66 27.6"
-                >
-                  <g
-                    id="uuid-1857a6df-aee0-40b2-9d05-248e1d04ae1f"
-                    data-name="Capa 1"
+            <div className="titleBox w-full flex justify-center items-center">
+              <h3 className="text-start text-5xl">
+                Detrás de la emotiva <br /> producción Amigos <br /> del Alma.
+                <figure className="w-full mx-auto my-6">
+                  <svg
+                    id="uuid-a71b0a1e-de76-4da8-809a-02fb9fedb1f3"
+                    data-name="Capa_2"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 456.58 27.18"
                   >
-                    <path
-                      className="stroke-[#ddc7b880]"
-                      d="m0,.5h284.94c1.69,0,3.06,1.37,3.06,3.06v19.86c0,3.42,4.26,4.99,6.48,2.38l19.55-23.05c.66-.78,1.63-1.23,2.65-1.23h290.99"
-                      style={{
-                        fill: "none",
-                        strokeMiterlimit: 10,
-                        strokeWidth: "0.5px",
-                      }}
-                    />
-                  </g>
-                </svg>
-              </figure>
-            </h3>
-            <p className="NeueHassRoman text-center text-xs text-[--tercero]">
-              hay historias de vida que nos inspiraron <br />y que deberías
-              conocer.
+                    <g
+                      id="uuid-cbe2be71-87a3-4b52-ba54-c722af1b2208"
+                      data-name="Capa_1"
+                    >
+                      <path
+                        d="M.25.25h141.9c1.92,0,3.48,1.55,3.5,3.47l.18,19.73c.03,3.25,4.09,4.71,6.18,2.22l19.51-23.26c.67-.79,1.65-1.25,2.68-1.25h282.12"
+                        style={{
+                          fill: "none",
+                          stroke: "#ddc7b8",
+                          strokeLinecap: "round",
+                          strokeMiterlimit: 10,
+                          strokeWidth: "1px",
+                        }}
+                      />
+                    </g>
+                  </svg>
+                </figure>
+              </h3>
+            </div>
+            <p className="NeueHaas-Ligth text-center text-sm text-[--tercero]">
+              Hay historias de vida que nos inspiraron y que deberías conocer.
             </p>
           </div>
         </div>

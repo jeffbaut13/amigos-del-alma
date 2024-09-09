@@ -92,10 +92,10 @@ export const CustomSlide = ({ DijeValtio, reset, setReset }) => {
 
   return (
     <div className="relative ">
-      <div className="w-5/6 left-1/2 -translate-x-1/2 absolute shadowbox bg-white top-1/2 -translate-y-1/2 rounded-xl h-2  " />
+      <div className="w-1/2 left-1/2 -translate-x-1/2 absolute shadowbox bg-white top-1/2 -translate-y-1/2 rounded-xl h-2  " />
       <div
         ref={sliderRef}
-        className="w-4/5 m-auto relative h-0.5  rounded-xl bg-[--primary] my-4"
+        className="w-1/2 m-auto relative h-0.5  rounded-xl bg-[--primary] my-4"
         onMouseDown={startDragging}
         onTouchStart={startDragging}
       >
