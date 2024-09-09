@@ -1,6 +1,26 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios"; 
 
 export const CardUno = ({ next }) => {
+  const [stockDije, setStockDije] = useState(null);
+
+  useEffect(() => {
+   
+    const fetchStockDije = async () => {
+      try {
+        const response = await axios.get("https://server-amigos.onrender.com/dijes");
+       
+        setStockDije(response.data.stockDije || 0);
+      } catch (error) {
+        console.error("Error al obtener stockDije:", error.message);
+        // Manejo de errores opcional
+        setStockDije(0); 
+      }
+    };
+
+    fetchStockDije();
+  }, []); 
+
   return (
     <div className="NeueHaas-Medium h-full flex text-[#1B191D] flex-col items-center justify-evenly py-12 w-full rounded-lg slide-uno border-none">
       <div className="flex flex-col items-center justify-center">
@@ -13,7 +33,7 @@ export const CardUno = ({ next }) => {
 
       <div className="flex flex-col items-center justify-center">
         <p className="text-3xl leading-6">$30.000</p>
-        <p className="text-xs">Disponibles: 1500</p>
+        <p className="text-xs stock">Disponibles: {stockDije !== null ? stockDije : "Cargando..."}</p>
         <hr className="border-black border w-1/3 mt-4" />
       </div>
 
