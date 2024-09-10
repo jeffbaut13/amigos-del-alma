@@ -15,6 +15,10 @@ export const Home = () => {
   const sections = [comercialRef, marketingRef, makingOfOneRef, footerRef];
 
   const [isMobile, setIsMobile] = useState(false);
+  const [scrollDelta, setScrollDelta] = useState(0); // Mantiene la cantidad acumulada de scroll
+
+  // Umbral de scroll - Ajusta este número para controlar la cantidad de scroll necesaria
+  const scrollThreshold = 350;
 
   // Detectar si el usuario está en un dispositivo móvil
   useEffect(() => {
@@ -33,16 +37,22 @@ export const Home = () => {
   // Función para manejar el scroll con el evento wheel (solo en escritorio)
   const handleWheel = (e) => {
     if (!isMobile) {
-      if (e.deltaY > 0) {
+      // Acumular el delta de scroll
+      setScrollDelta((prevDelta) => prevDelta + e.deltaY);
+
+      // Solo cambiar de sección si el desplazamiento es significativo
+      if (scrollDelta > scrollThreshold) {
         // Scroll hacia abajo
         if (currentSection < sections.length - 1) {
           setCurrentSection((prev) => prev + 1);
         }
-      } else {
+        setScrollDelta(0); // Resetear el acumulado de scroll
+      } else if (scrollDelta < -scrollThreshold) {
         // Scroll hacia arriba
         if (currentSection > 0) {
           setCurrentSection((prev) => prev - 1);
         }
+        setScrollDelta(0); // Resetear el acumulado de scroll
       }
 
       // Hacer scroll al componente correspondiente
