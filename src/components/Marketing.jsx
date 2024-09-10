@@ -36,12 +36,12 @@ export const Marketing = () => {
           <div className="textoMarket whitespace-nowrap overflow-hidden lg:w-1/4 xs:w-full lg:h-full xs:h-1/2 flex flex-col rounded-xl border border-[#E1C5B550] items-center justify-center text-xs text-[--second]">
             <h2 className="text-center text-2xl ">
               Ahora tú <br />
-              y tu amigo del alma
+              y tu Amigo del Alma
               <br />
               también podrán <br />
               tener un símbolo <br />
               que selle su amistad <br />
-              incondicional.,
+              incondicional.
             </h2>
             <button
               onClick={handleVideoEnd}
