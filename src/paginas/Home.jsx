@@ -14,69 +14,44 @@ export const Home = () => {
   const [currentSection, setCurrentSection] = useState(0); // Mantiene el índice de la sección actual
   const sections = [comercialRef, marketingRef, makingOfOneRef, footerRef];
 
-  // Para manejar el deslizamiento táctil
-  let touchStartY = 0;
-  let touchEndY = 0;
+  const [isMobile, setIsMobile] = useState(false);
 
-  // Función para manejar el scroll con el evento wheel (escritorio)
-  const handleWheel = (e) => {
-    if (e.deltaY > 0) {
-      // Scroll hacia abajo
-      if (currentSection < sections.length - 1) {
-        setCurrentSection((prev) => prev + 1);
-      }
-    } else {
-      // Scroll hacia arriba
-      if (currentSection > 0) {
-        setCurrentSection((prev) => prev - 1);
-      }
-    }
-
-    // Hacer scroll al componente correspondiente
-    sections[currentSection]?.current.scrollIntoView({ behavior: "smooth" });
-  };
-
-  // Funciones para manejar el swipe en dispositivos móviles
-  const handleTouchStart = (e) => {
-    touchStartY = e.touches[0].clientY; // Guardar el punto inicial del toque
-  };
-
-  const handleTouchMove = (e) => {
-    touchEndY = e.touches[0].clientY; // Guardar el punto final del toque
-  };
-
-  const handleTouchEnd = () => {
-    if (touchStartY - touchEndY > 50) {
-      // Swipe hacia arriba
-      if (currentSection < sections.length - 1) {
-        setCurrentSection((prev) => prev + 1);
-      }
-    } else if (touchEndY - touchStartY > 50) {
-      // Swipe hacia abajo
-      if (currentSection > 0) {
-        setCurrentSection((prev) => prev - 1);
-      }
-    }
-
-    // Hacer scroll al componente correspondiente
-    sections[currentSection]?.current.scrollIntoView({ behavior: "smooth" });
-  };
-
-  // Agregar event listeners para gestos táctiles en móviles
+  // Detectar si el usuario está en un dispositivo móvil
   useEffect(() => {
-    window.addEventListener("touchstart", handleTouchStart);
-    window.addEventListener("touchmove", handleTouchMove);
-    window.addEventListener("touchend", handleTouchEnd);
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    checkIsMobile(); // Verificar inicialmente
+    window.addEventListener("resize", checkIsMobile); // Actualizar al redimensionar
 
     return () => {
-      window.removeEventListener("touchstart", handleTouchStart);
-      window.removeEventListener("touchmove", handleTouchMove);
-      window.removeEventListener("touchend", handleTouchEnd);
+      window.removeEventListener("resize", checkIsMobile);
     };
-  }, [currentSection]);
+  }, []);
+
+  // Función para manejar el scroll con el evento wheel (solo en escritorio)
+  const handleWheel = (e) => {
+    if (!isMobile) {
+      if (e.deltaY > 0) {
+        // Scroll hacia abajo
+        if (currentSection < sections.length - 1) {
+          setCurrentSection((prev) => prev + 1);
+        }
+      } else {
+        // Scroll hacia arriba
+        if (currentSection > 0) {
+          setCurrentSection((prev) => prev - 1);
+        }
+      }
+
+      // Hacer scroll al componente correspondiente
+      sections[currentSection]?.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
-    <div onWheel={handleWheel} style={{ overflow: "hidden", height: "100vh" }}>
+    <div onWheel={handleWheel} style={{ overflowY: isMobile ? "scroll" : "hidden", height: "100vh" }}>
       <div ref={comercialRef} style={{ height: "100vh" }}>
         <Comercial />
       </div>
