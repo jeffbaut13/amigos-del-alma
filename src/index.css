@@ -23,7 +23,7 @@
 }
 
 .snap-item {
-  scroll-snap-align: top;
+  scroll-snap-align: start;
   margin: 0;
 }
 
