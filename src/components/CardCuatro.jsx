@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useSnapshot } from "valtio";
 import { mobile, tablet } from "../helpers/Medidas";
 
 export const CardCuatro = ({ DijeValtio, next, currentSlide }) => {
+  const inputNum = useRef(null);
   const responsive = mobile || tablet;
   const [ActiveAviso, setActiveAviso] = useState(false);
   const snap = useSnapshot(DijeValtio);
@@ -10,6 +11,11 @@ export const CardCuatro = ({ DijeValtio, next, currentSlide }) => {
   useEffect(() => {
     if (currentSlide === 3 || currentSlide === 5) {
       setActiveAviso(false);
+    }
+    if (currentSlide === 4) {
+      setTimeout(() => {
+        inputNum.current.focus();
+      }, 1000);
     }
   }, [currentSlide]);
 
@@ -31,6 +37,7 @@ export const CardCuatro = ({ DijeValtio, next, currentSlide }) => {
         </p>
         <div className="w-full border-b">
           <input
+            ref={inputNum}
             maxLength={10}
             onFocus={() => setActiveAviso(true)}
             type="number"

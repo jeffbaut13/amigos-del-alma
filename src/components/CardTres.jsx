@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useSnapshot } from "valtio";
 import { mobile, tablet } from "../helpers/Medidas";
 
 export const CardTres = ({ DijeValtio, next, currentSlide }) => {
+  const inputDog = useRef(null);
   const responsive = mobile || tablet;
   const [ActiveAviso, setActiveAviso] = useState(false);
   const snap = useSnapshot(DijeValtio);
@@ -10,6 +11,11 @@ export const CardTres = ({ DijeValtio, next, currentSlide }) => {
   useEffect(() => {
     if (currentSlide === 2 || currentSlide === 4) {
       setActiveAviso(false);
+    }
+    if (currentSlide === 3) {
+      setTimeout(() => {
+        inputDog.current.focus();
+      }, 1000);
     }
   }, [currentSlide]);
 
@@ -19,6 +25,7 @@ export const CardTres = ({ DijeValtio, next, currentSlide }) => {
       <div className="w-1/2 mx-auto flex flex-col">
         <div className="w-full border-b ">
           <input
+            ref={inputDog}
             maxLength={10}
             type="text"
             name="nameDog"
