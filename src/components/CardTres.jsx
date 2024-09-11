@@ -16,8 +16,8 @@ export const CardTres = ({ DijeValtio, next }) => {
             placeholder="¿Cómo se llama tu amigo?"
             className="focus:border-none focus:outline-none pt-4 text-center text-black"
             onKeyDown={(e) => {
-              if (snap.nombre === "" || snap.nombre === "TOÑO") {
-                // Verificar si se presionó "Enter" o "Done"
+              alert(e.key);
+              if (snap.nombre !== "" || snap.nombre !== "TOÑO") {
                 if (e.key === "Enter" || e.key === "Done") {
                   next();
                 }
