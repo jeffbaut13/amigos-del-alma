@@ -1,11 +1,55 @@
 import gsap from "gsap";
 import React, { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import { full, mobile, tablet } from "../helpers/Medidas";
 
 export const Prospero = ({ showLogo }) => {
   const navigate = useNavigate();
   const Prospero = useRef(null);
   const Inter = useRef(null);
+
+  const responsive = mobile || tablet;
+
+  useEffect(() => {
+    if (responsive) {
+      const handleScroll = () => {
+        const scrollPosition = window.scrollY;
+        const viewportHeight = window.innerHeight;
+
+        if (scrollPosition > viewportHeight / 2) {
+          gsap.to(Prospero.current, {
+            transform: "translateX(0%)",
+            duration: 1,
+            ease: "power3.out",
+          });
+
+          gsap.to(Inter.current, {
+            opacity: 1,
+            duration: 1,
+            ease: "power3.out",
+          });
+        } else {
+          gsap.to(Prospero.current, {
+            transform: "translateX(-80%)",
+            duration: 1,
+            ease: "power3.out",
+          });
+
+          gsap.to(Inter.current, {
+            opacity: 0,
+            duration: 1,
+            ease: "power3.out",
+          });
+        }
+      };
+
+      window.addEventListener("scroll", handleScroll);
+
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+      };
+    }
+  }, []);
 
   useEffect(() => {
     if (showLogo) {
