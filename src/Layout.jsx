@@ -24,13 +24,35 @@ export const Layout = ({ children }) => {
       }
     };
 
+    const handleScroll = () => {
+      const currentScrollTop = container.scrollTop;
+
+      if (currentScrollTop > lastScrollTop.current) {
+        // Scrolling down
+        document.documentElement.style.setProperty(
+          "--scroll-direction",
+          "down"
+        );
+      } else {
+        // Scrolling up
+        document.documentElement.style.setProperty("--scroll-direction", "up");
+      }
+
+      lastScrollTop.current = currentScrollTop;
+    };
+
+    const eject = () => {
+      handleScroll();
+      checkScroll();
+    };
+
     // Add event listener for scroll
-    container.addEventListener("scroll", checkScroll);
+    container.addEventListener("scroll", eject);
 
     // Cleanup event listener
     return () => {
       if (container) {
-        container.removeEventListener("scroll", checkScroll);
+        container.removeEventListener("scroll", eject);
       }
     };
   }, []);
