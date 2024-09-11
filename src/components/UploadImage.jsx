@@ -39,7 +39,7 @@ export const UploadImage = ({
           if (aspectWidth > aspectHeight) {
             // Normalizar el ancho a 2 y calcular el alto
             normalizedWidth = 3;
-            normalizedHeight = Math.max(0, (aspectHeight / aspectWidth) * 4);
+            normalizedHeight = Math.max(0, (aspectHeight / aspectWidth) * 3);
           } else {
             // Normalizar el alto a 2 y calcular el ancho
             normalizedHeight = 4;
