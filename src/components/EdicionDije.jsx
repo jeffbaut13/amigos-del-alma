@@ -29,7 +29,7 @@ export const EdicionDije = ({ abrirDije, setabrirDije, dijeCanvaRef }) => {
       } else if (abrirDije == null || abrirDije == false) {
         camMove(snap.home);
       }
-    }, 2000);
+    }, 3000);
   }, [abrirDije]);
 
   const handleButtonClick = (parte, zoom) => {
