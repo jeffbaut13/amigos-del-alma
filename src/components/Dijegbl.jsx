@@ -18,7 +18,7 @@ export function Dijegbl({ open, snap, group, abrirDije }) {
   useEffect(() => {
     // Animar la rotación
     gsap.to(placa.current.rotation, {
-      x: open ? -3 : 0.003,
+      x: open ? -3 : -0.01,
       duration: 1, // Duración de la animación
       ease: "power2.out",
     });
