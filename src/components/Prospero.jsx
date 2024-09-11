@@ -1,8 +1,52 @@
-import React from "react";
+import gsap from "gsap";
+import React, { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
 export const Prospero = ({ showLogo }) => {
   const navigate = useNavigate();
+
+  const Prospero = useRef(null);
+  const Inter = useRef(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const viewportHeight = window.innerHeight;
+
+      if (scrollPosition > viewportHeight / 2) {
+        gsap.to(Prospero.current, {
+          transform: "translateX(0%)",
+          duration: 1,
+          ease: "power3.out",
+        });
+
+        gsap.to(Inter.current, {
+          opacity: 1,
+          duration: 1,
+          ease: "power3.out",
+        });
+      } else {
+        gsap.to(Prospero.current, {
+          transform: "translateX(-80%)",
+          duration: 1,
+          ease: "power3.out",
+        });
+
+        gsap.to(Inter.current, {
+          opacity: 0,
+          duration: 1,
+          ease: "power3.out",
+        });
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <figure
       onClick={() => navigate("/")}
@@ -14,7 +58,7 @@ export const Prospero = ({ showLogo }) => {
         version="1.1"
         viewBox="0 0 148.44 30.73"
       >
-        <g className="interText opacity-0">
+        <g ref={Inter} className="interText opacity-0">
           <path d="M32.56,19.11l4.35.03c1.73,0,3.1-.51,4.11-1.52.65-.63,1.21-1.46,1.7-2.49.27-.47.5-.89.69-1.26h-3.5c.03.06.06.11.07.18v.03c0,.26-.26.76-.77,1.49-.29.48-1.13.73-2.51.73h-2.57l1.33-2.43h-3.14l-4.54,8.13h3.15c.16-.18.7-1.14,1.63-2.89" />
           <path d="M34.2,10.53l-1.38,2.48h10.99c.14-.36.23-.65.22-.85-.01-.25-.06-.45-.13-.59-.38-.7-1.05-1-1.87-1h-.64l-7.15-.03h-.03Z" />
           <polygon points="44.6 21.98 49.17 13.87 45.98 13.87 41.44 22 44.58 22 44.6 21.98" />
@@ -50,7 +94,7 @@ export const Prospero = ({ showLogo }) => {
           <polygon points="11.88 8.48 11.9 8.46 14.25 4.29 12.61 4.29 10.27 8.48 11.88 8.48" />
           <path d="M30.11,2.62h-5.79s-.25.43-.68,1.22h5.79l.68-1.22Z" />
         </g>
-        <g className="prospero -translate-x-[80%]">
+        <g ref={Prospero} className="prospero -translate-x-[80%]">
           <path d="M141.53,4.42c1.2,0,2.17-.97,2.17-2.17s-.97-2.17-2.17-2.17-2.17.97-2.17,2.17.97,2.17,2.17,2.17" />
           <path d="M140.74,17.22c-.08-.06-.16-.11-.25-.16h0,0s-.06-.04-.09-.05l-1.24-.7-5.12-2.96h0s-.02,0-.02,0l-8.02,13.9-.37.63c-.05.07-.09.15-.13.23h0s0,0,0,0c-.01.02-.02.05-.03.07h0s0,.01,0,.01c-.1.23-.15.48-.15.75,0,.99.74,1.79,1.66,1.79.54,0,1.03-.28,1.33-.72l.46-.79,2.13-3.69,8.75-2.34c.1-.02.21-.05.31-.08l.09-.03h0c1.21-.45,2.07-1.68,2.07-3.13,0-.64-.17-1.24-.46-1.74-.23-.39-.53-.73-.89-.99M136.05,20.66l-2.79.75,2-3.46,1.02.59,2.44,1.41-2.67.71Z" />
           <path d="M126.18,15.77l.27.76.75-.13.2-.03,3.67-.62-1.57-.92,3.01-5.21,4.25-.9h0c.69-.18,1.2-.85,1.2-1.65,0-.93-.7-1.69-1.57-1.69-.14,0-.27.02-.39.05l-5.64,1.19h-.01s-3.75,6.49-3.75,6.49l-1.73-1.01,1.24,3.47.07.19Z" />
