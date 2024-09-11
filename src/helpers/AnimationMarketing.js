@@ -29,7 +29,7 @@ export const AnimationMarketing = (abrirDije, dijeCanvaRef) => {
       tl.to(
         ".containMarket_child",
         {
-          height: "100%",
+          height: "85%",
           ease: easeAnim,
           duration: time,
         },
@@ -190,7 +190,7 @@ export const AnimationMarketing = (abrirDije, dijeCanvaRef) => {
       tl.to(
         ".containMarket_child",
         {
-          height: "83.33%",
+          height: "80%",
           ease: easeAnim,
           duration: time,
         },
