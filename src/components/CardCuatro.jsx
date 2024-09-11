@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useSnapshot } from "valtio";
+import { mobile, tablet } from "../helpers/Medidas";
 
 export const CardCuatro = ({ DijeValtio, next, currentSlide }) => {
+  const responsive = mobile || tablet;
   const [ActiveAviso, setActiveAviso] = useState(false);
   const snap = useSnapshot(DijeValtio);
 
@@ -15,7 +17,7 @@ export const CardCuatro = ({ DijeValtio, next, currentSlide }) => {
     <div className="h-full w-full flex flex-col items-center justify-around slide-uno relative">
       <div />
       <div className="w-5/6 mx-auto flex flex-col ">
-        {ActiveAviso && (
+        {ActiveAviso && responsive && (
           <span className="absolute top-14 left-1/2 -translate-x-1/2 text-black flex items-center justify-center space-x-2">
             <span>Verifica tu dije</span>
             <span role="img" aria-label="dedo apuntando hacia arriba">

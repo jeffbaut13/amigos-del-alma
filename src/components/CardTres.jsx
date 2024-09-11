@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useSnapshot } from "valtio";
+import { mobile, tablet } from "../helpers/Medidas";
 
 export const CardTres = ({ DijeValtio, next, currentSlide }) => {
+  const responsive = mobile || tablet;
   const [ActiveAviso, setActiveAviso] = useState(false);
   const snap = useSnapshot(DijeValtio);
 
@@ -32,7 +34,7 @@ export const CardTres = ({ DijeValtio, next, currentSlide }) => {
               }
             }}
           />
-          {ActiveAviso && (
+          {ActiveAviso && responsive && (
             <span className="absolute left-1/2 -translate-x-1/2 top-24 text-black flex items-center justify-center space-x-2">
               <span>Mira como va quedando tu dije</span>
               <span role="img" aria-label="dedo apuntando hacia arriba">

@@ -9,6 +9,11 @@ export const AnimationMarketing = (abrirDije, dijeCanvaRef) => {
   const tl = gsap.timeline();
 
   if (abrirDije) {
+    gsap.to(".BlurBack", {
+      opacity: 1,
+      ease: easeAnim,
+      duration: time,
+    });
     tl.fromTo(
       dijeCanvaRef.current,
       {
@@ -171,6 +176,13 @@ export const AnimationMarketing = (abrirDije, dijeCanvaRef) => {
       delay: 2.5,
     });
   } else if (abrirDije == false) {
+    gsap.to(".BlurBack", {
+      opacity: 0,
+      ease: easeAnim,
+      duration: time,
+      delay: 0.8,
+    });
+
     tl.to(
       dijeCanvaRef.current,
 
