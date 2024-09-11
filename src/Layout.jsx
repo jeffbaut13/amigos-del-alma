@@ -9,6 +9,7 @@ export const Layout = ({ children }) => {
 
   useEffect(() => {
     const container = containerRef.current;
+    const lastScrollTop = useRef(0);
 
     // Define the function to check if scrolled past 100vh
     const checkScroll = () => {
