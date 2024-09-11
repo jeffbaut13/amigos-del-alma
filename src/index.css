@@ -257,3 +257,24 @@ input[type="number"]::-webkit-inner-spin-button {
 .lineBurger.active {
   @apply absolute top-0;
 }
+
+/* Estilo para la barra de desplazamiento */
+::-webkit-scrollbar {
+  width: 5px; /* Ancho de la barra de desplazamiento */
+}
+
+/* Estilo para el riel de la barra de desplazamiento */
+::-webkit-scrollbar-track {
+  background-color: transparent; /* Color de fondo del riel */
+}
+
+/* Estilo para el pulgar (la parte móvil) de la barra de desplazamiento */
+::-webkit-scrollbar-thumb {
+  background-color: var(--pink); /* Color del pulgar */
+}
+/* Estilo para la barra de desplazamiento en Firefox */
+/* Nota: Esto solo funciona en Firefox 64+ */
+* {
+  scrollbar-color: var(--hoverBlack) #000; /* Color del pulgar y del riel */
+  scrollbar-width: thin; /* Ancho de la barra de desplazamiento */
+}
