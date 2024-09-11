@@ -147,6 +147,7 @@ export const Pasos = ({ DijeValtio, setOpen, camMove, snap }) => {
             sliderRef={sliderRef}
             DijeValtio={DijeValtio}
             setOpen={setOpen}
+            currentSlide={currentSlide}
           />{" "}
           {currentSlide >= 2 && (
             <figure

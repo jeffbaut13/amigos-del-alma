@@ -18,6 +18,7 @@ export const SliderPaso = ({
   setOpen,
   setBtnCompra,
   handleCompra,
+  currentSlide,
 }) => {
   const inputChangeRef = useRef();
   const inputEmail = useRef();
@@ -55,10 +56,18 @@ export const SliderPaso = ({
         <CardDos DijeValtio={DijeValtio} next={next} />
       </div>
       <div>
-        <CardTres DijeValtio={DijeValtio} next={next} />
+        <CardTres
+          DijeValtio={DijeValtio}
+          next={next}
+          currentSlide={currentSlide}
+        />
       </div>
       <div>
-        <CardCuatro DijeValtio={DijeValtio} next={next} />
+        <CardCuatro
+          currentSlide={currentSlide}
+          DijeValtio={DijeValtio}
+          next={next}
+        />
       </div>
       <div>
         <ImgLoadDije
