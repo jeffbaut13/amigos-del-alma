@@ -6,7 +6,6 @@ export const Layout = ({ children }) => {
   const containerRef = useRef(null);
   const [loader, setLoader] = useState(true);
   const [logo, setLogo] = useState(false);
-  const lastScrollTop = useRef(0);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -25,35 +24,13 @@ export const Layout = ({ children }) => {
       }
     };
 
-    const handleScroll = () => {
-      const currentScrollTop = container.scrollTop;
-
-      if (currentScrollTop > lastScrollTop.current) {
-        // Scrolling down
-        document.documentElement.style.setProperty(
-          "--scroll-direction",
-          "down"
-        );
-      } else {
-        // Scrolling up
-        document.documentElement.style.setProperty("--scroll-direction", "up");
-      }
-
-      lastScrollTop.current = currentScrollTop;
-    };
-
-    const eject = () => {
-      handleScroll();
-      checkScroll();
-    };
-
     // Add event listener for scroll
-    container.addEventListener("scroll", eject);
+    container.addEventListener("scroll", checkScroll);
 
     // Cleanup event listener
     return () => {
       if (container) {
-        container.removeEventListener("scroll", eject);
+        container.removeEventListener("scroll", checkScroll);
       }
     };
   }, []);
