@@ -148,24 +148,22 @@ export const Pasos = ({ DijeValtio, setOpen, camMove, snap }) => {
             DijeValtio={DijeValtio}
             setOpen={setOpen}
           />{" "}
-          <div className="arrows flex justify-between w-full h-6 top-1/2 left-0 absolute z-50">
-            {currentSlide >= 2 && (
-              <figure
-                onClick={prev}
-                className="cursor-pointer bg-black hover:bg-[--hoverBlack] transition-all duration-300 group border border-black absolute left-2 rotate-180 lg:w-6 lg:h-6 xs:w-11 xs:h-11 xs:p-3 inline-block lg:p-1.5 rounded-full -translate-y-1/2"
-              >
-                <Arrows color={"stroke-white transition-all duration-300 "} />
-              </figure>
-            )}
-            {currentSlide > 1 && currentSlide <= 4 && (
-              <figure
-                onClick={next}
-                className="cursor-pointer bg-black hover:bg-[--hoverBlack] transition-all duration-300 group border border-black absolute right-2 lg:w-6 lg:h-6 xs:w-11 xs:h-11 xs:p-3 inline-block lg:p-1.5 rounded-full -translate-y-1/2"
-              >
-                <Arrows color={"stroke-white transition-all duration-300 "} />
-              </figure>
-            )}
-          </div>
+          {currentSlide >= 2 && (
+            <figure
+              onClick={prev}
+              className="z-50 top-1/2 cursor-pointer bg-black hover:bg-[--hoverBlack] transition-all duration-300 group border border-black absolute left-2 rotate-180 lg:w-6 lg:h-6 xs:w-11 xs:h-11 xs:p-3 inline-block lg:p-1.5 rounded-full -translate-y-1/2"
+            >
+              <Arrows color={"stroke-white transition-all duration-300 "} />
+            </figure>
+          )}
+          {currentSlide > 1 && currentSlide <= 4 && (
+            <figure
+              onClick={next}
+              className="z-50 top-1/2 cursor-pointer bg-black hover:bg-[--hoverBlack] transition-all duration-300 group border border-black absolute right-2 lg:w-6 lg:h-6 xs:w-11 xs:h-11 xs:p-3 inline-block lg:p-1.5 rounded-full -translate-y-1/2"
+            >
+              <Arrows color={"stroke-white transition-all duration-300 "} />
+            </figure>
+          )}
         </div>
       </div>
     </>

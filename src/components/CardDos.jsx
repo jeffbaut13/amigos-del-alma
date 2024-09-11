@@ -1,6 +1,11 @@
 import React from "react";
+import { useSnapshot } from "valtio";
 
 export const CardDos = ({ DijeValtio, next }) => {
+  const snap = useSnapshot(DijeValtio);
+
+  const validacion = snap.usuario !== "" && snap.email !== "";
+
   return (
     <div className="h-full w-full flex flex-col items-center justify-around slide-uno">
       <div />
@@ -12,6 +17,14 @@ export const CardDos = ({ DijeValtio, next }) => {
             onChange={(e) => (DijeValtio.usuario = e.target.value)}
             placeholder="¿Cuál es tu nombre?"
             className="focus:border-none focus:outline-none pt-4 text-center text-black"
+            onKeyDown={(e) => {
+              if (snap.usuario !== "") {
+                // Verificar si se presionó "Enter" o "Done"
+                if (e.key === "Enter" || e.key === "Done") {
+                  document.querySelector(".email").focus();
+                }
+              }
+            }}
           />
         </div>
         <div className=" w-full pt-10 border-b">
@@ -19,13 +32,27 @@ export const CardDos = ({ DijeValtio, next }) => {
             type="email"
             name="email"
             onChange={(e) => (DijeValtio.email = e.target.value)}
+            onKeyDown={(e) => {
+              if (snap.email !== "") {
+                // Verificar si se presionó "Enter" o "Done"
+                if (e.key === "Enter" || e.key === "Done") {
+                  next();
+                }
+              }
+            }}
             placeholder="¿Tu correo?"
-            className="focus:border-none focus:outline-none pt-4 text-center text-black"
+            className="email focus:border-none focus:outline-none pt-4 text-center text-black"
           />
         </div>
       </div>
       <div className="w-full flex flex-col items-center justify-center">
-        <button onClick={next}>Siguiente</button>
+        <button
+          disabled={!validacion}
+          className={`${!validacion ? "opacity-30" : "opacity-100"}`}
+          onClick={next}
+        >
+          Siguiente
+        </button>
       </div>
     </div>
   );

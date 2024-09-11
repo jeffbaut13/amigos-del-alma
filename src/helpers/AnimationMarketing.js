@@ -9,14 +9,6 @@ export const AnimationMarketing = (abrirDije, dijeCanvaRef) => {
   const tl = gsap.timeline();
 
   if (abrirDije) {
-    if (mobile || tablet) {
-      gsap.to(".contaiMarket", {
-        width: "100%",
-      });
-      gsap.to(".containMarket_child", {
-        height: "100%",
-      });
-    }
     tl.fromTo(
       dijeCanvaRef.current,
       {
@@ -28,6 +20,22 @@ export const AnimationMarketing = (abrirDije, dijeCanvaRef) => {
         duration: 0.5,
       }
     );
+    if (mobile || tablet) {
+      tl.to(".contaiMarket", {
+        width: "100%",
+        ease: easeAnim,
+        duration: time,
+      });
+      tl.to(
+        ".containMarket_child",
+        {
+          height: "100%",
+          ease: easeAnim,
+          duration: time,
+        },
+        "<"
+      );
+    }
     if (destopk) {
       tl.fromTo(
         ".textoMarket",
@@ -163,14 +171,6 @@ export const AnimationMarketing = (abrirDije, dijeCanvaRef) => {
       delay: 2.5,
     });
   } else if (abrirDije == false) {
-    if (mobile || tablet) {
-      gsap.to(".contaiMarket", {
-        width: "80%",
-      });
-      gsap.to(".containMarket_child", {
-        height: "83.33%",
-      });
-    }
     tl.to(
       dijeCanvaRef.current,
 
@@ -180,6 +180,23 @@ export const AnimationMarketing = (abrirDije, dijeCanvaRef) => {
         duration: time,
       }
     );
+
+    if (mobile || tablet) {
+      tl.to(".contaiMarket", {
+        width: "80%",
+        ease: easeAnim,
+        duration: time,
+      });
+      tl.to(
+        ".containMarket_child",
+        {
+          height: "83.33%",
+          ease: easeAnim,
+          duration: time,
+        },
+        "<"
+      );
+    }
 
     if (destopk) {
       tl.to(".dijeCanva", { width: "100%", height: "100%" });

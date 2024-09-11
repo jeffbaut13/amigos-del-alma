@@ -1,6 +1,8 @@
 import React from "react";
+import { useSnapshot } from "valtio";
 
 export const CardTres = ({ DijeValtio, next }) => {
+  const snap = useSnapshot(DijeValtio);
   return (
     <div className="h-full w-full flex flex-col items-center justify-around slide-uno">
       <div />
@@ -13,11 +15,29 @@ export const CardTres = ({ DijeValtio, next }) => {
             onChange={(e) => (DijeValtio.nombre = e.target.value)}
             placeholder="¿Cómo se llama tu amigo?"
             className="focus:border-none focus:outline-none pt-4 text-center text-black"
+            onKeyDown={(e) => {
+              if (snap.nombre === "" || snap.nombre === "TOÑO") {
+                // Verificar si se presionó "Enter" o "Done"
+                if (e.key === "Enter" || e.key === "Done") {
+                  next();
+                }
+              }
+            }}
           />
         </div>
       </div>
       <div className="w-full flex flex-col items-center justify-center">
-        <button onClick={next}>Siguiente</button>
+        <button
+          disabled={snap.nombre === "" || snap.nombre === "TOÑO"}
+          className={`${
+            snap.nombre === "" || snap.nombre === "TOÑO"
+              ? "opacity-30"
+              : "opacity-100"
+          }`}
+          onClick={next}
+        >
+          Siguiente
+        </button>
       </div>
     </div>
   );
