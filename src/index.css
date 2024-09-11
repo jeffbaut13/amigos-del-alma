@@ -53,7 +53,10 @@
 .NeueHassRoman {
   font-family: "NeueHaas Roman";
 }
-
+.notFound {
+  -webkit-text-stroke: 2px var(--second);
+  -webkit-text-fill-color: #ffffff00;
+}
 html {
   @apply overflow-x-hidden xl:text-[1vw] xs:text-[3vw] sm:text-[1.5vw] lg:text-[1vw] scroll-smooth bg-black;
 }

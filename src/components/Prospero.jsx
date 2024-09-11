@@ -1,8 +1,13 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 export const Prospero = ({ showLogo }) => {
+  const navigate = useNavigate();
   return (
-    <figure className="w-6 h-full inline-block absolute left-6">
+    <figure
+      onClick={() => navigate("/")}
+      className="cursor-pointer w-6 h-full inline-block absolute left-6"
+    >
       <svg
         id="uuid-acb04939-5dee-4d33-b95d-d44bd88ca0ef"
         data-name="Capa 2"
