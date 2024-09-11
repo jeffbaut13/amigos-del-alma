@@ -60,7 +60,7 @@ const Comercial = () => {
             Un film de Inter Rapidísimo
           </h1>
           <button
-            className="group bg-[#828282] opacity-65 hover:opacity-100 hover:bg-[#fffae1] text-[#1d1d1b] text-lg flex items-center justify-between ml-2"
+            className="group btn-home text-lg flex items-center justify-between ml-2"
             onClick={handlePlayClick}
           >
             <figure className="w-5 h-5 block mr-2">
@@ -81,7 +81,7 @@ const Comercial = () => {
                       style={{ strokeMiterlimit: 10 }}
                     />
                     <path
-                      className="fill-[#828282] group-hover:fill-[#fffae1] stroke-[#828282] transition-all duration-300"
+                      className="fill-[--second]  transition-all duration-300"
                       style={{ strokeMiterlimit: 10, strokeWidth: "0.5px" }}
                       d="m10.71,10.27c0-1.3.92-1.83,2.05-1.18l10.59,6.11c1.13.65,1.13,1.72,0,2.37l-10.59,6.11c-1.13.65-2.05.12-2.05-1.18v-12.23Z"
                     />

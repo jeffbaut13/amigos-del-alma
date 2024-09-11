@@ -7,43 +7,51 @@ export const Prospero = ({ showLogo }) => {
 
   const Prospero = useRef(null);
   const Inter = useRef(null);
-
+  const btnMarket = document.querySelector("#btn-observer");
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      const viewportHeight = window.innerHeight;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Animación cuando el elemento está en el viewport
+            gsap.to(Prospero.current, {
+              transform: "translateX(0%)",
+              duration: 1,
+              ease: "power3.out",
+            });
 
-      if (scrollPosition > viewportHeight / 2) {
-        gsap.to(Prospero.current, {
-          transform: "translateX(0%)",
-          duration: 1,
-          ease: "power3.out",
-        });
+            gsap.to(Inter.current, {
+              opacity: 1,
+              duration: 1,
+              ease: "power3.out",
+            });
+          } else {
+            // Animación cuando el elemento está fuera del viewport
+            gsap.to(Prospero.current, {
+              transform: "translateX(-80%)",
+              duration: 1,
+              ease: "power3.out",
+            });
 
-        gsap.to(Inter.current, {
-          opacity: 1,
-          duration: 1,
-          ease: "power3.out",
+            gsap.to(Inter.current, {
+              opacity: 0,
+              duration: 1,
+              ease: "power3.out",
+            });
+          }
         });
-      } else {
-        gsap.to(Prospero.current, {
-          transform: "translateX(-80%)",
-          duration: 1,
-          ease: "power3.out",
-        });
+      },
+      { threshold: 0.5 } // Ajusta el umbral según sea necesario
+    );
 
-        gsap.to(Inter.current, {
-          opacity: 0,
-          duration: 1,
-          ease: "power3.out",
-        });
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
+    if (btnMarket) {
+      observer.observe(btnMarket);
+    }
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      if (btnMarket) {
+        observer.unobserve(btnMarket);
+      }
     };
   }, []);
 
