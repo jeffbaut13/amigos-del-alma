@@ -5,7 +5,7 @@ import { Prospero } from "./Prospero";
 import { LinkRouter } from "./LinkRouter";
 import gsap from "gsap";
 
-export const Navbar = () => {
+export const Navbar = ({ logo }) => {
   const [showLogo, setShowLogo] = useState(true);
   const [active, setActive] = useState(false);
   const location = useLocation(); // Hook para obtener la ubicación actual
@@ -51,7 +51,7 @@ export const Navbar = () => {
 
   return (
     <div className="fixed top-0 left-0 z-[200] px-8 mt-6 w-full h-6">
-      <Prospero showLogo={showLogo} />
+      <Prospero showLogo={logo} />
 
       <Burger handleClick={handleClick} showLogo={showLogo} active={active} />
       <LinkRouter setActive={setActive} showLogo={showLogo} />

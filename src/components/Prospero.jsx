@@ -4,56 +4,36 @@ import { useNavigate } from "react-router-dom";
 
 export const Prospero = ({ showLogo }) => {
   const navigate = useNavigate();
-
   const Prospero = useRef(null);
   const Inter = useRef(null);
-  const btnMarket = document.querySelector("#btn-observer");
+
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            // Animación cuando el elemento está en el viewport
-            gsap.to(Prospero.current, {
-              transform: "translateX(0%)",
-              duration: 1,
-              ease: "power3.out",
-            });
+    if (showLogo) {
+      gsap.to(Prospero.current, {
+        transform: "translateX(0%)",
+        duration: 1,
+        ease: "power3.out",
+      });
 
-            gsap.to(Inter.current, {
-              opacity: 1,
-              duration: 1,
-              ease: "power3.out",
-            });
-          } else {
-            // Animación cuando el elemento está fuera del viewport
-            gsap.to(Prospero.current, {
-              transform: "translateX(-80%)",
-              duration: 1,
-              ease: "power3.out",
-            });
+      gsap.to(Inter.current, {
+        opacity: 1,
+        duration: 1,
+        ease: "power3.out",
+      });
+    } else {
+      gsap.to(Prospero.current, {
+        transform: "translateX(-80%)",
+        duration: 1,
+        ease: "power3.out",
+      });
 
-            gsap.to(Inter.current, {
-              opacity: 0,
-              duration: 1,
-              ease: "power3.out",
-            });
-          }
-        });
-      },
-      { threshold: 0.5 } // Ajusta el umbral según sea necesario
-    );
-
-    if (btnMarket) {
-      observer.observe(btnMarket);
+      gsap.to(Inter.current, {
+        opacity: 0,
+        duration: 1,
+        ease: "power3.out",
+      });
     }
-
-    return () => {
-      if (btnMarket) {
-        observer.unobserve(btnMarket);
-      }
-    };
-  }, []);
+  }, [showLogo]); // Ejecutar solo cuando se renderice el componente
 
   return (
     <figure
