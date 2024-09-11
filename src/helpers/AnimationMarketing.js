@@ -7,7 +7,16 @@ export const AnimationMarketing = (abrirDije, dijeCanvaRef) => {
   const easeAnim = "power1.inOut";
   const time = 0.3;
   const tl = gsap.timeline();
+
   if (abrirDije) {
+    if (mobile || tablet) {
+      gsap.to(".contaiMarket", {
+        width: "100%",
+      });
+      gsap.to(".containMarket_child", {
+        height: "100%",
+      });
+    }
     tl.fromTo(
       dijeCanvaRef.current,
       {
@@ -154,6 +163,14 @@ export const AnimationMarketing = (abrirDije, dijeCanvaRef) => {
       delay: 2.5,
     });
   } else if (abrirDije == false) {
+    if (mobile || tablet) {
+      gsap.to(".contaiMarket", {
+        width: "80%",
+      });
+      gsap.to(".containMarket_child", {
+        height: "83.33%",
+      });
+    }
     tl.to(
       dijeCanvaRef.current,
 

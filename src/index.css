@@ -100,7 +100,7 @@ body,
 }
 
 button {
-  @apply py-3 px-5 rounded-full transition-all duration-300;
+  @apply max-lg:text-xl py-3 px-5 rounded-full transition-all duration-300;
 }
 .btn-home {
   @apply bg-[--second] border border-[--second] text-[--primary] hover:bg-white text-base;
@@ -153,7 +153,7 @@ svg {
   text-shadow: 0px 0px 1px var(--second);
 }
 input {
-  @apply w-full bg-transparent  focus:outline-none text-sm;
+  @apply w-full bg-transparent  focus:outline-none max-lg:text-xl;
 }
 /* Chrome, Safari, Edge, Opera */
 input[type="number"]::-webkit-outer-spin-button,

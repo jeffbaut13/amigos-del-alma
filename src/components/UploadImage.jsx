@@ -70,12 +70,12 @@ export const UploadImage = ({
     <>
       {!controles ? (
         <div className="lg:w-2/5 xs:w-[45%] flex flex-col justify-center items-center h-full">
-          <p className="lg:text-2xl xs:text-base text-start mb-4 text-black">
+          <p className="lg:text-2xl xs:text-xl text-start mb-4 text-black">
             Sube la mejor foto que tengas con tu amigo.
           </p>
 
           <button className="w-full" onClick={openFileDialog}>
-            <span className="w-4 h-4 inline-block">
+            <span className="lg:w-4 xs:w-10 lg:h-4 xs:h-10 inline-block">
               <svg
                 id="uuid-bdd3d4bd-bb1d-42e4-8673-61b974f9d6e1"
                 data-name="Capa_2"

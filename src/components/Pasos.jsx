@@ -134,7 +134,7 @@ export const Pasos = ({ DijeValtio, setOpen, camMove, snap }) => {
 
   return (
     <>
-      <div className="  relative border-dashed border w-full h-full rounded-lg flex flex-col  items-start  ">
+      <div className="relative border-dashed border w-full h-full rounded-lg flex flex-col  items-start  ">
         <div
           className={`NeueHassRoman relative border-none shadowbox w-full h-full flex flex-col  items-start `}
         >
@@ -152,7 +152,7 @@ export const Pasos = ({ DijeValtio, setOpen, camMove, snap }) => {
             {currentSlide >= 2 && (
               <figure
                 onClick={prev}
-                className="cursor-pointer bg-black hover:bg-[--hoverBlack] transition-all duration-300 group border border-black absolute left-2 rotate-180 w-6 h-6 inline-block p-1.5 rounded-full -translate-y-1/2"
+                className="cursor-pointer bg-black hover:bg-[--hoverBlack] transition-all duration-300 group border border-black absolute left-2 rotate-180 lg:w-6 lg:h-6 xs:w-11 xs:h-11 xs:p-3 inline-block lg:p-1.5 rounded-full -translate-y-1/2"
               >
                 <Arrows color={"stroke-white transition-all duration-300 "} />
               </figure>
@@ -160,7 +160,7 @@ export const Pasos = ({ DijeValtio, setOpen, camMove, snap }) => {
             {currentSlide > 1 && currentSlide <= 4 && (
               <figure
                 onClick={next}
-                className="cursor-pointer bg-black hover:bg-[--hoverBlack] transition-all duration-300 group border border-black absolute right-2 w-6 h-6 inline-block p-1.5 rounded-full -translate-y-1/2"
+                className="cursor-pointer bg-black hover:bg-[--hoverBlack] transition-all duration-300 group border border-black absolute right-2 lg:w-6 lg:h-6 xs:w-11 xs:h-11 xs:p-3 inline-block lg:p-1.5 rounded-full -translate-y-1/2"
               >
                 <Arrows color={"stroke-white transition-all duration-300 "} />
               </figure>
