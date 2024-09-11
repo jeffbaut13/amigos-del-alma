@@ -6,10 +6,10 @@ export const Layout = ({ children }) => {
   const containerRef = useRef(null);
   const [loader, setLoader] = useState(true);
   const [logo, setLogo] = useState(false);
+  const lastScrollTop = useRef(0);
 
   useEffect(() => {
     const container = containerRef.current;
-    const lastScrollTop = useRef(0);
 
     // Define the function to check if scrolled past 100vh
     const checkScroll = () => {
