@@ -64,7 +64,7 @@ export const MakingOfOne = () => {
       <div className="absolute top-0 left-0 bg-black bg-opacity-80 w-full h-full" />
       <div className="absolute top-0 left-0 z-0 w-full h-full bg-video" />
 
-      <div className="z-10 relative w-full lg:h-3/4 xs:h-3/5 flex lg:flex-wrap xs:flex-col lg:px-40 xs:px-10">
+      <div className="z-10 relative w-full lg:h-3/4 xs:h-3/4 flex lg:flex-wrap xs:flex-col lg:px-40 xs:px-10">
         {isMobile && <CajaVideosTitulos />}
 
         <div className="videos relative lg:w-[40%] xs:w-full flex flex-wrap px-2 lg:mt-0 xs:mt-4 h-full">

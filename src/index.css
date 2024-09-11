@@ -70,7 +70,7 @@
   -webkit-text-fill-color: #ffffff00;
 }
 html {
-  @apply overflow-x-hidden xl:text-[1vw] xs:text-[3.5vw] sm:text-[1.5vw] lg:text-[1vw] scroll-smooth bg-black;
+  @apply overflow-x-hidden xl:text-[1vw] xs:text-[3vw] sm:text-[1.5vw] lg:text-[1vw] scroll-smooth bg-black;
 }
 body,
 #root {
