@@ -19,7 +19,7 @@ const Comercial = () => {
   };
 
   return (
-    <div id="comercial" className="h-screen w-full relative">
+    <div id="comercial" className="h-screen w-full relative snap-item">
       {/* Fondo de la pantalla principal */}
       <div
         className="absolute inset-0 bg-cover bg-center"

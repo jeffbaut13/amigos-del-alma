@@ -11,7 +11,7 @@ export const Layout = ({ children }) => {
     <>
       <Navbar />
       {loader && <Loader setLoader={setLoader} />}
-      <div className="w-full h-full">{children}</div>
+      <div className="w-full h-full snap">{children}</div>
     </>
   );
 };

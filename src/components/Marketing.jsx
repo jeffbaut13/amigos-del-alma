@@ -28,7 +28,7 @@ export const Marketing = () => {
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
       }}
-      className="section relative flex items-center justify-center lg:bg-top xs:bg-left-top"
+      className="snap-item section relative flex items-center justify-center lg:bg-top xs:bg-left-top"
     >
       {/* <div className="absolute top-0 left-0 z-0 w-full h-full bg-video" /> */}
       <div className="z-10 relative w-4/5 h-full flex items-center justify-center">

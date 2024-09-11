@@ -3,7 +3,7 @@ import { RedesSociales } from "./RedesSociales";
 
 export const Footer = () => {
   return (
-    <div id="compartir" className="section">
+    <div id="compartir" className="snap-item section">
       <RedesSociales />
     </div>
   );

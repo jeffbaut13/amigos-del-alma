@@ -14,6 +14,18 @@
 .animate-scroll {
   animation: scroll 90s linear infinite;
 }
+.snap {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+.snap-item {
+  scroll-snap-align: center;
+  margin: 0;
+}
 
 @font-face {
   font-family: "AddingtonCF-thin";
