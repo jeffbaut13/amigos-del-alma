@@ -30,17 +30,19 @@ export function Dijegbl({ open, snap, group, abrirDije }) {
   useFrame(() => {
     if (!abrirDije && group.current) {
       // Actualizamos el valor de rotación
-      setRotationValue((prev) => prev + 0.01 * rotationDirection);
+      setTimeout(() => {
+        setRotationValue((prev) => prev + 0.01 * rotationDirection);
 
-      // Aplicamos la rotación al objeto
-      group.current.rotation.y = rotationValue;
+        // Aplicamos la rotación al objeto
+        group.current.rotation.y = rotationValue;
 
-      // Cambiamos la dirección de la rotación cuando llega a 0 o a 360 grados (aproximadamente 2 * Math.PI)
-      if (rotationValue >= Math.PI * 2) {
-        setRotationDirection(-1); // Cambiar la dirección hacia atrás
-      } else if (rotationValue <= 0) {
-        setRotationDirection(1); // Cambiar la dirección hacia adelante
-      }
+        // Cambiamos la dirección de la rotación cuando llega a 0 o a 360 grados (aproximadamente 2 * Math.PI)
+        if (rotationValue >= Math.PI * 2) {
+          setRotationDirection(-1); // Cambiar la dirección hacia atrás
+        } else if (rotationValue <= 0) {
+          setRotationDirection(1); // Cambiar la dirección hacia adelante
+        }
+      }, 1000);
     }
   });
 
