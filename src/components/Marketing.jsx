@@ -32,7 +32,7 @@ export const Marketing = () => {
     >
       {/* <div className="absolute top-0 left-0 z-0 w-full h-full bg-video" /> */}
       <div className="z-10 relative w-4/5 h-full flex items-center justify-center">
-        <div className="p-2 flex max-lg:flex-col-reverse relative justify-between rounded-xl border w-full lg:h-4/6 xs:h-5/6 max-lg:gap-2  border-dashed border-[#E1C5B550]">
+        <div className="p-2 flex max-lg:flex-col-reverse relative justify-between rounded-xl border w-full lg:h-4/6 xs:h-3/5 max-lg:gap-2  border-dashed border-[#E1C5B550]">
           <div className="textoMarket whitespace-nowrap overflow-hidden lg:w-1/4 xs:w-full lg:h-full xs:h-1/2 flex flex-col rounded-xl border border-[#E1C5B550] items-center justify-center text-xs text-[--second]">
             <h2 className="text-center text-2xl ">
               Ahora tú y tu <br /> Amigo del Alma también
