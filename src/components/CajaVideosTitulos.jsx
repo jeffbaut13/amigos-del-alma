@@ -8,7 +8,9 @@ export const CajaVideosTitulos = () => {
           <div className="w-4/5">
             <div className="titleBox w-full flex justify-center items-center">
               <h3 className="text-start lg:text-5xl xs:text-4xl">
-                Detrás de la emotiva <br /> producción Amigos <br /> del Alma.
+                Detrás de la <br />
+                emotiva producción <br />
+                Amigos del Alma.
                 <figure className="w-full mx-auto my-6">
                   <svg
                     id="uuid-a71b0a1e-de76-4da8-809a-02fb9fedb1f3"

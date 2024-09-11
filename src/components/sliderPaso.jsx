@@ -19,6 +19,8 @@ export const SliderPaso = ({
   setBtnCompra,
   handleCompra,
   currentSlide,
+  setDisable,
+  disable,
 }) => {
   const inputChangeRef = useRef();
   const inputEmail = useRef();
@@ -53,13 +55,21 @@ export const SliderPaso = ({
         <CardUno next={next} />
       </div>
       <div>
-        <CardDos DijeValtio={DijeValtio} next={next} />
+        <CardDos
+          DijeValtio={DijeValtio}
+          next={next}
+          setDisable={setDisable}
+          disable={disable}
+          currentSlide={currentSlide}
+        />
       </div>
       <div>
         <CardTres
           DijeValtio={DijeValtio}
           next={next}
           currentSlide={currentSlide}
+          setDisable={setDisable}
+          disable={disable}
         />
       </div>
       <div>
@@ -67,6 +77,8 @@ export const SliderPaso = ({
           currentSlide={currentSlide}
           DijeValtio={DijeValtio}
           next={next}
+          setDisable={setDisable}
+          disable={disable}
         />
       </div>
       <div>

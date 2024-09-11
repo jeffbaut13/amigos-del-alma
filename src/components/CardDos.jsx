@@ -1,10 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSnapshot } from "valtio";
 
-export const CardDos = ({ DijeValtio, next }) => {
+export const CardDos = ({
+  DijeValtio,
+  next,
+  setDisable,
+  disable,
+  currentSlide,
+}) => {
   const snap = useSnapshot(DijeValtio);
 
   const validacion = snap.usuario !== "" && snap.email !== "";
+
+  useEffect(() => {
+    if (validacion && currentSlide == 2) {
+      setDisable(true);
+    }
+    if (!validacion && currentSlide == 2) {
+      setDisable(false);
+    }
+  }, [validacion, currentSlide]);
 
   return (
     <div className="h-full w-full flex flex-col items-center justify-around slide-uno">

@@ -27,8 +27,8 @@ const Dije = proxy({
   },
   back: {
     rotation: [0, -3.5, 0],
-    position: [0, -0.6, 0],
-    zoom: 1.5,
+    position: [0, -0.1, 0],
+    zoom: 2,
   },
   EditImage: {
     rotation: [0, 0, 0],

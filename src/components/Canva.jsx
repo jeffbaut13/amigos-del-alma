@@ -37,7 +37,13 @@ export const Canva = ({
           maxDistance={7}
           minDistance={3}
         /> */}
-        <OrbitControls ref={cameraControlRef} enableZoom={false} />
+        <OrbitControls ref={cameraControlRef} enabled={false} />
+        {/* <OrbitControls
+          ref={cameraControlRef}
+          enabled={abrirDije ? true : false}
+          enableZoom={false}
+        /> */}
+
         <ambientLight intensity={100} />
         <directionalLight position={[6, 10, 10]} intensity={20} />
         <directionalLight position={[-6, 10, 10]} intensity={20} />

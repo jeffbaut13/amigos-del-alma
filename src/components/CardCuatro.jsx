@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { useSnapshot } from "valtio";
 import { mobile, tablet } from "../helpers/Medidas";
 
-export const CardCuatro = ({ DijeValtio, next, currentSlide }) => {
+export const CardCuatro = ({ DijeValtio, next, currentSlide, setDisable }) => {
   const inputNum = useRef(null);
   const responsive = mobile || tablet;
   const [ActiveAviso, setActiveAviso] = useState(false);
@@ -18,6 +18,15 @@ export const CardCuatro = ({ DijeValtio, next, currentSlide }) => {
       }, 1000);
     }
   }, [currentSlide]);
+
+  useEffect(() => {
+    if (snap.contacto !== "" && currentSlide === 4) {
+      setDisable(true);
+    }
+    if (snap.contacto === "" && currentSlide === 4) {
+      setDisable(false);
+    }
+  }, [snap.contacto, currentSlide]);
 
   return (
     <div className="h-full w-full flex flex-col items-center justify-around slide-uno relative">

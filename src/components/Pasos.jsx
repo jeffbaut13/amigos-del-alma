@@ -12,6 +12,7 @@ export const Pasos = ({ DijeValtio, setOpen, camMove, snap }) => {
   const sliderRef = useRef();
   const [currentSlide, setCurrentSlide] = useState(1);
   const [btnCompra, setBtnCompra] = useState(false);
+  const [disable, setDisable] = useState(false);
 
   const handleCompra = async () => {
     // Verifica que todos los datos requeridos estén presentes
@@ -83,6 +84,9 @@ export const Pasos = ({ DijeValtio, setOpen, camMove, snap }) => {
     position: [-1.5, -1, 3],
   };
 
+  console.log(disable);
+  console.log(snap.usuario !== "" && snap.email !== "");
+
   useEffect(() => {
     if (currentSlide == 2) {
       camMove(snap.reset);
@@ -104,6 +108,16 @@ export const Pasos = ({ DijeValtio, setOpen, camMove, snap }) => {
   }, [currentSlide]);
 
   const next = () => {
+    if (snap.usuario !== "" && snap.email !== "" && currentSlide == 2) {
+      setDisable(false);
+    }
+    if ((snap.nombre !== "" || snap.nombre !== "TOÑO") && currentSlide == 3) {
+      setDisable(false);
+    }
+    if (snap.contacto !== "" && currentSlide == 4) {
+      setDisable(false);
+    }
+
     sliderRef.current.slickNext();
     if (currentSlide === 0) {
       setCurrentSlide(1);
@@ -112,6 +126,7 @@ export const Pasos = ({ DijeValtio, setOpen, camMove, snap }) => {
     }
   };
   const prev = () => {
+    setDisable(true);
     sliderRef.current.slickPrev();
 
     if (currentSlide === 0) {
@@ -148,11 +163,13 @@ export const Pasos = ({ DijeValtio, setOpen, camMove, snap }) => {
             DijeValtio={DijeValtio}
             setOpen={setOpen}
             currentSlide={currentSlide}
+            setDisable={setDisable}
+            disable={disable}
           />{" "}
           {currentSlide >= 2 && (
             <figure
               onClick={prev}
-              className="z-50 top-1/2 cursor-pointer bg-black hover:bg-[--hoverBlack] transition-all duration-300 group border border-black absolute left-2 rotate-180 lg:w-6 lg:h-6 xs:w-11 xs:h-11 xs:p-3 inline-block lg:p-1.5 rounded-full -translate-y-1/2"
+              className={`z-50 top-1/2 cursor-pointer bg-black hover:bg-[--hoverBlack] transition-all duration-300 group border border-black absolute left-2 rotate-180 lg:w-6 lg:h-6 xs:w-11 xs:h-11 xs:p-3 inline-block lg:p-1.5 rounded-full -translate-y-1/2`}
             >
               <Arrows color={"stroke-white transition-all duration-300 "} />
             </figure>
@@ -160,7 +177,9 @@ export const Pasos = ({ DijeValtio, setOpen, camMove, snap }) => {
           {currentSlide > 1 && currentSlide <= 4 && (
             <figure
               onClick={next}
-              className="z-50 top-1/2 cursor-pointer bg-black hover:bg-[--hoverBlack] transition-all duration-300 group border border-black absolute right-2 lg:w-6 lg:h-6 xs:w-11 xs:h-11 xs:p-3 inline-block lg:p-1.5 rounded-full -translate-y-1/2"
+              className={`${
+                disable ? "" : "pointer-events-none opacity-30"
+              } z-50 top-1/2 cursor-pointer bg-black hover:bg-[--hoverBlack] transition-all duration-300 group border border-black absolute right-2 lg:w-6 lg:h-6 xs:w-11 xs:h-11 xs:p-3 inline-block lg:p-1.5 rounded-full -translate-y-1/2`}
             >
               <Arrows color={"stroke-white transition-all duration-300 "} />
             </figure>

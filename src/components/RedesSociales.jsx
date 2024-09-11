@@ -16,17 +16,16 @@ export const RedesSociales = () => {
       <div className="flex items-center lg:h-2/3 xs:h-1/2 w-[80%] relative border border-[--borderOpacity] p-2 border-dashed rounded-xl overflow-hidden">
         <div className="border border-[--borderOpacity] w-full h-full flex flex-col items-center justify-evenly bg-black bg-opacity-30 rounded-xl">
           <div className="flex flex-col justify-center items-center z-10 relative">
-            <figure className="lg:w-96 xs:w-[24rem] mb-8">
+            <figure className="lg:w-80 xs:w-80 mb-8">
               <img src="/iconos/TituloCentrado.svg" alt="Título" />
             </figure>
-            <h2 className="text-[--colorYellow] text-3xl text-center">
-              ¿Tienes un amigo que debería <br />
-              conocer esta historia?
+            <h2 className="text-[--colorYellow] text-2xl mt-8 text-center">
+              ¿Tienes un amigo <br /> que debería conocer <br /> esta historia?
             </h2>
           </div>
           <div className="flex w-full flex-col z-10">
             <h2 className="w-full NeueHaas-Ligth text-center text-xs text-[--tercero]">
-              compártele este contenido aquí
+              Compártele este contenido aquí
             </h2>
             <div className="w-full flex flex-col mt-8 justify-around items-center gap-2">
               <button className="group btn-home w-36 py-1 flex items-center justify-center transition-all duration-300">
@@ -55,7 +54,7 @@ export const RedesSociales = () => {
                   </svg>
                 </span>
               </button>
-              <button className="group btn-home w-36 py-1 flex items-center justify-center transition-all duration-300">
+              <button className="group btn-home w-36 py-1 my-3 flex items-center justify-center transition-all duration-300">
                 <span className="w-10 h-10 inline-block">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
