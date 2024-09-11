@@ -6,9 +6,10 @@ export const Prospero = ({ showLogo }) => {
   return (
     <figure
       onClick={() => navigate("/")}
-      className="cursor-pointer w-6 h-full inline-block absolute left-6"
+      className="cursor-pointer w-28 h-full inline-block absolute left-6"
     >
-      <svg
+      <img src="/iconos/inter.svg" alt="" />
+      {/* <svg
         id="uuid-acb04939-5dee-4d33-b95d-d44bd88ca0ef"
         data-name="Capa 2"
         xmlns="http://www.w3.org/2000/svg"
@@ -47,7 +48,7 @@ export const Prospero = ({ showLogo }) => {
             />
           </g>
         </g>
-      </svg>
+      </svg> */}
     </figure>
   );
 };
