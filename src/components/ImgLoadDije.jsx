@@ -5,6 +5,7 @@ import { ButtonImgEditor } from "./ButtonImgEditor";
 import { Arrows } from "./Arrows";
 import { PhotoCapture } from "./PhotoCapture";
 import { UploadImage } from "./UploadImage";
+import { CustomAutomaticButton } from "./CustomAutomaticButton";
 
 export const ImgLoadDije = ({ DijeValtio, setBtnCompra, handleCompra }) => {
   const snap = useSnapshot(DijeValtio);
@@ -13,7 +14,9 @@ export const ImgLoadDije = ({ DijeValtio, setBtnCompra, handleCompra }) => {
   const directionRef = useRef(null); // Referencia para la dirección
 
   const [reset, setReset] = useState(false);
-  const [controles, setControles] = useState(false);
+  const [controles, setControles] = useState(true);
+  const [updateImg, setUpdateImg] = useState(false);
+  const [edicion, setEdicion] = useState(false);
 
   // Función para ajustar el tamaño en porcentaje
   const scale = (factor) => {
@@ -52,54 +55,28 @@ export const ImgLoadDije = ({ DijeValtio, setBtnCompra, handleCompra }) => {
   return (
     <div className="h-full flex flex-col justify-evenly pt-8 px-12">
       <div
-        className={`botonesBox justify-center items-center mb-2 ${
-          controles
-            ? "flex justify-center"
-            : "h-42 flex flex-row justify-center items-center"
-        }`}
+        className={`botonesBox items-center mb-2  h-42 flex flex-row justify-center items-center"
+         `}
       >
         <UploadImage
+          setUpdateImg={setUpdateImg}
           setReset={setReset}
           setControles={setControles}
           controles={controles}
           DijeValtio={DijeValtio}
           setBtnCompra={setBtnCompra}
+          edicion={edicion}
+          setEdicion={setEdicion}
         />
-        {/*  <PhotoCapture
-          setControles={setControles}
-          controles={controles}
-          DijeValtio={DijeValtio}
-          setReset={setReset}
-          setBtnCompra={setBtnCompra}
-        /> */}
+        {updateImg && (
+          <CustomAutomaticButton
+            setEdicion={setEdicion}
+            setUpdateImg={setUpdateImg}
+          />
+        )}
       </div>
-
-      {controles && (
+      {edicion && (
         <>
-          <h2 className=" w-full text-center text-2xl my-4 text-black ">
-            Ubicación
-          </h2>
-          {/* Flecha derecha */}
-          <div className="relative flex w-full justify-center">
-            <ButtonImgEditor
-              position={"mx-6"}
-              rotate={"rotate-180"}
-              handleclick={() => (DijeValtio.imagePositionX -= 0.01)}
-              handleOnMouseDown={() => startAction("move", -0.01, 0)}
-              HandleOnMouseUp={stopAction}
-              handleOnMouseLeave={stopAction}
-            />
-            {/* Flecha izquierda */}
-            <ButtonImgEditor
-              position={"mx-6"}
-              rotate={""}
-              handleclick={() => (DijeValtio.imagePositionX += 0.01)}
-              handleOnMouseDown={() => startAction("move", +0.01, 0)}
-              HandleOnMouseUp={stopAction}
-              handleOnMouseLeave={stopAction}
-            />
-          </div>
-
           <h2 className="w-full text-center text-2xl my-4 text-black">
             Tamaño de imagen
           </h2>
@@ -108,6 +85,8 @@ export const ImgLoadDije = ({ DijeValtio, setBtnCompra, handleCompra }) => {
             DijeValtio={DijeValtio}
             reset={reset}
             setReset={setReset}
+            setEdicion={setEdicion}
+            setUpdateImg={setUpdateImg}
           />
           <div className=" w-full flex flex-col py-8 items-center">
             <button
@@ -117,7 +96,7 @@ export const ImgLoadDije = ({ DijeValtio, setBtnCompra, handleCompra }) => {
                 console.log("Compra iniciada");
               }}
             >
-              Finalizar
+              Ir a pagar
             </button>
           </div>
         </>

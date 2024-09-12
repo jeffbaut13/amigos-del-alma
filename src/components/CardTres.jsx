@@ -27,10 +27,14 @@ export const CardTres = ({
 
   useEffect(() => {
     if (snap.nombre !== "" && snap.nombre !== "TOÑO" && currentSlide == 3) {
-      setDisable(true);
+      setTimeout(() => {
+        setDisable(true);
+      }, 500);
     }
     if ((snap.nombre === "" || snap.nombre === "TOÑO") && currentSlide == 3) {
-      setDisable(false);
+      setTimeout(() => {
+        setDisable(false);
+      }, 500);
     }
   }, [snap.nombre, currentSlide]);
 
@@ -49,8 +53,8 @@ export const CardTres = ({
             placeholder="¿Cómo se llama tu amigo?"
             className="focus:border-none focus:outline-none pt-4 text-center text-black"
             onKeyDown={(e) => {
-              if (snap.nombre !== "" || snap.nombre !== "TOÑO") {
-                if (e.key === "Enter" || e.key === "Done") {
+              if (snap.nombre !== "" && snap.nombre !== "TOÑO") {
+                if (e.key === "Enter") {
                   next();
                 }
               }
@@ -58,9 +62,12 @@ export const CardTres = ({
           />
           {ActiveAviso && responsive && (
             <span className="absolute left-1/2 -translate-x-1/2 top-24 text-black flex items-center justify-center space-x-2">
-              <span>Mira como va quedando tu dije</span>
-              <span role="img" aria-label="dedo apuntando hacia arriba">
-                👆👆👆
+              <span className="w-full text-center relative">
+                Después de completar los datos, <br />
+                confirma cómo está quedando tu dije.{" "}
+                <span className="w-6 h-6 inline-block absolute bottom-1 -right-7">
+                  <img src="/iconos/iconoArriba.svg" alt="" />
+                </span>
               </span>
             </span>
           )}

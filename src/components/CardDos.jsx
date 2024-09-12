@@ -10,14 +10,22 @@ export const CardDos = ({
 }) => {
   const snap = useSnapshot(DijeValtio);
 
-  const validacion = snap.usuario !== "" && snap.email !== "";
+  const validacion =
+    snap.usuario !== "" &&
+    snap.usuario.length > 2 &&
+    snap.email.includes("@") &&
+    snap.email !== "";
 
   useEffect(() => {
     if (validacion && currentSlide == 2) {
-      setDisable(true);
+      setTimeout(() => {
+        setDisable(true);
+      }, 500);
     }
     if (!validacion && currentSlide == 2) {
-      setDisable(false);
+      setTimeout(() => {
+        setDisable(false);
+      }, 500);
     }
   }, [validacion, currentSlide]);
 
@@ -33,7 +41,7 @@ export const CardDos = ({
             placeholder="¿Cuál es tu nombre?"
             className="focus:border-none focus:outline-none pt-4 text-center text-black"
             onKeyDown={(e) => {
-              if (snap.usuario !== "") {
+              if (snap.usuario !== "" && snap.usuario.length > 2) {
                 // Verificar si se presionó "Enter" o "Done"
                 if (e.key === "Enter" || e.key === "Done") {
                   document.querySelector(".email").focus();
@@ -48,7 +56,7 @@ export const CardDos = ({
             name="email"
             onChange={(e) => (DijeValtio.email = e.target.value)}
             onKeyDown={(e) => {
-              if (snap.email !== "") {
+              if (snap.email.includes("@") && snap.email !== "") {
                 // Verificar si se presionó "Enter" o "Done"
                 if (e.key === "Enter" || e.key === "Done") {
                   next();

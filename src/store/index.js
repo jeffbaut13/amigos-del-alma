@@ -42,6 +42,7 @@ const Dije = proxy({
   imageHeight: 1,
   imagePositionX: 0,
   imagePositionY: 0,
+  iconDije: false,
 });
 
 export default Dije;

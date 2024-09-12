@@ -20,11 +20,22 @@ export const CardCuatro = ({ DijeValtio, next, currentSlide, setDisable }) => {
   }, [currentSlide]);
 
   useEffect(() => {
-    if (snap.contacto !== "" && currentSlide === 4) {
-      setDisable(true);
+    if (
+      snap.contacto !== "" &&
+      snap.contacto.length > 6 &&
+      currentSlide === 4
+    ) {
+      setTimeout(() => {
+        setDisable(true);
+      }, 500);
     }
-    if (snap.contacto === "" && currentSlide === 4) {
-      setDisable(false);
+    if (
+      snap.contacto === "" ||
+      (snap.contacto.length < 7 && currentSlide === 4)
+    ) {
+      setTimeout(() => {
+        setDisable(false);
+      }, 500);
     }
   }, [snap.contacto, currentSlide]);
 
@@ -33,10 +44,13 @@ export const CardCuatro = ({ DijeValtio, next, currentSlide, setDisable }) => {
       <div />
       <div className="w-5/6 mx-auto flex flex-col ">
         {ActiveAviso && responsive && (
-          <span className="absolute top-14 left-1/2 -translate-x-1/2 text-black flex items-center justify-center space-x-2">
-            <span>Verifica tu dije</span>
-            <span role="img" aria-label="dedo apuntando hacia arriba">
-              👆👆👆
+          <span className="absolute left-1/2 -translate-x-1/2 top-24 text-black flex items-center justify-center space-x-2">
+            <span className="w-full text-center relative">
+              Después de completar los datos, <br />
+              confirma cómo está quedando tu dije.{" "}
+              <span className="w-6 h-6 inline-block absolute bottom-1 -right-7">
+                <img src="/iconos/iconoArriba.svg" alt="" />
+              </span>
             </span>
           </span>
         )}
@@ -54,9 +68,9 @@ export const CardCuatro = ({ DijeValtio, next, currentSlide, setDisable }) => {
             onChange={(e) => (DijeValtio.contacto = e.target.value)}
             placeholder="EJ: 310 300 08 02"
             onKeyDown={(e) => {
-              if (snap.contacto !== "") {
+              if (snap.contacto !== "" && snap.contacto.length > 6) {
                 // Verificar si se presionó "Enter" o "Done"
-                if (e.key === "Enter" || e.key === "Done") {
+                if (e.key === "Enter") {
                   next();
                 }
               }
@@ -67,8 +81,12 @@ export const CardCuatro = ({ DijeValtio, next, currentSlide, setDisable }) => {
       </div>
       <div className="w-full flex flex-col items-center justify-center">
         <button
-          disabled={snap.contacto === ""}
-          className={`${snap.contacto === "" ? "opacity-30" : "opacity-100"}`}
+          disabled={snap.contacto === "" || snap.contacto.length < 7}
+          className={`${
+            snap.contacto === "" || snap.contacto.length < 7
+              ? "opacity-30"
+              : "opacity-100"
+          }`}
           onClick={next}
         >
           Siguiente

@@ -23,9 +23,6 @@ export const SliderPaso = ({
   disable,
 }) => {
   const inputChangeRef = useRef();
-  const inputEmail = useRef();
-  const [inputChange, setInputChange] = useState(true);
-  const [inputChangeTwo, setInputChangeTwo] = useState(true);
 
   const settings = {
     dots: false,

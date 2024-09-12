@@ -30,6 +30,9 @@ export const EdicionDije = ({ abrirDije, setabrirDije, dijeCanvaRef }) => {
         camMove(snap.home);
       }
     }, 3000);
+    if (!abrirDije) {
+      DijeValtio.iconDije = false;
+    }
   }, [abrirDije]);
 
   const handleButtonClick = (parte, zoom) => {
@@ -100,6 +103,7 @@ export const EdicionDije = ({ abrirDije, setabrirDije, dijeCanvaRef }) => {
           snap={snap}
           handleInputChange={handleInputChange}
           camMove={camMove}
+          abrirDije={abrirDije}
         />
       </div>
     </div>

@@ -4,7 +4,7 @@ import { Pasos } from "./Pasos";
 export const CardsCustomer = ({
   setOpen,
   DijeValtio,
-
+  abrirDije,
   camMove,
   snap,
 }) => {
@@ -17,6 +17,7 @@ export const CardsCustomer = ({
             setOpen={setOpen}
             camMove={camMove}
             snap={snap}
+            abrirDije={abrirDije}
           />
         </div>
       </div>

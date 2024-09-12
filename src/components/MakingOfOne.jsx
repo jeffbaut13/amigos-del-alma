@@ -4,9 +4,9 @@ import { CajaVideosTitulos } from "./CajaVideosTitulos";
 
 const videos = [
   {
-    title: "El amigo del alma",
+    title: "Alejo y la música.",
     content:
-      "Conoce a Tequila, quien interpretó a Toño y que al final de esta producción se convirtió en la amiga del alma de Teresa, una señora que la adoptó para convertirla ahora en la protagonista historias de la vida real.",
+      "Conoce la historia de Alejandro, quien a través de la música aprendió a ver la vida desde otras perspectivas y cómo la convirtió en la banda sonora que despierta sus sentidos.",
     videoCss: "secondVideo",
     urlVideo: "/imagenes/videoplaybackk.mp4",
   },

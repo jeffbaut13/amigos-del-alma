@@ -8,7 +8,7 @@ import { useSnapshot } from "valtio";
 import { Arrows } from "./Arrows";
 import { Price } from "./Price";
 
-export const Pasos = ({ DijeValtio, setOpen, camMove, snap }) => {
+export const Pasos = ({ DijeValtio, setOpen, camMove, snap, abrirDije }) => {
   const sliderRef = useRef();
   const [currentSlide, setCurrentSlide] = useState(1);
   const [btnCompra, setBtnCompra] = useState(false);
@@ -93,23 +93,33 @@ export const Pasos = ({ DijeValtio, setOpen, camMove, snap }) => {
       setOpen(false);
       camMove(snap.back);
     }
-    if (currentSlide == 5) {
-      camMove(snap.EditImage);
-
+    if (currentSlide > 4) {
       setTimeout(() => {
+        camMove(snap.EditImage);
         setOpen(true);
-      }, 800);
+      }, 500);
+      setTimeout(() => {
+        DijeValtio.iconDije = true;
+      }, 1500);
+    } else {
+      DijeValtio.iconDije = false;
     }
   }, [currentSlide]);
 
   const next = () => {
-    if (snap.usuario !== "" && snap.email !== "" && currentSlide == 2) {
+    if (
+      snap.usuario !== "" &&
+      snap.usuario.length > 2 &&
+      snap.email.includes("@") &&
+      snap.email !== "" &&
+      currentSlide == 2
+    ) {
       setDisable(false);
     }
-    if ((snap.nombre !== "" || snap.nombre !== "TOÑO") && currentSlide == 3) {
+    if (snap.nombre !== "" && snap.nombre !== "TOÑO" && currentSlide == 3) {
       setDisable(false);
     }
-    if (snap.contacto !== "" && currentSlide == 4) {
+    if (snap.contacto !== "" && snap.contacto.length > 6 && currentSlide == 4) {
       setDisable(false);
     }
 
@@ -158,6 +168,7 @@ export const Pasos = ({ DijeValtio, setOpen, camMove, snap }) => {
             DijeValtio={DijeValtio}
             setOpen={setOpen}
             currentSlide={currentSlide}
+            setCurrentSlide={setCurrentSlide}
             setDisable={setDisable}
             disable={disable}
           />{" "}
