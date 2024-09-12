@@ -26,7 +26,7 @@ export const UploadImage = ({
       reader.onloadend = () => {
         const img = new Image();
         img.onload = () => {
-          const width = img.width;
+          const width = img.width * 1.45;
           const height = img.height;
 
           // Calcular el MCD y la proporción base
@@ -38,12 +38,12 @@ export const UploadImage = ({
           let normalizedWidth, normalizedHeight;
           if (aspectWidth > aspectHeight) {
             // Normalizar el ancho a 2 y calcular el alto
-            normalizedWidth = 2.5;
-            normalizedHeight = Math.max(0, (aspectHeight / aspectWidth) * 2.5);
+            normalizedWidth = 4;
+            normalizedHeight = Math.max(0, (aspectHeight / aspectWidth) * 4);
           } else {
             // Normalizar el alto a 2 y calcular el ancho
-            normalizedHeight = 2.5;
-            normalizedWidth = Math.max(0, (aspectWidth / aspectHeight) * 2.5);
+            normalizedHeight = 4;
+            normalizedWidth = Math.max(0, (aspectWidth / aspectHeight) * 4);
           }
 
           // Asegurar que los valores estén entre 1 y 2

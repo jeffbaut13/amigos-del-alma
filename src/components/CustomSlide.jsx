@@ -6,6 +6,7 @@ export const CustomSlide = ({ DijeValtio, reset, setReset }) => {
   const sliderRef = useRef(null);
   const [circlePos, setCirclePos] = useState(50); // Posición del círculo (50 es el centro)
   const [isDragging, setIsDragging] = useState(false);
+  const [updateImg, setUpdateImg] = useState(false);
 
   // Función para actualizar la posición del slider y el escalado de la imagen
   const updatePosition = (clientX) => {
@@ -18,10 +19,10 @@ export const CustomSlide = ({ DijeValtio, reset, setReset }) => {
     setCirclePos(newPos);
 
     // Calcular el factor de escala basado en la posición del slider
-    const scale = 1 + newPos / 100; // Escala entre 1 y 2
+    const scale = 0.5 + newPos / 100; // Escala entre 1 y 2
 
     // Calcular la nueva altura
-    const newHeight = Math.max(1, Math.min(2, scale)); // Limita entre 1 y 2
+    const newHeight = Math.max(0.9, Math.min(2, scale)); // Limita entre 1 y 2
 
     // Mantener la proporción del ancho basado en la nueva altura
     const aspectRatio = snap.imageWidth / snap.imageHeight;
@@ -34,12 +35,30 @@ export const CustomSlide = ({ DijeValtio, reset, setReset }) => {
 
   // Función para manejar el inicio del arrastre (ratón o toque)
   const startDragging = (e) => {
+    setUpdateImg(true);
     setIsDragging(true);
     if (e.type === "mousedown") {
       updatePosition(e.clientX);
     } else if (e.type === "touchstart") {
       updatePosition(e.touches[0].clientX);
     }
+  };
+
+  const posicionAutomatica = () => {
+    setUpdateImg(true);
+    // Calcular el factor de escala basado en la posición del slider
+    const scale = 2; // Escala entre 1 y 2
+
+    // Calcular la nueva altura
+    const newHeight = Math.max(1, Math.min(1, scale)); // Limita entre 1 y 2
+
+    // Mantener la proporción del ancho basado en la nueva altura
+    const aspectRatio = snap.imageWidth / snap.imageHeight;
+    const newWidth = newHeight * aspectRatio;
+
+    // Actualizar el tamaño de la imagen
+    DijeValtio.imageWidth = newWidth;
+    DijeValtio.imageHeight = newHeight;
   };
 
   // Función para detectar el fin del drag
@@ -85,6 +104,7 @@ export const CustomSlide = ({ DijeValtio, reset, setReset }) => {
   // Efecto para reiniciar el slider cuando `reset` es true
   useEffect(() => {
     if (reset) {
+      setUpdateImg(false);
       setCirclePos(50); // Restaurar al centro
       setReset(false); // Restablecer el estado de `reset`
     }
@@ -92,40 +112,50 @@ export const CustomSlide = ({ DijeValtio, reset, setReset }) => {
 
   return (
     <div className="relative ">
-      <div className="w-1/2 left-1/2 -translate-x-1/2 absolute shadowbox bg-white top-1/2 -translate-y-1/2 rounded-xl h-2  " />
-      <div
-        ref={sliderRef}
-        className="w-1/2 m-auto relative h-0.5  rounded-xl bg-[--primary] my-4"
-        onMouseDown={startDragging}
-        onTouchStart={startDragging}
-      >
-        <span
-          style={{ width: `${circlePos}%` }}
-          className="absolute top-0 rounded-full h-0.5 bg-[#00cfff]"
-        />
-        <span
-          style={{
-            position: "absolute",
-            left: `${circlePos}%`,
-            top: "50%",
-            transform: "translate(-50%, -50%)",
-            cursor: "pointer",
-            width: "30px",
-            height: "30px",
-            userSelect: "none",
-          }}
-        >
-          <img
-            className="pointer-events-none w-full h-full object-contain"
-            src="/iconos/slideIcon.svg"
-            alt=""
-          />
-        </span>
-        <div className="w-full py-2  flex justify-between">
-          <span>-</span>
-          <span>+</span>
-        </div>
-      </div>
+      {updateImg ? (
+        <>
+          <div className="w-1/2 left-1/2 -translate-x-1/2 absolute shadowbox bg-white top-1/2 -translate-y-1/2 rounded-xl h-2  " />
+          <div
+            ref={sliderRef}
+            className="w-1/2 m-auto relative h-0.5  rounded-xl bg-[--primary] my-4"
+            onMouseDown={startDragging}
+            onTouchStart={startDragging}
+          >
+            <span
+              style={{ width: `${circlePos}%` }}
+              className="absolute top-0 rounded-full h-0.5 bg-[#00cfff]"
+            />
+            <span
+              style={{
+                position: "absolute",
+                left: `${circlePos}%`,
+                top: "50%",
+                transform: "translate(-50%, -50%)",
+                cursor: "pointer",
+                width: "30px",
+                height: "30px",
+                userSelect: "none",
+              }}
+            >
+              <img
+                className="pointer-events-none w-full h-full object-contain"
+                src="/iconos/slideIcon.svg"
+                alt=""
+              />
+            </span>
+            <div className="w-full py-2  flex justify-between">
+              <span>-</span>
+              <span>+</span>
+            </div>
+          </div>
+        </>
+      ) : (
+        <>
+          <span onClick={posicionAutomatica} className="text-black">
+            posicionar automaticamente
+          </span>
+        </>
+      )}
     </div>
   );
 };
