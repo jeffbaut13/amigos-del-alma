@@ -54,8 +54,6 @@ export const Pasos = ({ DijeValtio, setOpen, camMove, snap }) => {
       });
 
       if (res.ok) {
-        alert("Compra realizada con éxito");
-
         // Construir la cadena de consulta con el email
         const dataSend = {
           email: DijeValtio.email,
@@ -83,9 +81,6 @@ export const Pasos = ({ DijeValtio, setOpen, camMove, snap }) => {
   const resetBack = {
     position: [-1.5, -1, 3],
   };
-
-  console.log(disable);
-  console.log(snap.usuario !== "" && snap.email !== "");
 
   useEffect(() => {
     if (currentSlide == 2) {

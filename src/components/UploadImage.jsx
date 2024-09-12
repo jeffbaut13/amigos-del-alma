@@ -38,12 +38,12 @@ export const UploadImage = ({
           let normalizedWidth, normalizedHeight;
           if (aspectWidth > aspectHeight) {
             // Normalizar el ancho a 2 y calcular el alto
-            normalizedWidth = 3;
-            normalizedHeight = Math.max(0, (aspectHeight / aspectWidth) * 3);
+            normalizedWidth = 2.5;
+            normalizedHeight = Math.max(0, (aspectHeight / aspectWidth) * 2.5);
           } else {
             // Normalizar el alto a 2 y calcular el ancho
-            normalizedHeight = 4;
-            normalizedWidth = Math.max(0, (aspectWidth / aspectHeight) * 4);
+            normalizedHeight = 2.5;
+            normalizedWidth = Math.max(0, (aspectWidth / aspectHeight) * 2.5);
           }
 
           // Asegurar que los valores estén entre 1 y 2
