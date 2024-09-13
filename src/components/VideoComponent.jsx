@@ -77,8 +77,8 @@ export const VideoComponent = ({
 
       <ReactPlayer
         className="video w-full h-full object-cover z-10 rounded-md"
-        controls={localIsPlaying}
-        playing={localIsPlaying} // Controla el estado de reproducción
+        controls
+        playing={localIsPlaying ? true : false} // Controla el estado de reproducción
         ref={videoRef}
         url={urlVideo}
         width="100%"
