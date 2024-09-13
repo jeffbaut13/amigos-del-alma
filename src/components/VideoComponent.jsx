@@ -67,7 +67,9 @@ export const VideoComponent = ({
 
       <figure
         className={`${
-          !localIsPlaying ? "opacity-100" : "opacity-0"
+          !localIsPlaying
+            ? "opacity-100 pointer-events-auto"
+            : "opacity-0 pointer-events-none"
         } transition-opacity duration-1000 ease-in-out z-[19] absolute top-0 left-0 h-full w-full inline-block`}
       >
         <img className="object-cover" src={poster} alt="" />
