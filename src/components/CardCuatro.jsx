@@ -33,9 +33,7 @@ export const CardCuatro = ({ DijeValtio, next, currentSlide, setDisable }) => {
       snap.contacto === "" ||
       (snap.contacto.length < 7 && currentSlide === 4)
     ) {
-      setTimeout(() => {
-        setDisable(false);
-      }, 500);
+      setDisable(false);
     }
   }, [snap.contacto, currentSlide]);
 

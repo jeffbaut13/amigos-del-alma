@@ -1,18 +1,18 @@
 import React, { useEffect, useRef, useState } from "react";
-
-import { convertToBraille } from "../helpers/BraileConverter";
 import { animaitionsGroup } from "../helpers/AnimationIconSteps";
-import { PasosIcons } from "./PasosIcons";
 import { SliderPaso } from "./sliderPaso";
-import { useSnapshot } from "valtio";
 import { Arrows } from "./Arrows";
-import { Price } from "./Price";
 
 export const Pasos = ({ DijeValtio, setOpen, camMove, snap, abrirDije }) => {
   const sliderRef = useRef();
   const [currentSlide, setCurrentSlide] = useState(1);
   const [btnCompra, setBtnCompra] = useState(false);
   const [disable, setDisable] = useState(false);
+
+  // Generar un número aleatorio de al menos 5 caracteres
+  const generateRandomNumber = () => {
+    return Math.random().toString(36).substring(2, 7); // Genera un número aleatorio de 5 caracteres
+  };
 
   const handleCompra = async () => {
     // Verifica que todos los datos requeridos estén presentes
@@ -27,21 +27,24 @@ export const Pasos = ({ DijeValtio, setOpen, camMove, snap, abrirDije }) => {
       return;
     }
 
-    const formData = new FormData();
-    formData.append("usuario", DijeValtio.usuario);
-    formData.append("email", DijeValtio.email);
-    formData.append("contacto", DijeValtio.contacto);
-    formData.append("nombre", DijeValtio.nombre);
-
     try {
+      // Generar un número aleatorio
+      const randomNumber = generateRandomNumber();
+
+      // Modificar el email agregando el número aleatorio
+      const emailConsecutivo = `${DijeValtio.email}-${randomNumber}`;
+      const formData = new FormData();
+      formData.append("usuario", DijeValtio.usuario);
+      formData.append("email", emailConsecutivo);
+      formData.append("contacto", DijeValtio.contacto);
+      formData.append("nombre", DijeValtio.nombre);
+
       // Descargar la imagen
       const response = await fetch(DijeValtio.Imagen);
       if (!response.ok) {
         throw new Error("No se pudo descargar la imagen");
       }
       const blob = await response.blob();
-
-      // Agregar la imagen al FormData
       formData.append(
         "image",
         new File([blob], "imagen.jpg", { type: "image/jpeg" })
@@ -54,19 +57,18 @@ export const Pasos = ({ DijeValtio, setOpen, camMove, snap, abrirDije }) => {
       });
 
       if (res.ok) {
-        // Construir la cadena de consulta con el email
+        // Construir la cadena de consulta con el email modificado
         const dataSend = {
-          email: DijeValtio.email,
+          email: emailConsecutivo,
           usuario: DijeValtio.usuario,
           promoid: DijeValtio.promoid,
-          // Solo el campo email
         };
         const queryString = Object.keys(dataSend)
           .map((key) => key + "=" + encodeURIComponent(dataSend[key]))
           .join("&");
 
         // Redirigir a la URL de "completacarrito" con la cadena de consulta
-        const urlAlcarrito = "local/promo/addtocart";
+        const urlAlcarrito = "/local/promo/addtocart"; // Cambiar si es necesario
         window.location.href = `${urlAlcarrito}?${queryString}`;
       } else {
         const errorText = await res.text();
@@ -107,45 +109,13 @@ export const Pasos = ({ DijeValtio, setOpen, camMove, snap, abrirDije }) => {
   }, [currentSlide]);
 
   const next = () => {
-    if (
-      snap.usuario !== "" &&
-      snap.usuario.length > 2 &&
-      snap.email.includes("@") &&
-      snap.email !== "" &&
-      currentSlide == 2
-    ) {
-      setDisable(false);
-    }
-    if (snap.nombre !== "" && snap.nombre !== "TOÑO" && currentSlide == 3) {
-      setDisable(false);
-    }
-    if (snap.contacto !== "" && snap.contacto.length > 6 && currentSlide == 4) {
-      setDisable(false);
-    }
-
     sliderRef.current.slickNext();
-    if (currentSlide === 0) {
-      setCurrentSlide(1);
-    } else {
-      setCurrentSlide(currentSlide + 1);
-    }
+    setCurrentSlide(currentSlide + 1);
   };
+
   const prev = () => {
-    setDisable(true);
     sliderRef.current.slickPrev();
-
-    if (currentSlide === 0) {
-      setCurrentSlide(1);
-    } else {
-      setCurrentSlide(currentSlide - 1);
-    }
-  };
-
-  const handleInputChange = (e) => {
-    const text = e.target.value.toUpperCase(); // Convierte el texto a mayúsculas
-
-    DijeValtio.nombre = text;
-    DijeValtio.braile = convertToBraille(text);
+    setCurrentSlide(currentSlide - 1);
   };
 
   useEffect(() => {
@@ -154,12 +124,10 @@ export const Pasos = ({ DijeValtio, setOpen, camMove, snap, abrirDije }) => {
 
   return (
     <>
-      <div className="relative border-dashed border w-full h-full rounded-lg flex flex-col  items-start  ">
+      <div className="relative border-dashed border w-full h-full rounded-lg flex flex-col items-start">
         <div
-          className={`NeueHassRoman relative border-none shadowbox w-full h-full flex flex-col  items-start `}
+          className={`NeueHassRoman relative border-none shadowbox w-full h-full flex flex-col items-start`}
         >
-          {/*         <PasosIcons currentSlide={currentSlide} />
-           */}
           <SliderPaso
             handleCompra={handleCompra}
             setBtnCompra={setBtnCompra}
@@ -171,7 +139,7 @@ export const Pasos = ({ DijeValtio, setOpen, camMove, snap, abrirDije }) => {
             setCurrentSlide={setCurrentSlide}
             setDisable={setDisable}
             disable={disable}
-          />{" "}
+          />
           {currentSlide >= 2 && (
             <figure
               onClick={prev}

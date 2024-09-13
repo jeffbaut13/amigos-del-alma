@@ -21,7 +21,7 @@ export const CardTres = ({
     if (currentSlide === 3) {
       setTimeout(() => {
         inputDog.current.focus();
-      }, 1000);
+      }, 500);
     }
   }, [currentSlide]);
 
@@ -32,9 +32,7 @@ export const CardTres = ({
       }, 500);
     }
     if ((snap.nombre === "" || snap.nombre === "TOÑO") && currentSlide == 3) {
-      setTimeout(() => {
-        setDisable(false);
-      }, 500);
+      setDisable(false);
     }
   }, [snap.nombre, currentSlide]);
 

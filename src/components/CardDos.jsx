@@ -22,12 +22,9 @@ export const CardDos = ({
         setDisable(true);
       }, 500);
     }
-    if (!validacion && currentSlide == 2) {
-      setTimeout(() => {
-        setDisable(false);
-      }, 500);
-    }
   }, [validacion, currentSlide]);
+
+  console.log(validacion && currentSlide == 2);
 
   return (
     <div className="h-full w-full flex flex-col items-center justify-around slide-uno">
