@@ -14,7 +14,7 @@ export const RedesSociales = () => {
       navigator
         .share({
           title: "Compartir",
-          text: texto.texto,
+          text: texto.texto + " " + texto.url,
         })
         .then(() => console.log("Contenido compartido exitosamente"))
         .catch((error) => console.error("Error al compartir:", error));
@@ -51,7 +51,12 @@ export const RedesSociales = () => {
               Compártele este contenido aquí
             </h2>
             <div className="w-full flex flex-col mt-8 justify-around items-center gap-2">
-              <button className="group btn-home w-36 py-1 flex items-center justify-center transition-all duration-300">
+              <button
+                onClick={() => {
+                  compartirConWebShareAPI();
+                }}
+                className="group btn-home w-36 py-1 flex items-center justify-center transition-all duration-300"
+              >
                 <span className="w-10 h-10 inline-block">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -77,7 +82,12 @@ export const RedesSociales = () => {
                   </svg>
                 </span>
               </button>
-              <button className="group btn-home w-36 py-1 my-3 flex items-center justify-center transition-all duration-300">
+              <button
+                onClick={() => {
+                  compartirConWebShareAPI();
+                }}
+                className="group btn-home w-36 py-1 my-3 flex items-center justify-center transition-all duration-300"
+              >
                 <span className="w-10 h-10 inline-block">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -132,15 +142,6 @@ export const RedesSociales = () => {
                   </span>
                 </button>
               </WhatsappShareButton>
-
-              <span
-                onClick={() => {
-                  compartirConWebShareAPI();
-                }}
-                className="iconSocial cursor-pointer w-20 h-20 inline-block"
-              >
-                compartir
-              </span>
             </div>
           </div>
         </div>
