@@ -14,7 +14,8 @@ const App = () => {
         <link rel="canonical" href="/" />
         <meta
           name="description"
-          content="Campaña interrapidisimo amigos del alma dia amor y amistad"
+          content="Nueva campaña de Inter Rapidísimo para Amor y Amistad que cuenta la noble historia de Toño, el perrito y Alejo, el pianista, dos compañeros unidos por la vida, que nos demuestran que la entrega y fidelidad se entregan desde el corazón.
+"
         />
       </Helmet>
 
