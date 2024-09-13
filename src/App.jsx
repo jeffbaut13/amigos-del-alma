@@ -15,7 +15,10 @@ const App = () => {
           property="og:description"
           content="Campaña interrapidisimo amigos del alma dia amor y amistad"
         />
-        <meta property="og:image" content="/imagenes/amigo-del-alma.webp" />
+        <meta
+          property="og:image"
+          content="https://amigodelalma.com/imagenes/amigo-del-alma.webp"
+        />
         <meta property="og:url" content="https://amigodelalma.com/" />
         <meta property="og:type" content="website" />
 
