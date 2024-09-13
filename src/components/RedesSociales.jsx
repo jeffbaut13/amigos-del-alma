@@ -4,9 +4,8 @@ import { WhatsappShareButton } from "react-share";
 
 export const RedesSociales = () => {
   const texto = {
-    texto:
-      "En operacion mayo puedes grabar un mensaje de voz para enviárselo a mamá dentro de un osito peluche para celebrar el Día de las Madres. 🤩 🥰",
-    url: "operacionmayo.com",
+    texto: "Amigo del Alma. Tienes que ver esta historia.",
+    url: "https://amigodelalma.com/",
   };
 
   const compartirConWebShareAPI = () => {
