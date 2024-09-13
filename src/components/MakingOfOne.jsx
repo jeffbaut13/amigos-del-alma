@@ -10,23 +10,25 @@ const videos = [
     videoCss: "secondVideo",
     urlVideo: "https://www.youtube.com/watch?v=yG4ifL9HiPY",
     poster: "/imagenes/detras1.webp",
-  },
+  }, */
   {
     title: "Detrás de cámaras",
     content:
       "Conoce el detrás de cámaras y todo lo que sucedió para que la historia de Alejo y Toño fuera tan cercana que miles de espectadores la sintieran como propia.",
-    videoCss: "thirtVideo",
+    //videoCss: "thirtVideo",
+    videoCss: "firstVideo",
     urlVideo: "https://www.youtube.com/watch?v=yG4ifL9HiPY",
-    poster: "/imagenes/detras2.webp",
-  }, */
-  {
+    poster: "/imagenes/detras1.webp",
+    //poster: "/imagenes/detras2.webp",
+  },
+  /*  {
     title: "La inspiración",
     content:
       "Conoce a Andrés, guitarrista por vocación, profesor y músico invidente que inspiró esta historia. además, nos demostró que no hay condiciones que superen el propósito de hacer que la vida de los demás suene más alegre.",
     videoCss: "firstVideo",
     urlVideo: "https://www.youtube.com/watch?v=yG4ifL9HiPY",
     poster: "/imagenes/detras1.webp",
-  },
+  }, */
 ];
 
 export const MakingOfOne = () => {

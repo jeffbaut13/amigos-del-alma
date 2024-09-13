@@ -41,8 +41,9 @@ export const RedesSociales = () => {
             <figure className="lg:w-80 xs:w-80 mb-8">
               <img src="/iconos/TituloCentrado.svg" alt="Título" />
             </figure>
-            <h2 className="text-[--colorYellow] text-2xl mt-8 text-center">
-              ¿Tienes un amigo <br /> que debería conocer <br /> esta historia?
+            <h2 className="text-[--colorYellow] text-xl mt-8 text-center">
+              ¿Tienes un amigo que debería <br />
+              conocer esta historia?
             </h2>
           </div>
           <div className="flex w-full flex-col z-10">
@@ -56,7 +57,7 @@ export const RedesSociales = () => {
                 }}
                 className="group btn-home w-28 py-1 flex items-center justify-center transition-all duration-300"
               >
-                <span className="w-8 h-8k inline-block">
+                <span className="w-6 h-6 inline-block">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     version="1.1"
@@ -83,7 +84,7 @@ export const RedesSociales = () => {
               </button>
               <TwitterShareButton title={texto.texto} url={texto.url}>
                 <span className="group btn-home w-28 py-1 my-3 flex items-center justify-center transition-all duration-300 rounded-full">
-                  <span className="w-8 h-8k inline-block">
+                  <span className="w-6 h-6 inline-block">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       version="1.1"
@@ -111,7 +112,7 @@ export const RedesSociales = () => {
 
               <WhatsappShareButton title={texto.texto} url={texto.url}>
                 <span className="group btn-home w-28 py-1 flex items-center justify-center transition-all duration-300 rounded-full">
-                  <span className="w-8 h-8k inline-block">
+                  <span className="w-6 h-6 inline-block">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       version="1.1"

@@ -18,7 +18,7 @@ export const handleGsasp = (activeBox, funcion) => {
       },
       {
         transform: "translate3d(95vw, 0vw, 0px)",
-        //opacity: 0,
+
         width: "0%",
         ease: easeEffect,
         duration: time,
@@ -48,7 +48,7 @@ export const handleGsasp = (activeBox, funcion) => {
       {
         height: "80%",
         ease: easeEffect,
-        //opacity: 0,
+
         duration: time,
       }
     ),
@@ -65,7 +65,6 @@ export const handleGsasp = (activeBox, funcion) => {
       },
       {
         transform: "translate3d(95vw, 0vw, 0px)",
-        //opacity: 0,
 
         height: "0%",
         ease: easeEffect,
@@ -98,7 +97,7 @@ export const handleGsasp = (activeBox, funcion) => {
       {
         height: "50%",
         ease: easeEffect,
-        //opacity: 0,
+
         duration: time,
       }
     ),
@@ -119,13 +118,13 @@ export const handleGsasp = (activeBox, funcion) => {
       transform: "translate3d(-100vw, 0, 0px)",
 
       ease: easeEffect,
-      //opacity: 0,
+
       duration: time,
     });
     gsap.to(".thirtVideo", {
       transform: "translate3d(0, -100vh, 0px)",
       ease: easeEffect,
-      //opacity: 0,
+
       duration: time,
     });
   }
@@ -145,13 +144,13 @@ export const handleGsasp = (activeBox, funcion) => {
     gsap.to(".thirtVideo", {
       transform: "translate3d(0, -100vh, 0px)",
       ease: easeEffect,
-      //opacity: 0,
+
       duration: time,
     });
     gsap.to(".firstVideo", {
       transform: "translate3d(0vw, 100vh, 0px)",
       ease: easeEffect,
-      //opacity: 0,
+
       duration: time,
     });
   }
@@ -173,13 +172,13 @@ export const handleGsasp = (activeBox, funcion) => {
       transform: "translate3d(-100vw, 0, 0px)",
 
       ease: easeEffect,
-      //opacity: 0,
+
       duration: time,
     });
     gsap.to(".firstVideo", {
       transform: "translate3d(0vw, 100vh, 0px)",
       ease: easeEffect,
-      //opacity: 0,
+
       duration: time,
     });
   }
@@ -319,7 +318,7 @@ export const resetAnimation = (activeBox) => {
     {
       height: "100%",
       ease: easeEffect,
-      //opacity: 0,
+
       duration: time,
     },
     "<"
@@ -344,13 +343,13 @@ export const resetAnimation = (activeBox) => {
     gsap.to(".thirtVideo", {
       transform: "translate3d(0, 0vh, 0px)",
       ease: easeEffect,
-      //opacity: 0,
+
       duration: time,
     });
     gsap.to(".firstVideo", {
       transform: "translate3d(0vw, 0vh, 0px) ",
       ease: easeEffect,
-      //opacity: 0,
+
       duration: time,
     });
   }
@@ -375,13 +374,13 @@ export const resetAnimation = (activeBox) => {
     gsap.to(".secondVideo", {
       transform: "translate3d(0, 0vh, 0px)",
       ease: easeEffect,
-      //opacity: 0,
+
       duration: time,
     });
     gsap.to(".firstVideo", {
       transform: "translate3d(0vw, 0vh, 0px) ",
       ease: easeEffect,
-      //opacity: 0,
+
       duration: time,
     });
   }
@@ -403,13 +402,13 @@ export const resetAnimation = (activeBox) => {
       transform: "translate3d(0vw, 0, 0px)",
 
       ease: easeEffect,
-      //opacity: 0,
+
       duration: time,
     });
     gsap.to(".thirtVideo", {
       transform: "translate3d(0, 0vh, 0px)",
       ease: easeEffect,
-      //opacity: 0,
+
       duration: time,
     });
   }
@@ -424,7 +423,8 @@ export const resetAnimation = (activeBox) => {
     ".cajaTitulos",
     {
       position: "absolute",
-      height: "20%",
+      //height: "20%",
+      height: "10%",
     },
     "<"
   );
