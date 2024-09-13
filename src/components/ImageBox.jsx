@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Box, Decal, Html, useTexture } from "@react-three/drei";
 import Dije from "../store/index";
 import { useSnapshot } from "valtio";
-import { MessageDije } from "./MessageDije";
 
 export const ImageBox = ({ material }) => {
   const snap = useSnapshot(Dije);
@@ -64,11 +63,7 @@ export const ImageBox = ({ material }) => {
       onPointerMove={handlePointerMove} // Mueve la imagen durante el drag
     >
       <meshStandardMaterial attach="material" {...material} />
-      {snap.iconDije && (
-        <Html position={[0.7, 0, 0]}>
-          <MessageDije />
-        </Html>
-      )}
+
       <Decal
         depthTest={true}
         depthWrite={true}

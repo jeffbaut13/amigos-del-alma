@@ -26,7 +26,7 @@ export const CustomAutomaticButton = ({ setEdicion, setUpdateImg }) => {
   return (
     <>
       <button className="mx-2" onClick={posicionAutomatica}>
-        Escala automática
+        Ajuste automático
       </button>
     </>
   );

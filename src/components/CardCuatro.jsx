@@ -42,7 +42,7 @@ export const CardCuatro = ({ DijeValtio, next, currentSlide, setDisable }) => {
       <div />
       <div className="w-5/6 mx-auto flex flex-col ">
         {ActiveAviso && responsive && (
-          <span className="absolute left-1/2 -translate-x-1/2 top-24 text-black flex items-center justify-center space-x-2">
+          <span className="absolute left-1/2 -translate-x-1/2 top-6 w-2/3 text-black flex items-center justify-center">
             <span className="w-full text-center relative">
               Después de completar los datos, <br />
               confirma cómo está quedando tu dije.{" "}

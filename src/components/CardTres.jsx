@@ -59,7 +59,7 @@ export const CardTres = ({
             }}
           />
           {ActiveAviso && responsive && (
-            <span className="absolute left-1/2 -translate-x-1/2 top-24 text-black flex items-center justify-center space-x-2">
+            <span className="absolute left-1/2 -translate-x-1/2 top-6 text-black flex items-center justify-center space-x-2">
               <span className="w-full text-center relative">
                 Después de completar los datos, <br />
                 confirma cómo está quedando tu dije.{" "}

@@ -100,10 +100,7 @@ export const ImgLoadDije = ({ DijeValtio, setBtnCompra, handleCompra }) => {
             {loading ? (
               <div className="loader"></div> // Círculo de carga
             ) : (
-              <button
-                onClick={handleClick}
-                className="bg-blue-500 text-white p-2 rounded"
-              >
+              <button onClick={handleClick} className="">
                 Ir a pagar
               </button>
             )}
