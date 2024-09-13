@@ -17,6 +17,7 @@ export const ImgLoadDije = ({ DijeValtio, setBtnCompra, handleCompra }) => {
   const [controles, setControles] = useState(true);
   const [updateImg, setUpdateImg] = useState(false);
   const [edicion, setEdicion] = useState(false);
+  const [loading, setLoading] = useState(false); // Estado de carga
 
   // Función para ajustar el tamaño en porcentaje
   const scale = (factor) => {
@@ -50,6 +51,13 @@ export const ImgLoadDije = ({ DijeValtio, setBtnCompra, handleCompra }) => {
   const stopAction = () => {
     clearInterval(intervalRef.current);
     directionRef.current = null;
+  };
+
+  const handleClick = async () => {
+    setLoading(true); // Iniciar carga
+    await handleCompra(); // Ejecutar la función de compra
+    setBtnCompra(true);
+    console.log("Compra iniciada");
   };
 
   return (
@@ -88,16 +96,17 @@ export const ImgLoadDije = ({ DijeValtio, setBtnCompra, handleCompra }) => {
             setEdicion={setEdicion}
             setUpdateImg={setUpdateImg}
           />
-          <div className=" w-full flex flex-col py-8 items-center">
-            <button
-              onClick={() => {
-                handleCompra();
-                setBtnCompra(true);
-                console.log("Compra iniciada");
-              }}
-            >
-              Ir a pagar
-            </button>
+          <div className="w-full flex flex-col py-8 items-center">
+            {loading ? (
+              <div className="loader"></div> // Círculo de carga
+            ) : (
+              <button
+                onClick={handleClick}
+                className="bg-blue-500 text-white p-2 rounded"
+              >
+                Ir a pagar
+              </button>
+            )}
           </div>
         </>
       )}
