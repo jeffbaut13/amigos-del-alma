@@ -1,5 +1,4 @@
 import React from "react";
-import backgroundImage from "/imagenes/making.jpg";
 import { WhatsappShareButton } from "react-share";
 
 export const RedesSociales = () => {
@@ -114,7 +113,7 @@ export const RedesSociales = () => {
               </button>
 
               <WhatsappShareButton title={texto.texto} url={texto.url}>
-                <button className="group btn-home w-36 py-1 flex items-center justify-center transition-all duration-300">
+                <span className="group btn-home w-36 py-1 flex items-center justify-center transition-all duration-300 rounded-full">
                   <span className="w-10 h-10 inline-block">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -139,7 +138,7 @@ export const RedesSociales = () => {
                       </g>
                     </svg>
                   </span>
-                </button>
+                </span>
               </WhatsappShareButton>
             </div>
           </div>

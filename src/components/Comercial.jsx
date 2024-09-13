@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import backgroundImage from "/imagenes/amigosDelAlma.jpg";
+import backgroundImage from "/imagenes/amigosDelAlma.webp";
 import { VideoComercial } from "./VideoComercial";
 import DijeValtio from "../store/index";
 import { useSnapshot } from "valtio";
@@ -33,6 +33,7 @@ const Comercial = () => {
           autoPlay
           muted
           loop
+          onLoadedData={() => (DijeValtio.readyVideo = true)}
           controls={false}
           playsInline
           ref={videoRef}
@@ -94,13 +95,7 @@ const Comercial = () => {
         </div>
       </div>
 
-      <VideoComercial
-        playVideo={playVideo}
-        VideoReady={() => {
-          DijeValtio.readyVideo = true;
-        }}
-        setPlayVideo={setPlayVideo}
-      />
+      <VideoComercial playVideo={playVideo} setPlayVideo={setPlayVideo} />
     </div>
   );
 };

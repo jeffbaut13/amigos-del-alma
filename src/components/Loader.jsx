@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import Lottie from "lottie-react";
 import Piano from "../lotties/loader-amigosdelalma.json";
-import PianoTwo from "../lotties/loader-amigosdelalmaTwo.json";
+
 import Dije from "../store";
 import { useSnapshot } from "valtio";
 import gsap from "gsap";

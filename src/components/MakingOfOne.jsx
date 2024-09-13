@@ -8,21 +8,24 @@ const videos = [
     content:
       "Conoce la historia de Alejandro, quien a través de la música aprendió a ver la vida desde otras perspectivas y cómo la convirtió en la banda sonora que despierta sus sentidos.",
     videoCss: "secondVideo",
-    urlVideo: "/imagenes/videoplaybackk.mp4",
+    urlVideo: "https://www.youtube.com/watch?v=yG4ifL9HiPY",
+    poster: "/imagenes/detras1.webp",
   },
   {
     title: "Detrás de cámaras",
     content:
       "Conoce el detrás de cámaras y todo lo que sucedió para que la historia de Alejo y Toño fuera tan cercana que miles de espectadores la sintieran como propia.",
     videoCss: "thirtVideo",
-    urlVideo: "/imagenes/videoplaybackk.mp4",
+    urlVideo: "https://www.youtube.com/watch?v=yG4ifL9HiPY",
+    poster: "/imagenes/detras2.webp",
   },
   {
     title: "La inspiración",
     content:
       "Conoce a Andrés, guitarrista por vocación, profesor y músico invidente que inspiró esta historia. además, nos demostró que no hay condiciones que superen el propósito de hacer que la vida de los demás suene más alegre.",
     videoCss: "firstVideo",
-    urlVideo: "/imagenes/videoplaybackk.mp4",
+    urlVideo: "https://www.youtube.com/watch?v=yG4ifL9HiPY",
+    poster: "/imagenes/detras1.webp",
   },
 ];
 
@@ -85,6 +88,7 @@ export const MakingOfOne = () => {
                 )}
                 <div className="h-full border border-[#BCBCBC70] border-dashed rounded-xl p-2 flex flex-col pruebaDos">
                   <VideoComponent
+                    poster={video.poster}
                     reset={reset}
                     isActive={activeVideo === index}
                     urlVideo={video.urlVideo}

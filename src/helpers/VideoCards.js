@@ -326,7 +326,6 @@ export const resetAnimation = (activeBox) => {
   );
 
   if (activeBox === "secondVideo") {
-    console.log(activeBox);
     tl.fromTo(
       ".secondVideo",
       {

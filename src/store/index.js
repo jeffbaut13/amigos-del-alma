@@ -6,7 +6,7 @@ const Dije = proxy({
   email: "",
   contacto: "",
   nombre: "TOÑO",
-  Imagen: "/file2.jpg",
+  Imagen: "/file2.webp",
   promoid: "amigoalma",
   readyVideo: false,
   nameDog: {

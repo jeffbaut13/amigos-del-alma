@@ -8,14 +8,14 @@ const videos = [
     content:
       "Conoce a Tequila, quien interpretó a Toño y que al final de esta producción se convirtió en la amiga del alma de Teresa, una señora que la adoptó para convertirla ahora en la protagonista historias de la vida real.",
     videoCss: "secondVideo",
-    urlVideo: "/imagenes/dije-gracias.jpg",
+    urlVideo: "/imagenes/dije-gracias.webp",
   },
   {
     title: "Detrás de cámaras",
     content:
       "Conoce el detrás de cámaras y todo lo que sucedió para que la historia de Alejo y Toño fuera tan cercana que miles de espectadores la sintieran como propia.",
     videoCss: "thirtVideo",
-    urlVideo: "/imagenes/tono-gracias.jpg",
+    urlVideo: "/imagenes/tono-gracias.webp",
   },
   {
     title: "La inspiración",

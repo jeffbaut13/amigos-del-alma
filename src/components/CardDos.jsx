@@ -24,8 +24,6 @@ export const CardDos = ({
     }
   }, [validacion, currentSlide]);
 
-  console.log(validacion && currentSlide == 2);
-
   return (
     <div className="h-full w-full flex flex-col items-center justify-around slide-uno">
       <div />
