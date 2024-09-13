@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 45.7 45.7">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #002433;
+        stroke-miterlimit: 10;
+        stroke-width: .5px;
+      }
+
+      .cls-2 {
+        fill: #002433;
+      }
+    </style>
+  </defs>
+  <!-- Generator: Adobe Illustrator 28.7.1, SVG Export Plug-In . SVG Version: 1.2.0 Build 142)  -->
+  <g>
+    <g id="uuid-1820ef8c-e06a-4ba4-99bb-b6b902a92245">
+      <g id="uuid-ae8199f1-8ae9-48a4-be76-d671c7ce96b2">
+        <path class="cls-2" d="M25.4,21l10.1-10.8h-2.5l-8.7,9.3-7-9.3h-7.8l10.4,14-10.5,11.3h2.5l9.1-9.8,7.3,9.8h7.8l-10.8-14.4h0ZM22.4,24.3l-1.1-1.5-8.1-10.8h3.3l6.6,8.9,1.1,1.5,8.4,11.3h-3.3l-7-9.3h0Z"/>
+      </g>
+      <circle class="cls-1" cx="22.8" cy="22.8" r="22.2"/>
+    </g>
+  </g>
+</svg>

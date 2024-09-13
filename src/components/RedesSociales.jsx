@@ -1,9 +1,10 @@
 import React from "react";
-import { WhatsappShareButton } from "react-share";
+import { TwitterShareButton, WhatsappShareButton } from "react-share";
 
 export const RedesSociales = () => {
   const texto = {
-    texto: "En Amigos del Alma puedes personalizar y comprar el mismo collar de Toño y Alejo. Conoce esta historia y todo lo que hay detrás de ella en:",
+    texto:
+      "En Amigos del Alma puedes personalizar y comprar el mismo collar de Toño y Alejo. Conoce esta historia y todo lo que hay detrás de ella en:",
     url: "https://amigodelalma.com/",
   };
 
@@ -80,37 +81,33 @@ export const RedesSociales = () => {
                   </svg>
                 </span>
               </button>
-              <button
-                onClick={() => {
-                  compartirConWebShareAPI();
-                }}
-                className="group btn-home w-36 py-1 my-3 flex items-center justify-center transition-all duration-300"
-              >
-                <span className="w-10 h-10 inline-block">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    version="1.1"
-                    viewBox="0 0 41 42"
-                  >
-                    <g>
-                      <g id="Capa_1">
-                        <g>
+              <TwitterShareButton title={texto.texto} url={texto.url}>
+                <span className="group btn-home w-36 py-1 my-3 flex items-center justify-center transition-all duration-300 rounded-full">
+                  <span className="w-10 h-10 inline-block">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      version="1.1"
+                      viewBox="0 0 45.7 45.7"
+                    >
+                      <g id="uuid-1820ef8c-e06a-4ba4-99bb-b6b902a92245">
+                        <g id="uuid-ae8199f1-8ae9-48a4-be76-d671c7ce96b2">
                           <path
-                            style={{ fillRule: "evenodd" }}
-                            className="fill-[--primary]"
-                            d="M23.07,30.59c-2.6,0-5.16.05-7.78-.05-1.41-.05-2.88-.22-3.85-.92-1.77-1.26-1.97-2.99-2.04-5.08-.08-2.22-.03-4.87-.04-7.12,0-1.67-.04-4.09.79-5.52.86-1.48,2.24-2.08,3.91-2.25,2.3-.24,11.52-.37,13.44.39,1.01.4,1.88,1.18,2.33,2.17.76,1.68.62,4.35.63,6.2,0,2.12.05,5.62-.1,7.32-.14,1.51-.56,2.64-1.53,3.51-.59.53-1.18.82-2,1.03-1.01.26-2.64.3-3.74.3h0ZM16.54,7.25c-2.66.05-4.77.09-6.77,1.64-.81.63-1.53,1.57-1.94,2.51-.74,1.72-.75,3.63-.77,5.66-.02,2.15-.11,7.37.16,9.43.32,2.47,1.63,4.65,3.99,5.65,1.74.74,3.61.75,5.66.77,2.13.03,4.31.05,6.44,0,2.7-.06,4.99-.13,6.98-1.83.15-.13.31-.26.43-.4,1.99-2.17,2.03-4.55,2.06-7.57.03-2.11.1-7.43-.17-9.46-.16-1.16-.61-2.61-1.31-3.5-.78-.99-1.52-1.61-2.69-2.15-1.6-.73-3.77-.75-5.68-.77-2.11-.03-4.28-.04-6.38,0h0ZM19.7,15.81c2.34-.17,4.34,1.72,4.49,4.03.16,2.34-1.68,4.38-4.03,4.51-1.74.1-3.31-.83-4.09-2.35-1.31-2.54.27-5.96,3.62-6.2h0ZM19.55,13.5c-3.65.22-6.45,3.3-6.24,6.97.22,3.62,3.34,6.42,7,6.19,1.6-.1,2.86-.68,4.05-1.72,1.44-1.29,2.27-3.21,2.15-5.26-.21-3.58-3.32-6.41-6.95-6.19h0ZM26.6,11.69c-.84.11-1.46.87-1.35,1.72.1.79.8,1.45,1.73,1.34.8-.1,1.46-.79,1.34-1.72-.1-.78-.8-1.46-1.71-1.34h0Z"
-                          />
-                          <path
-                            style={{ strokeMiterlimit: 10 }}
-                            className="fill-none stroke-[--primary]"
-                            d="M.63,20.11c.09,10.68,8.82,19.38,19.54,19.26,10.56.04,19.65-9.49,19.04-20.11C38.75,9.15,30.38.93,20.21.77,9.73.62.79,8.96.63,20.11h0Z"
+                            class="fill-black"
+                            d="M25.4,21l10.1-10.8h-2.5l-8.7,9.3-7-9.3h-7.8l10.4,14-10.5,11.3h2.5l9.1-9.8,7.3,9.8h7.8l-10.8-14.4h0ZM22.4,24.3l-1.1-1.5-8.1-10.8h3.3l6.6,8.9,1.1,1.5,8.4,11.3h-3.3l-7-9.3h0Z"
                           />
                         </g>
+                        <circle
+                          class="fill-none stroke-black"
+                          style={{ strokeMiterlimit: 10, strokeWidth: "1px" }}
+                          cx="22.8"
+                          cy="22.8"
+                          r="22.2"
+                        />
                       </g>
-                    </g>
-                  </svg>
+                    </svg>
+                  </span>
                 </span>
-              </button>
+              </TwitterShareButton>
 
               <WhatsappShareButton title={texto.texto} url={texto.url}>
                 <span className="group btn-home w-36 py-1 flex items-center justify-center transition-all duration-300 rounded-full">
