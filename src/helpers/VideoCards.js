@@ -392,7 +392,8 @@ export const resetAnimation = (activeBox) => {
         height: "100%",
       },
       {
-        height: "49.5%",
+        //height: "49.5%",
+        height: "100%",
         ease: easeEffect,
         duration: time,
       },

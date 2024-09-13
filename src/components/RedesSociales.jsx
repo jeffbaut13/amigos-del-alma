@@ -54,9 +54,9 @@ export const RedesSociales = () => {
                 onClick={() => {
                   compartirConWebShareAPI();
                 }}
-                className="group btn-home w-36 py-1 flex items-center justify-center transition-all duration-300"
+                className="group btn-home w-28 py-1 flex items-center justify-center transition-all duration-300"
               >
-                <span className="w-10 h-10 inline-block">
+                <span className="w-8 h-8k inline-block">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     version="1.1"
@@ -82,8 +82,8 @@ export const RedesSociales = () => {
                 </span>
               </button>
               <TwitterShareButton title={texto.texto} url={texto.url}>
-                <span className="group btn-home w-36 py-1 my-3 flex items-center justify-center transition-all duration-300 rounded-full">
-                  <span className="w-10 h-10 inline-block">
+                <span className="group btn-home w-28 py-1 my-3 flex items-center justify-center transition-all duration-300 rounded-full">
+                  <span className="w-8 h-8k inline-block">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       version="1.1"
@@ -110,8 +110,8 @@ export const RedesSociales = () => {
               </TwitterShareButton>
 
               <WhatsappShareButton title={texto.texto} url={texto.url}>
-                <span className="group btn-home w-36 py-1 flex items-center justify-center transition-all duration-300 rounded-full">
-                  <span className="w-10 h-10 inline-block">
+                <span className="group btn-home w-28 py-1 flex items-center justify-center transition-all duration-300 rounded-full">
+                  <span className="w-8 h-8k inline-block">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       version="1.1"

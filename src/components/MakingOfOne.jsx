@@ -3,7 +3,7 @@ import { VideoComponent } from "./VideoComponent";
 import { CajaVideosTitulos } from "./CajaVideosTitulos";
 
 const videos = [
-  {
+  /* {
     title: "Alejo y la música.",
     content:
       "Conoce la historia de Alejandro, quien a través de la música aprendió a ver la vida desde otras perspectivas y cómo la convirtió en la banda sonora que despierta sus sentidos.",
@@ -18,7 +18,7 @@ const videos = [
     videoCss: "thirtVideo",
     urlVideo: "https://www.youtube.com/watch?v=yG4ifL9HiPY",
     poster: "/imagenes/detras2.webp",
-  },
+  }, */
   {
     title: "La inspiración",
     content:
