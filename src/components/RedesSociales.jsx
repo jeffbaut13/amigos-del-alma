@@ -3,7 +3,7 @@ import { WhatsappShareButton } from "react-share";
 
 export const RedesSociales = () => {
   const texto = {
-    texto: "Amigo del Alma. Tienes que ver esta historia.",
+    texto: "En Amigos del Alma puedes personalizar y comprar el mismo collar de Toño y Alejo. Conoce esta historia y todo lo que hay detrás de ella en:",
     url: "https://amigodelalma.com/",
   };
 
