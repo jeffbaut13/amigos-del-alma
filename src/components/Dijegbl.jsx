@@ -49,7 +49,7 @@ export function Dijegbl({ open, snap, group, abrirDije }) {
   useFrame(() => {
     if (!abrirDije) {
       setTimeout(() => {
-        group.current.rotation.y += 0.01;
+        group.current.rotation.y += 0.001;
       }, 500);
     }
   });
