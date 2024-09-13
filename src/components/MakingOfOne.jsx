@@ -18,8 +18,7 @@ const videos = [
     //videoCss: "thirtVideo",
     videoCss: "firstVideo",
     urlVideo: "https://www.youtube.com/watch?v=yG4ifL9HiPY",
-    poster: "/imagenes/detras1.webp",
-    //poster: "/imagenes/detras2.webp",
+    poster: "/imagenes/detras2.webp",
   },
   /*  {
     title: "La inspiración",
