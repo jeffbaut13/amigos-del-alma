@@ -17,7 +17,7 @@ const videos = [
       "Conoce el detrás de cámaras y todo lo que sucedió para que la historia de Alejo y Toño fuera tan cercana que miles de espectadores la sintieran como propia.",
     //videoCss: "thirtVideo",
     videoCss: "firstVideo",
-    urlVideo: "https://www.youtube.com/watch?v=yG4ifL9HiPY",
+    urlVideo: "https://www.youtube.com/watch?v=a7ddtxlYkpw",
     poster: "/imagenes/detras2.webp",
   },
   /*  {
@@ -101,7 +101,7 @@ export const MakingOfOne = () => {
                   <div className="px-4 cajaTitulos pointer-events-none w-full absolute bottom-8 flex max-lg:flex-col items-center lg:justify-start xs:justify-center z-30">
                     <h2
                       dangerouslySetInnerHTML={{ __html: video.title }}
-                      className="titleCard lg:w-full xs:w-5/6 text-sm"
+                      className="titleCard lg:w-full xs:w-5/6 text-2xl"
                     />
                     <p
                       className={`NeueHaas-Ligth text-start max-lg:mt-6 text-xs text-[--tercero] block contenidoCard lg:w-1/2 xs:w-5/6`}

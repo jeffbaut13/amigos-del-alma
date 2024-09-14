@@ -432,8 +432,8 @@ export const resetAnimation = (activeBox) => {
   tl.to(`.titleCard`, {
     textAlign: "start",
     width: "100%",
-    fontSize: "0.875rem",
-    lineHeight: "1.25rem",
+    fontSize: "1.5rem",
+    lineHeight: "2rem",
   });
   tl.to(`.${activeBox} br`, {
     display: "block",

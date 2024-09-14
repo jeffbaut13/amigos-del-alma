@@ -93,12 +93,12 @@ export const RedesSociales = () => {
                       <g id="uuid-1820ef8c-e06a-4ba4-99bb-b6b902a92245">
                         <g id="uuid-ae8199f1-8ae9-48a4-be76-d671c7ce96b2">
                           <path
-                            class="fill-black"
+                            className="fill-black"
                             d="M25.4,21l10.1-10.8h-2.5l-8.7,9.3-7-9.3h-7.8l10.4,14-10.5,11.3h2.5l9.1-9.8,7.3,9.8h7.8l-10.8-14.4h0ZM22.4,24.3l-1.1-1.5-8.1-10.8h3.3l6.6,8.9,1.1,1.5,8.4,11.3h-3.3l-7-9.3h0Z"
                           />
                         </g>
                         <circle
-                          class="fill-none stroke-black"
+                          className="fill-none stroke-black"
                           style={{ strokeMiterlimit: 10, strokeWidth: "1px" }}
                           cx="22.8"
                           cy="22.8"
