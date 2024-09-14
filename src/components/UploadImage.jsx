@@ -10,7 +10,7 @@ export const UploadImage = ({
   DijeValtio,
   controles,
   setControles,
-  setReset,
+  updateImg,
   setBtnCompra,
   edicion,
   setUpdateImg,
@@ -72,7 +72,9 @@ export const UploadImage = ({
 
   return (
     <>
-      {edicion && <button onClick={openFileDialog}>Cambiar imagen</button>}
+      {(edicion || updateImg) && (
+        <button onClick={openFileDialog}>Cambiar imagen</button>
+      )}
       {controles && (
         <>
           <div className="lg:w-2/5 xs:w-[45%] flex flex-col justify-center items-center h-full">

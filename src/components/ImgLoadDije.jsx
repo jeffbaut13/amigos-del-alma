@@ -75,6 +75,7 @@ export const ImgLoadDije = ({ DijeValtio, setBtnCompra, handleCompra }) => {
           setBtnCompra={setBtnCompra}
           edicion={edicion}
           setEdicion={setEdicion}
+          updateImg={updateImg}
         />
         {updateImg && (
           <CustomAutomaticButton
