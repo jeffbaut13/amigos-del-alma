@@ -52,7 +52,7 @@ export const RedesSociales = () => {
             </h2>
             <div className="w-full flex flex-col mt-8 justify-around items-center gap-2">
               <TwitterShareButton title={texto.texto} url={texto.url}>
-                <span className="group btn-home w-28 py-1 my-3 flex items-center justify-center transition-all duration-300 rounded-full">
+                <span className="group btn-home w-28 py-1 flex items-center justify-center transition-all duration-300 rounded-full">
                   <span className="w-6 h-6 inline-block">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
