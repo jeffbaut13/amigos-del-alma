@@ -7,21 +7,21 @@ const videos = [
     title: "El amigo del alma",
     content:
       "Conoce a Tequila, quien interpretó a Toño y que al final de esta producción se convirtió en la amiga del alma de Teresa, una señora que la adoptó para convertirla ahora en la protagonista historias de la vida real.",
-    videoCss: "secondVideo",
+    videoCss: "secondVideoDog",
     urlVideo: "/imagenes/dije-gracias.webp",
   },
   {
     title: "Detrás de cámaras",
     content:
       "Conoce el detrás de cámaras y todo lo que sucedió para que la historia de Alejo y Toño fuera tan cercana que miles de espectadores la sintieran como propia.",
-    videoCss: "thirtVideo",
+    videoCss: "thirtVideoDog",
     urlVideo: "/imagenes/tono-gracias.webp",
   },
   {
     title: "La inspiración",
     content:
       "Conoce a Andrés, guitarrista por vocación, profesor y músico invidente que inspiró esta historia. además, nos demostró que no hay condiciones que superen el propósito de hacer que la vida de los demás suene más alegre.",
-    videoCss: "firstVideo",
+    videoCss: "firstVideoDog",
     urlVideo: "/imagenes/tono.webp",
   },
 ];

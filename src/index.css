@@ -233,6 +233,15 @@ input[type="number"]::-webkit-inner-spin-button {
 .secondVideo {
   @apply top-0 left-0 h-[49.5%] w-[49.5%];
 }
+.firstVideoDog {
+  @apply bottom-0 left-0 h-[49.5%] w-full;
+}
+.thirtVideoDog {
+  @apply top-0 right-0 h-[49.5%] w-[49.5%];
+}
+.secondVideoDog {
+  @apply top-0 left-0 h-[49.5%] w-[49.5%];
+}
 /*Hamburgesa*/
 .lineBurger {
   @apply absolute w-full h-[2px] rounded-full transition-all ease-in-out duration-500;
