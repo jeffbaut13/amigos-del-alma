@@ -63,8 +63,7 @@ export const ImgLoadDije = ({ DijeValtio, setBtnCompra, handleCompra }) => {
   return (
     <div className="h-full flex flex-col justify-evenly pt-8 px-12">
       <div
-        className={`botonesBox items-center mb-2  h-42 flex flex-row justify-center items-center"
-         `}
+        className={`max-lg:flex-col max-lg:h-1/2 max-lg:justify-evenly botonesBox mb-2 h-42 flex flex-row lg:justify-center items-center`}
       >
         <UploadImage
           setUpdateImg={setUpdateImg}
