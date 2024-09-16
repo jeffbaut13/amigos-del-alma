@@ -114,7 +114,11 @@ export const Gracias = () => {
                   <div className="h-full border border-[#BCBCBC70] border-dashed rounded-xl p-2 flex flex-col pruebaDos">
                     <div className="relative border border-[--borderOpacity] rounded-xl w-full h-full videoCajas flex justify-center items-center overflow-hidden">
                       <figure className="cursor-pointer z-20 w-full h-full inline-block absolute  top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                        <img src={video.urlVideo} alt="Play" />
+                        <img
+                          className="object-cover object-top"
+                          src={video.urlVideo}
+                          alt="Play"
+                        />
                       </figure>
                     </div>
                   </div>
