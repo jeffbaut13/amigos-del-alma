@@ -22,7 +22,7 @@ const videos = [
     content:
       "Conoce a Andrés, guitarrista por vocación, profesor y músico invidente que inspiró esta historia. además, nos demostró que no hay condiciones que superen el propósito de hacer que la vida de los demás suene más alegre.",
     videoCss: "firstVideoDog",
-    urlVideo: "/imagenes/tono.webp",
+    urlVideo: "/imagenes/tono-gracias-2.webp",
   },
 ];
 
@@ -115,7 +115,7 @@ export const Gracias = () => {
                     <div className="relative border border-[--borderOpacity] rounded-xl w-full h-full videoCajas flex justify-center items-center overflow-hidden">
                       <figure className="cursor-pointer z-20 w-full h-full inline-block absolute  top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
                         <img
-                          className="object-cover object-top"
+                          className="object-cover  "
                           src={video.urlVideo}
                           alt="Play"
                         />
