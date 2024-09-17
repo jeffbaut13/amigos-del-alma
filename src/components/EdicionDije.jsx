@@ -98,6 +98,7 @@ export const EdicionDije = ({ abrirDije, setabrirDije, dijeCanvaRef }) => {
 
       <div className="cardDije overflow-hidden lg:w-0 lg:h-full xs:h-0 xs:w-full flex flex-col items-center">
         <CardsCustomer
+          setabrirDije={setabrirDije}
           setOpen={setOpen}
           DijeValtio={DijeValtio}
           snap={snap}

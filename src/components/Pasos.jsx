@@ -3,7 +3,7 @@ import { animaitionsGroup } from "../helpers/AnimationIconSteps";
 import { SliderPaso } from "./sliderPaso";
 import { Arrows } from "./Arrows";
 
-export const Pasos = ({ DijeValtio, setOpen, camMove, snap, abrirDije }) => {
+export const Pasos = ({ DijeValtio, setOpen, camMove, snap, setabrirDije }) => {
   const sliderRef = useRef();
   const [currentSlide, setCurrentSlide] = useState(1);
   const [btnCompra, setBtnCompra] = useState(false);
@@ -129,6 +129,7 @@ export const Pasos = ({ DijeValtio, setOpen, camMove, snap, abrirDije }) => {
           className={`NeueHassRoman relative border-none shadowbox w-full h-full flex flex-col items-start`}
         >
           <SliderPaso
+            setabrirDije={setabrirDije}
             handleCompra={handleCompra}
             setBtnCompra={setBtnCompra}
             next={next}

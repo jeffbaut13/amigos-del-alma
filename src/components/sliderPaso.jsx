@@ -14,7 +14,7 @@ export const SliderPaso = ({
   next,
   sliderRef,
   DijeValtio,
-  setOpen,
+  setabrirDije,
   setBtnCompra,
   handleCompra,
   currentSlide,
@@ -48,7 +48,7 @@ export const SliderPaso = ({
   return (
     <Slider className="w-full h-full z-20" {...settings} ref={sliderRef}>
       <div>
-        <CardUno next={next} />
+        <CardUno next={next} setabrirDije={setabrirDije} />
       </div>
       <div>
         <CardDos

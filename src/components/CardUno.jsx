@@ -11,7 +11,8 @@ export const CardUno = ({ next }) => {
           "https://server-amigos.onrender.com/dijes"
         );
 
-        setStockDije(response.data.stockDije || 0);
+        /* setStockDije(response.data.stockDije || 0); */
+        setStockDije(0);
       } catch (error) {
         console.error("Error al obtener stockDije:", error.message);
         // Manejo de errores opcional
@@ -24,16 +25,15 @@ export const CardUno = ({ next }) => {
 
   return (
     <div className="NeueHaas-Medium h-full flex text-[#1B191D] flex-col items-center justify-evenly py-12 w-full rounded-lg slide-uno border-none">
-      <div className="flex flex-col items-center justify-center">
-        <h2 className="text-2xl leading-5 text-center">
-          Collar <br />
-          Amigos del Alma.
-        </h2>
-        <span className="text-xs">Por: Inter Rapidísimo</span>
-      </div>
-
       {stockDije > 1 ? (
         <>
+          <div className="flex flex-col items-center justify-center">
+            <h2 className="text-2xl leading-5 text-center">
+              Collar <br />
+              Amigos del Alma.
+            </h2>
+            <span className="text-xs">Por: Inter Rapidísimo</span>
+          </div>
           <div className="flex flex-col items-center justify-center">
             <p className="text-3xl leading-6">$89.000</p>
             <p className="text-xs stock">
@@ -52,11 +52,18 @@ export const CardUno = ({ next }) => {
         </>
       ) : (
         <>
-          <p className="NeueHassRoman text-black lg:text-base xs:text-base px-8 text-center lg:w-[65%] xs:w-full">
-            Las existencias de nuestro collar Amigos del Alma se han agotado.
+          <h2 className="text-2xl leading-6 text-center">
+            Las existencias de nuestro <br />
+            collar Amigos del Alma <br />{" "}
+            <span className="underline underline-offset-8">
+              se han agotado.
+            </span>
+          </h2>
+          <p className="NeueHassRoman text-black lg:text-sm xs:text-base px-8 text-center lg:w-[65%] xs:w-full">
             Gracias por querer sumarte a este homenaje a esos amigos que lo
             entregan todo.
           </p>
+          <button onClick={() => setabrirDije(false)}>Volver</button>
         </>
       )}
     </div>
