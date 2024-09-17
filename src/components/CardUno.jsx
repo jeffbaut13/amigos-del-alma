@@ -11,8 +11,7 @@ export const CardUno = ({ next }) => {
           "https://server-amigos.onrender.com/dijes"
         );
 
-        /* setStockDije(response.data.stockDije || 0); */
-        setStockDije(0);
+        setStockDije(response.data.stockDije || 0);
       } catch (error) {
         console.error("Error al obtener stockDije:", error.message);
         // Manejo de errores opcional
