@@ -86,7 +86,7 @@ export const ImgLoadDije = ({ DijeValtio, setBtnCompra, handleCompra }) => {
       </div>
       {edicion && (
         <>
-          <h2 className="w-full text-center text-2xl my-4 text-black">
+          <h2 className="w-full text-center text-2xl lg:my-4 xs:my-2 text-black">
             Tamaño de imagen
           </h2>
           <CustomSlide
