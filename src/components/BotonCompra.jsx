@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 
-const BotonCompra = () => {
+const BotonCompra = ({ handleClick }) => {
   const [isAccepted, setIsAccepted] = useState(false);
   const [captchaVerified, setCaptchaVerified] = useState(false);
 
@@ -13,8 +13,8 @@ const BotonCompra = () => {
     setCaptchaVerified(!!value); // Si el valor no es nulo, el captcha está verificado
   };
 
-  const handleClick = () => {
-    alert("Pasando al pago...");
+  const handleCompra = () => {
+    handleClick();
   };
 
   return (
@@ -46,7 +46,7 @@ const BotonCompra = () => {
         onChange={handleCaptchaChange}
       />
       <button
-        onClick={handleClick}
+        onClick={handleCompra}
         disabled={!isAccepted || !captchaVerified}
         className={
           isAccepted && captchaVerified

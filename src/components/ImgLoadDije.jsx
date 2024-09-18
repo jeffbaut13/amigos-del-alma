@@ -101,7 +101,7 @@ export const ImgLoadDije = ({ DijeValtio, setBtnCompra, handleCompra }) => {
             {loading ? (
               <div className="loader"></div> // Círculo de carga
             ) : (
-              <BotonCompra />
+              <BotonCompra handleClick={handleClick} />
             )}
           </div>
         </>
