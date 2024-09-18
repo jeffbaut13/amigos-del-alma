@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-export const CardUno = ({ next }) => {
+export const CardUno = ({ next, setabrirDije }) => {
   const [stockDije, setStockDije] = useState(null);
 
   useEffect(() => {
@@ -24,7 +24,7 @@ export const CardUno = ({ next }) => {
 
   return (
     <div className="NeueHaas-Medium h-full flex text-[#1B191D] flex-col items-center justify-evenly py-12 w-full rounded-lg slide-uno border-none">
-      {stockDije > 1 ? (
+      {stockDije > 0 ? (
         <>
           <div className="flex flex-col items-center justify-center">
             <h2 className="text-2xl leading-5 text-center">
