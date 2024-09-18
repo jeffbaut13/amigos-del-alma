@@ -43,7 +43,7 @@ export const CardTres = ({
         <div className="w-full border-b ">
           <input
             ref={inputDog}
-            maxLength={10}
+            maxLength={11}
             type="text"
             name="nameDog"
             onFocus={() => setActiveAviso(true)}

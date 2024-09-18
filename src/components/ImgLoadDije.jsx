@@ -6,6 +6,7 @@ import { Arrows } from "./Arrows";
 import { PhotoCapture } from "./PhotoCapture";
 import { UploadImage } from "./UploadImage";
 import { CustomAutomaticButton } from "./CustomAutomaticButton";
+import BotonCompra from "./BotonCompra";
 
 export const ImgLoadDije = ({ DijeValtio, setBtnCompra, handleCompra }) => {
   const snap = useSnapshot(DijeValtio);
@@ -100,9 +101,7 @@ export const ImgLoadDije = ({ DijeValtio, setBtnCompra, handleCompra }) => {
             {loading ? (
               <div className="loader"></div> // Círculo de carga
             ) : (
-              <button onClick={handleClick} className="">
-                Ir a pagar
-              </button>
+              <BotonCompra />
             )}
           </div>
         </>
