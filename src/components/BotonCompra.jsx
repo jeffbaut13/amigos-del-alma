@@ -26,7 +26,7 @@ const BotonCompra = () => {
           checked={isAccepted}
           className="w-20 h-20 inline-block"
         />
-        <span className="text-black NeueHaas-Ligth lg:text-[0.6rem] xs:text-xs">
+        <span className="text-black NeueHaas-Ligth lg:text-[0.6rem] xs:text-sm">
           Autorizo el tratamiento de mis datos personales para la finalidad
           descrita en la{" "}
           <a
