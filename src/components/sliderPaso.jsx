@@ -51,18 +51,18 @@ export const SliderPaso = ({
         <CardUno next={next} setabrirDije={setabrirDije} />
       </div>
       <div>
-        <ImgLoadDije
+        {/* <ImgLoadDije
           DijeValtio={DijeValtio}
           setBtnCompra={setBtnCompra}
           handleCompra={handleCompra}
-        />
-        {/* <CardDos
+        /> */}
+        <CardDos
           DijeValtio={DijeValtio}
           next={next}
           setDisable={setDisable}
           disable={disable}
           currentSlide={currentSlide}
-        /> */}
+        />
       </div>
       <div>
         <CardTres
