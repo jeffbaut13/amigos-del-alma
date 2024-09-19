@@ -34,7 +34,7 @@ const BotonCompra = ({ handleClick }) => {
             className="text-black"
           >
             <strong className="NeueHaas-Medium">
-              Política de tratamiento de datos Personales
+              Política de tratamiento de datos Personales{" "}
             </strong>
           </a>
           de Inter Rapidísimo.
