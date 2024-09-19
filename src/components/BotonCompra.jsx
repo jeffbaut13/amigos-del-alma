@@ -24,9 +24,9 @@ const BotonCompra = ({ handleClick }) => {
           type="checkbox"
           onChange={handleCheckboxChange}
           checked={isAccepted}
-          className="xs:w-20 xs:h-20 lg:w-10 lg:h-10 inline-block"
+          className="xs:w-[8%] xs:h-full lg:w-10 lg:h-10 inline-block"
         />
-        <span className="text-black NeueHaas-Ligth lg:text-[0.6rem] xs:text-sm">
+        <span className="text-black NeueHaas-Ligth lg:text-[0.6rem] xs:text-sm max-lg:w-[92%]">
           Autorizo el tratamiento de mis datos personales para la finalidad
           descrita en la{" "}
           <a
