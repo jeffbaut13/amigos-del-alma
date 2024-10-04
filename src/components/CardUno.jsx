@@ -33,7 +33,7 @@ export const CardUno = ({ next, setabrirDije, handleCompra }) => {
         <span className="text-xs">Por: Inter Rapidísimo</span>
       </div>
       <div className="flex flex-col items-center justify-center">
-        <p className="text-3xl leading-6">$30.000</p>
+        <p className="text-3xl leading-6">desde $30.137</p>
         <p className="text-xs stock">
           {/* Disponibles: {stockDije !== null ? stockDije : "Cargando..."} */}
           Disponibles: 1500
