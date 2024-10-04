@@ -3,7 +3,7 @@ import { full, laptop, minilaptop, mobile, tablet } from "./Medidas";
 
 const destopk = full || minilaptop || laptop;
 
-export const AnimationMarketing = (abrirDije, dijeCanvaRef) => {
+export const AnimationMarketing = (abrirDije, dijeCanvaRef, setPerro) => {
   const easeAnim = "power1.inOut";
   const time = 0.3;
   const tl = gsap.timeline();
@@ -25,6 +25,7 @@ export const AnimationMarketing = (abrirDije, dijeCanvaRef) => {
         duration: 0.5,
       }
     );
+    tl.add(() => setPerro(false));
     if (mobile || tablet) {
       tl.to(".contaiMarket", {
         width: "100%",
@@ -42,6 +43,11 @@ export const AnimationMarketing = (abrirDije, dijeCanvaRef) => {
       );
     }
     if (destopk) {
+      tl.to(".containMarket_child", {
+        height: "66%",
+        ease: easeAnim,
+        duration: time,
+      });
       tl.fromTo(
         ".textoMarket",
         {
@@ -51,7 +57,8 @@ export const AnimationMarketing = (abrirDije, dijeCanvaRef) => {
           width: "0%",
           ease: easeAnim,
           duration: time,
-        }
+        },
+        "<"
       );
 
       tl.fromTo(
@@ -192,7 +199,7 @@ export const AnimationMarketing = (abrirDije, dijeCanvaRef) => {
         duration: time,
       }
     );
-
+    tl.add(() => setPerro(true));
     if (mobile || tablet) {
       tl.to(".contaiMarket", {
         width: "80%",
@@ -231,6 +238,15 @@ export const AnimationMarketing = (abrirDije, dijeCanvaRef) => {
         ".textoMarket",
         {
           width: "25%",
+        },
+        "<"
+      );
+      tl.to(
+        ".containMarket_child",
+        {
+          height: "40%",
+          ease: easeAnim,
+          duration: time,
         },
         "<"
       );

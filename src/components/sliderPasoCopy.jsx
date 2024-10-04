@@ -9,14 +9,13 @@ import { CardUno } from "./CardUno";
 import { CardDos } from "./CardDos";
 import { CardTres } from "./CardTres";
 import { CardCuatro } from "./CardCuatro";
-import BotonCompra from "./BotonCompra";
 
 export const SliderPaso = ({
   next,
   sliderRef,
   DijeValtio,
   setabrirDije,
-
+  setBtnCompra,
   handleCompra,
   currentSlide,
   setDisable,
@@ -49,9 +48,44 @@ export const SliderPaso = ({
   return (
     <Slider className="w-full h-full z-20" {...settings} ref={sliderRef}>
       <div>
-        <CardUno
+        <CardUno next={next} setabrirDije={setabrirDije} />
+      </div>
+      <div>
+        {/* <ImgLoadDije
+          DijeValtio={DijeValtio}
+          setBtnCompra={setBtnCompra}
+          handleCompra={handleCompra}
+        /> */}
+        <CardDos
+          DijeValtio={DijeValtio}
           next={next}
-          setabrirDije={setabrirDije}
+          setDisable={setDisable}
+          disable={disable}
+          currentSlide={currentSlide}
+        />
+      </div>
+      <div>
+        <CardTres
+          DijeValtio={DijeValtio}
+          next={next}
+          currentSlide={currentSlide}
+          setDisable={setDisable}
+          disable={disable}
+        />
+      </div>
+      <div>
+        <CardCuatro
+          currentSlide={currentSlide}
+          DijeValtio={DijeValtio}
+          next={next}
+          setDisable={setDisable}
+          disable={disable}
+        />
+      </div>
+      <div>
+        <ImgLoadDije
+          DijeValtio={DijeValtio}
+          setBtnCompra={setBtnCompra}
           handleCompra={handleCompra}
         />
       </div>

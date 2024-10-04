@@ -92,7 +92,7 @@ body,
   --colorYellow: #fff6c2;
   --bg-black: #19171b;
   font-family: "NeueHaas Medium", "san serif";
-  @apply tracking-[0.1rem];
+  @apply tracking-[0.02rem];
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;

@@ -60,7 +60,6 @@ export const UploadImage = ({
       setUpdateImg(true);
       setControles(false);
       setEdicion(false);
-      setBtnCompra(true);
     } else {
       alert("Solo se permiten imágenes JPG, JPEG o PNG.");
     }

@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
-export const CardUno = ({ next, setabrirDije }) => {
+export const CardUno = ({ next, setabrirDije, handleCompra }) => {
   const [stockDije, setStockDije] = useState(null);
 
   useEffect(() => {
@@ -24,47 +25,57 @@ export const CardUno = ({ next, setabrirDije }) => {
 
   return (
     <div className="NeueHaas-Medium h-full flex text-[#1B191D] flex-col items-center justify-evenly py-12 w-full rounded-lg slide-uno border-none">
-      {stockDije > 0 ? (
-        <>
-          <div className="flex flex-col items-center justify-center">
-            <h2 className="text-2xl leading-5 text-center">
-              Collar <br />
-              Amigos del Alma.
-            </h2>
-            <span className="text-xs">Por: Inter Rapidísimo</span>
-          </div>
-          <div className="flex flex-col items-center justify-center">
-            <p className="text-3xl leading-6">$89.000</p>
-            <p className="text-xs stock">
-              Disponibles: {stockDije !== null ? stockDije : "Cargando..."}
-            </p>
-            <hr className="border-black border w-1/3 mt-4" />
-          </div>
+      <div className="flex flex-col items-center justify-center">
+        <h2 className="text-2xl leading-5 text-center">
+          Casa <br />
+          Amigos del Alma.
+        </h2>
+        <span className="text-xs">Por: Inter Rapidísimo</span>
+      </div>
+      <div className="flex flex-col items-center justify-center">
+        <p className="text-3xl leading-6">$30.000</p>
+        <p className="text-xs stock">
+          {/* Disponibles: {stockDije !== null ? stockDije : "Cargando..."} */}
+          Disponibles: 1500
+        </p>
+        <hr className="border-black border w-1/2 mt-1" />
+      </div>
 
-          <button onClick={next}>Iniciar</button>
+      <div className="btnAnchor flex justify-between gap-4">
+        <Link
+          className="xs:text-base lg:text-sm py-3 px-5 bg-black text-white NeueHaas-Medium rounded-full hover:text-white hover:bg-[--hoverBlack] transition-all duration-300"
+          to={
+            "https://www.alcarrito.com/paquete-de-3-cajas-de-carton-grande-de-40x40x40-cm-con-divertido-motivo-de-perro.html"
+          }
+          target="_blank"
+        >
+          Tu perrito
+        </Link>
+        <Link
+          className="max-lg:text-base lg:text-sm py-3 px-5 bg-black text-white NeueHaas-Medium rounded-full hover:text-white hover:bg-[--hoverBlack] transition-all duration-300"
+          to={
+            "https://www.alcarrito.com/paquete-de-3-cajas-de-carton-pequena-de-30x30x30-cm-con-divertido-motivo-de-gato.html"
+          }
+          target="_blank"
+        >
+          Tu michi grande
+        </Link>
+        <Link
+          className="max-lg:text-base lg:text-sm py-3 px-5 bg-black text-white NeueHaas-Medium rounded-full hover:text-white hover:bg-[--hoverBlack] transition-all duration-300"
+          to={
+            "https://www.alcarrito.com/paquete-de-3-cajas-de-carton-grande-de-40x40x40-cm-con-divertido-motivo-de-gato.html"
+          }
+          target="_blank"
+        >
+          Tu michi pequeño
+        </Link>
+      </div>
 
-          <p className="NeueHassRoman text-black lg:text-xs xs:text-base px-8 text-center lg:w-[65%] xs:w-full">
-            Este collar de finas terminaciones enmarcado en un contenedor de
-            cuero y un estético dije que llevará impresa su foto, será el
-            símbolo ideal para que todo el mundo reconozca a tu Amigo del Alma.
-          </p>
-        </>
-      ) : (
-        <>
-          <h2 className="text-2xl leading-6 text-center">
-            Las existencias de nuestro <br />
-            collar Amigos del Alma <br />{" "}
-            <span className="underline underline-offset-8">
-              se han agotado.
-            </span>
-          </h2>
-          <p className="NeueHassRoman text-black lg:text-sm xs:text-base px-8 text-center lg:w-[65%] xs:w-full">
-            Gracias por querer sumarte a este homenaje a esos amigos que lo
-            entregan todo.
-          </p>
-          <button onClick={() => setabrirDije(false)}>Volver</button>
-        </>
-      )}
+      <p className="NeueHassRoman text-black lg:text-xs xs:text-base px-8 text-center lg:w-[65%] xs:w-full">
+        Esta caja de cartón de 40 X 40 centímetros, precortadas y lista para ser
+        armada, será la nueva casa de tu Amigo del Alma, que podrás personalizar
+        con tu estilo.
+      </p>
     </div>
   );
 };
