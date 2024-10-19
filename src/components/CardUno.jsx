@@ -34,7 +34,7 @@ export const CardUno = ({ next, setabrirDije, handleCompra }) => {
       </div>
       <div className="flex flex-col items-center justify-center">
         <p className="text-3xl leading-6">
-          <span className="text-xl">Desde</span> $30.137
+          <span className="text-xl">Desde</span> $30.137 x 6uds
         </p>
         <p className="text-xs stock">
           {/* Disponibles: {stockDije !== null ? stockDije : "Cargando..."} */}
