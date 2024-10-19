@@ -56,7 +56,7 @@ export const CardUno = ({ next, setabrirDije, handleCompra }) => {
         <Link
           className="max-lg:text-base lg:text-sm py-3 px-5 bg-black text-white NeueHaas-Medium rounded-full hover:text-white hover:bg-[--hoverBlack] transition-all duration-300"
           to={
-            "https://www.alcarrito.com/paquete-de-3-cajas-de-carton-pequena-de-30x30x30-cm-con-divertido-motivo-de-gato.html"
+            "https://www.alcarrito.com/paquete-de-3-cajas-de-carton-grande-de-40x40x40-cm-con-divertido-motivo-de-gato.html"
           }
           target="_blank"
         >
@@ -65,7 +65,7 @@ export const CardUno = ({ next, setabrirDije, handleCompra }) => {
         <Link
           className="max-lg:text-base lg:text-sm py-3 px-5 bg-black text-white NeueHaas-Medium rounded-full hover:text-white hover:bg-[--hoverBlack] transition-all duration-300"
           to={
-            "https://www.alcarrito.com/paquete-de-3-cajas-de-carton-grande-de-40x40x40-cm-con-divertido-motivo-de-gato.html"
+            "https://www.alcarrito.com/paquete-de-3-cajas-de-carton-pequena-de-30x30x30-cm-con-divertido-motivo-de-gato.html"
           }
           target="_blank"
         >
@@ -74,9 +74,7 @@ export const CardUno = ({ next, setabrirDije, handleCompra }) => {
       </div>
 
       <p className="NeueHassRoman text-black lg:text-xs xs:text-base px-8 text-center lg:w-[65%] xs:w-full">
-        Esta caja de cartón de 40 X 40 centímetros, precortadas y lista para ser
-        armada, será la nueva casa de tu Amigo del Alma, que podrás personalizar
-        con tu estilo.
+        Paquete x6 cajas, cada una de 40 X 40 centímetros, precortadas y listas para ser armadas, serán la nueva casa de tu Amigo del Alma, que podrás personalizar con tu estilo.
       </p>
     </div>
   );
