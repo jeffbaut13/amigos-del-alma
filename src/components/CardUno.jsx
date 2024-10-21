@@ -34,7 +34,7 @@ export const CardUno = ({ next, setabrirDije, handleCompra }) => {
       </div>
       <div className="flex flex-col items-center justify-center">
         <p className="text-3xl leading-6">
-          <span className="text-xl">Desde</span> $30.137 x 6uds
+          <span className="text-xl">Desde</span> $30.137 x 3uds
         </p>
         <p className="text-xs stock">
           {/* Disponibles: {stockDije !== null ? stockDije : "Cargando..."} */}
@@ -74,7 +74,7 @@ export const CardUno = ({ next, setabrirDije, handleCompra }) => {
       </div>
 
       <p className="NeueHassRoman text-black lg:text-xs xs:text-base px-8 text-center lg:w-[65%] xs:w-full">
-        Paquete x6 cajas, cada una de 40 X 40 centímetros, precortadas y listas para ser armadas, serán la nueva casa de tu Amigo del Alma, que podrás personalizar con tu estilo.
+        Paquete x3 cajas, cada una de 40 X 40 centímetros, precortadas y listas para ser armadas, serán la nueva casa de tu Amigo del Alma, que podrás personalizar con tu estilo.
       </p>
     </div>
   );
