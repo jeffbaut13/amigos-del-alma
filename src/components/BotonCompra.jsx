@@ -3,7 +3,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 
 const BotonCompra = ({ handleClick }) => {
   const [isAccepted, setIsAccepted] = useState(false);
-  const [captchaVerified, setCaptchaVerified] = useState(false);
+  const [captchaVerified, setCaptchaVerified] = useState(true);
 
   const handleCheckboxChange = (e) => {
     setIsAccepted(e.target.checked);
@@ -40,11 +40,11 @@ const BotonCompra = ({ handleClick }) => {
           de Inter Rapidísimo.
         </span>
       </label>
-      <ReCAPTCHA
+     {/*  <ReCAPTCHA
         className="lg:my-4 xs:my-2"
         sitekey="6LfzPkgqAAAAAAr0swKl0883weytfpI5QR0iFVot"
         onChange={handleCaptchaChange}
-      />
+      /> */}
       <button
         onClick={handleCompra}
         disabled={!isAccepted || !captchaVerified}
