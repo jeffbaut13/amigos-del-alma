@@ -2,8 +2,8 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 const links = [
-  { name: "Comercial", url: "#comercial", position: 1 },
-  { name: "Compra la casa", url: "#comprar", position: 2 },
+  { name: "Compra la casa", url: "#comprar", position: 1 },
+  { name: "Comercial", url: "#comercial", position: 2 },
   { name: "Detrás de cámaras", url: "#detras", position: 3 },
   { name: "Comparte", url: "#compartir", position: 4 },
 ];

@@ -9,8 +9,8 @@ export const Home = () => {
   return (
     <>
       <Scroll />
-      <Comercial />
       <Marketing />
+      <Comercial />
       <MakingOfOne />
       <Footer />
     </>
